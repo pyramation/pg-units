@@ -1,0 +1,52 @@
+#
+# Musical measures.  Musical intervals expressed as ratios.  Multiply
+# two intervals together to get the sum of the interval.  The function
+# musicalcent can be used to convert ratios to cents.
+#
+
+# Perfect intervals
+
+octave                  2
+majorsecond             musicalfifth^2 / octave
+majorthird              5|4
+minorthird              6|5
+musicalfourth           4|3
+musicalfifth            3|2
+majorsixth              musicalfourth majorthird
+minorsixth              musicalfourth minorthird
+majorseventh            musicalfifth majorthird
+minorseventh            musicalfifth minorthird
+
+pythagoreanthird        majorsecond musicalfifth^2 / octave
+syntoniccomma           pythagoreanthird / majorthird
+pythagoreancomma        musicalfifth^12 / octave^7
+
+# Equal tempered definitions
+
+semitone                octave^(1|12)
+musicalcent(x) units=[1;1] range=(0,) semitone^(x/100) ; \
+                                      100 log(musicalcent)/log(semitone)
+
+#
+# Musical note lengths.
+#
+
+wholenote               !
+MUSICAL_NOTE_LENGTH     wholenote
+halfnote                1|2 wholenote
+quarternote             1|4 wholenote
+eighthnote              1|8 wholenote
+sixteenthnote           1|16 wholenote
+thirtysecondnote        1|32 wholenote
+sixtyfourthnote         1|64 wholenote
+dotted                  3|2
+doubledotted            7|4
+breve                   doublewholenote
+semibreve               wholenote
+minimnote               halfnote
+crotchet                quarternote
+quaver                  eighthnote
+semiquaver              sixteenthnote
+demisemiquaver          thirtysecondnote
+hemidemisemiquaver      sixtyfourthnote
+semidemisemiquaver      hemidemisemiquaver

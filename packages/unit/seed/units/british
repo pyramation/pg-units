@@ -1,0 +1,208 @@
+#
+# British
+#
+
+# The length measure in the UK was defined by a bronze bar manufactured in
+# 1844.  Various conversions were sanctioned for convenience at different
+# times, which makes conversions before 1963 a confusing matter.  Apparently
+# previous conversions were never explicitly revoked.  Four different
+# conversion factors appear below.  Multiply them times an imperial length
+# units as desired.  The Weights and Measures Act of 1963 switched the UK away
+# from their bronze standard and onto a definition of the yard in terms of the
+# meter.  This happened after an international agreement in 1959 to align the
+# world's measurement systems.
+
+UK                      UKlength_SJJ
+UK-                     UK
+british-                UK
+
+UKlength_B            0.9143992 meter / yard  # Benoit found the yard to be
+                                              #   0.9143992 m at a weights and
+                                              #   measures conference around
+                                              #   1896.   Legally sanctioned
+                                              #   in 1898.
+UKlength_SJJ          0.91439841 meter / yard # In 1922, Seers, Jolly and
+                                              #   Johnson found the yard to be
+                                              #   0.91439841 meters.
+                                              #   Used starting in the 1930's.
+UKlength_K              meter / 39.37079 inch # In 1816 Kater found this ratio
+                                              #   for the meter and inch.  This
+                                              #   value was used as the legal
+                                              #   conversion ratio when the
+                                              #   metric system was legalized
+                                              #   for contract in 1864.
+UKlength_C            meter / 1.09362311 yard # In 1866 Clarke found the meter
+                                              #   to be 1.09362311 yards.  This
+                                              #   conversion was legalized
+                                              #   around 1878.
+brnauticalmile          6080 ft               # Used until 1970 when the UK
+brknot                  brnauticalmile / hr   #   switched to the international
+brcable                 1|10 brnauticalmile   #   nautical mile.
+admiraltymile           brnauticalmile
+admiraltyknot           brknot
+admiraltycable          brcable
+seamile                 6000 ft
+shackle                 15 fathoms            # Adopted 1949 by British navy
+
+# British Imperial weight is mostly the same as US weight.  A few extra
+# units are added here.
+
+clove                   7 lb
+stone                   14 lb
+tod                     28 lb
+brquarterweight         1|4 brhundredweight
+brhundredweight         8 stone
+longhundredweight       brhundredweight
+longton                 20 brhundredweight
+brton                   longton
+
+# British Imperial volume measures
+
+brminim                 1|60 brdram
+brscruple               1|3 brdram
+fluidscruple            brscruple
+brdram                  1|8 brfloz
+brfluidounce            1|20 brpint
+brfloz                  brfluidounce
+brgill                  1|4 brpint
+brpint                  1|2 brquart
+brquart                 1|4 brgallon
+brgallon                4.54609 l      # The British Imperial gallon was
+                                       # defined in 1824 to be the volume of
+                                       # water which weighed 10 pounds at 62
+                                       # deg F with a pressure of 30 inHg.
+                                       # It was also defined as 277.274 in^3,
+                                       # Which is slightly in error.  In
+                                       # 1963 it was defined to be the volume
+                                       # occupied by 10 pounds of distilled
+                                       # water of density 0.998859 g/ml weighed
+                                       # in air of density 0.001217 g/ml
+                                       # against weights of density 8.136 g/ml.
+                                       # This gives a value of approximately
+                                       # 4.5459645 liters, but the old liter
+                                       # was in force at this time.  In 1976
+                                       # the definition was changed to exactly
+                                       # 4.54609 liters using the new
+                                       # definition of the liter (1 dm^3).
+brbarrel                36 brgallon    # Used for beer
+brbushel                8 brgallon
+brheapedbushel          1.278 brbushel
+brquarter               8 brbushel
+brchaldron              36 brbushel
+
+# Obscure British volume measures.  These units are generally traditional
+# measures whose definitions have fluctuated over the years.  Often they
+# depended on the quantity being measured.  They are given here in terms of
+# British Imperial measures.  For example, the puncheon may have historically
+# been defined relative to the wine gallon or beer gallon or ale gallon
+# rather than the British Imperial gallon.
+
+bag                     4 brbushel
+bucket                  4 brgallon
+kilderkin               2 brfirkin
+last                    40 brbushel
+noggin                  brgill
+pottle                  0.5 brgallon
+pin                     4.5 brgallon
+puncheon                72 brgallon
+seam                    8 brbushel
+coomb                   4 brbushel
+boll                    6 brbushel
+firlot                  1|4 boll
+brfirkin                9 brgallon     # Used for ale and beer
+cran                    37.5 brgallon  # measures herring, about 750 fish
+brwinehogshead          52.5 brgallon  # This value is approximately equal
+brhogshead              brwinehogshead #   to the old wine hogshead of 63
+                                       #   wine gallons.  This adjustment
+                                       #   is listed in the OED and in
+                                       #   "The Weights and Measures of
+                                       #   England" by R. D. Connor
+brbeerhogshead          54 brgallon
+brbeerbutt              2 brbeerhogshead
+registerton             100 ft^3  # Used for internal capacity of ships
+shippington             40 ft^3   # Used for ship's cargo freight or timber
+brshippington           42 ft^3   #
+freightton            shippington # Both register ton and shipping ton derive
+                                  # from the "tun cask" of wine.
+displacementton         35 ft^3   # Approximate volume of a longton weight of
+                                  # sea water.  Measures water displaced by
+                                  # ships.
+waterton                224 brgallon
+strike                  70.5 l    # 16th century unit, sometimes
+                                  #   defined as .5, 2, or 4 bushels
+                                  #   depending on the location.  It
+                                  #   probably doesn't make a lot of
+                                  #   sense to define in terms of imperial
+                                  #   bushels.  Zupko gives a value of
+                                  #   2 Winchester grain bushels or about
+                                  #   70.5 liters.
+amber                   4 brbushel# Used for dry and liquid capacity [18]
+
+# British volume measures with "imperial"
+
+imperialminim           brminim
+imperialscruple         brscruple
+imperialdram            brdram
+imperialfluidounce      brfluidounce
+imperialfloz            brfloz
+imperialgill            brgill
+imperialpint            brpint
+imperialquart           brquart
+imperialgallon          brgallon
+imperialbarrel          brbarrel
+imperialbushel          brbushel
+imperialheapedbushel    brheapedbushel
+imperialquarter         brquarter
+imperialchaldron        brchaldron
+imperialwinehogshead    brwinehogshead
+imperialhogshead        brhogshead
+imperialbeerhogshead    brbeerhogshead
+imperialbeerbutt        brbeerbutt
+imperialfirkin          brfirkin
+
+# obscure British lengths
+
+barleycorn              1|3 UKinch   # Given in Realm of Measure as the
+                                     # difference between successive shoe sizes
+nail                    1|16 UKyard  # Originally the width of the thumbnail,
+                                     #   or 1|16 ft.  This took on the general
+                                     #   meaning of 1|16 and settled on the
+                                     #   nail of a yard or 1|16 yards as its
+                                     #   final value.  [12]
+pole                    16.5 UKft    # This was 15 Saxon feet, the Saxon
+rope                    20 UKft      #   foot (aka northern foot) being longer
+englishell              45 UKinch
+flemishell              27 UKinch
+ell                     englishell   # supposed to be measure from elbow to
+                                     #   fingertips
+span                    9 UKinch     # supposed to be distance from thumb
+                                     #   to pinky with full hand extension
+goad                    4.5 UKft     # used for cloth, possibly named after the
+                                     #   stick used for prodding animals.
+
+# misc obscure British units
+
+hide                    120 acre  # English unit of land area dating to the 7th
+                                  #   century, originally the amount of land
+                                  #   that a single plowman could cultivate,
+                                  #   which varied from 60-180 acres regionally.
+                                  #   Standardized at Normon conquest.
+virgate                 1|4 hide
+nook                    1|2 virgate
+rood                    furlong rod  # Area of a strip a rod by a furlong
+englishcarat            troyounce/151.5 # Originally intended to be 4 grain
+                                        #   but this value ended up being
+                                        #   used in the London diamond market
+mancus                  2 oz
+mast                    2.5 lb
+nailkeg                 100 lbs
+basebox                 31360 in^2      # Used in metal plating
+
+# alternate spellings
+
+metre                   meter
+gramme                  gram
+litre                   liter
+dioptre                 diopter
+aluminium               aluminum
+sulphur                 sulfur

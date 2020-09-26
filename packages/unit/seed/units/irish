@@ -1,0 +1,48 @@
+
+# Irish linear measure
+
+irishinch       UKinch
+irishpalm       3 irishinch
+irishspan       3 irishpalm
+irishfoot       12 irishinch
+irishfeet       irishfoot
+irishcubit      18 irishinch
+irishyard       3 irishfeet
+irishpace       5 irishfeet
+irishfathom     6 irishfeet
+irishpole       7 irishyard      # Only these values
+irishperch      irishpole        # are different from
+irishchain      4 irishperch     # the British Imperial
+irishlink       1|100 irishchain # or English values for
+irishfurlong    10 irishchain    # these lengths.
+irishmile       8 irishfurlong   #
+
+#  Irish area measure
+
+irishrood       40 irishpole^2
+irishacre       4 irishrood
+
+
+
+# Irish liquid capacity measure
+
+irishnoggin    1|4 irishpint
+irishpint      1|2 irishquart
+irishquart     1|2 irishpottle
+irishpottle    1|2 irishgallon
+irishgallon    217.6 UKinch^3
+irishrundlet   18 irishgallon
+irishbarrel    31.5 irishgallon
+irishtierce    42 irishgallon
+irishhogshead  2 irishbarrel
+irishpuncheon  2 irishtierce
+irishpipe      2 irishhogshead
+irishtun       2 irishpipe
+
+# Irish dry capacity measure
+
+irishpeck      2 irishgallon
+irishbushel    4 irishpeck
+irishstrike    2 irishbushel
+irishdrybarrel 2 irishstrike
+irishquarter   2 irishbarrel

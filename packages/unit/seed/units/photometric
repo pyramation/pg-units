@@ -1,0 +1,43 @@
+                                     
+#
+# Photometric units
+#
+
+LUMINOUS_INTENSITY      candela
+LUMINOUS_FLUX           lumen
+LUMINOUS_ENERGY         talbot
+ILLUMINANCE             lux
+EXITANCE                lux
+
+candle                  1.02 candela  # Standard unit for luminous intensity
+hefnerunit              0.9 candle    #   in use before candela
+hefnercandle            hefnerunit    #
+violle                  20.17 cd      # luminous intensity of 1 cm^2 of
+                                      #   platinum at its temperature of
+                                      #   solidification (2045 K)
+
+lumen                   cd sr         # Luminous flux (luminous energy per
+lm                      lumen         #    time unit)
+
+talbot                  lumen s       # Luminous energy
+lumberg                 talbot        # References give these values for
+lumerg                  talbot        #    lumerg and lumberg both.  Note that
+                                      #    a paper from 1948 suggests that
+                                      #    lumerg should be 1e-7 talbots so
+                                      #    that lumergs/erg = talbots/joule.
+                                      #    lumerg = luminous erg
+lux                     lm/m^2        # Illuminance or exitance (luminous
+lx                      lux           #   flux incident on or coming from
+phot                    lumen / cm^2  #   a surface)
+ph                      phot          #
+footcandle              lumen/ft^2    # Illuminance from a 1 candela source
+                                      #    at a distance of one foot
+metercandle             lumen/m^2     # Illuminance from a 1 candela source
+                                      #    at a distance of one meter
+
+mcs                     metercandle s # luminous energy per area, used to
+                                      #    measure photographic exposure
+
+nox                     1e-3 lux      # These two units were proposed for
+skot                    1e-3 apostilb # measurements relating to dark adapted
+                                      # eyes.

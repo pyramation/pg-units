@@ -1,0 +1,10 @@
+#
+# Some geometric formulas
+#
+
+circlearea(r)   units=[m;m^2] range=[0,) pi r^2 ; sqrt(circlearea/pi)
+spherevolume(r) units=[m;m^3] range=[0,) 4|3 pi r^3 ; \
+                                         cuberoot(spherevolume/4|3 pi)
+spherevol()     spherevolume
+square(x)       range=[0,)          x^2 ; sqrt(square)
+

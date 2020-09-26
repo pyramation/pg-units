@@ -1,0 +1,343 @@
+#
+# Cooking measures
+#
+
+# Common abbreviations
+
+tbl                     tablespoon
+tbsp                    tablespoon
+tblsp                   tablespoon
+Tb                      tablespoon
+tsp                     teaspoon
+saltspoon               1|4 tsp
+
+# US measures
+
+uscup                   8 usfloz
+ustablespoon            1|16 uscup
+usteaspoon              1|3 ustablespoon
+ustbl                   ustablespoon
+ustbsp                  ustablespoon
+ustblsp                 ustablespoon
+ustsp                   usteaspoon
+metriccup               250 ml
+stickbutter             1|4 lb            # Butter in the USA is sold in one
+                                          # pound packages that contain four
+                                          # individually wrapped pieces.  The
+                                          # pieces are marked into tablespoons,
+                                          # making it possible to measure out
+                                          # butter by volume by slicing the
+                                          # butter.
+
+legalcup                240 ml            # The cup used on nutrition labeling
+legaltablespoon         1|16 legalcup
+legaltbsp               legaltablespoon
+
+# Scoop size.  Ice cream scoops in the US are marked with numbers
+# indicating the number of scoops requird to fill a US quart.
+
+scoop(n)  units=[1;cup] domain=[4,100] range=[0.04,1] \
+           32 usfloz / n ; 32 usfloz / scoop
+
+
+# US can sizes.
+
+number1can              10 usfloz
+number2can              19 usfloz
+number2_5can            3.5 uscups
+number3can              4 uscups
+number5can              7 uscups
+number10can             105 usfloz
+
+# British measures
+
+brcup                   1|2 brpint
+brteacup                1|3 brpint
+brtablespoon            15 ml             # Also 5|8 brfloz, approx 17.7 ml
+brteaspoon              1|3 brtablespoon  # Also 1|4 brtablespoon
+brdessertspoon          2 brteaspoon
+dessertspoon            brdessertspoon
+dsp                     dessertspoon
+brtsp                   brteaspoon
+brtbl                   brtablespoon
+brtbsp                  brtablespoon
+brtblsp                 brtablespoon
+
+# Australian
+
+australiatablespoon     20 ml
+austbl                  australiatablespoon
+austbsp                 australiatablespoon
+austblsp                australiatablespoon
+australiateaspoon       1|4 australiatablespoon
+austsp                  australiateaspoon
+
+# Italian
+
+etto                    100 g          # Used for buying items like meat and
+etti                    etto           #   cheese.
+
+# Chinese
+
+catty                   0.5 kg
+oldcatty                4|3 lbs        # Before metric conversion.
+tael                    1|16 oldcatty  # Should the tael be defined both ways?
+mace                    0.1 tael
+oldpicul                100 oldcatty
+picul                   100 catty      # Chinese usage
+
+# Indian
+
+seer                    14400 grain    # British Colonial standard
+ser                     seer
+maund                   40 seer
+pakistanseer            1 kg
+pakistanmaund           40 pakistanseer
+chittak                 1|16 seer
+tola                    1|5 chittak
+ollock                  1|4 liter      # Is this right?
+
+# Japanese
+
+japancup                200 ml
+
+# densities of cooking ingredients from The Cake Bible by Rose Levy Beranbaum
+# so you can convert '2 cups sugar' to grams, for example, or in the other
+# direction grams could be converted to 'cup flour_scooped'.
+
+butter                  8 oz/uscup
+butter_clarified        6.8 oz/uscup
+cocoa_butter            9 oz/uscup
+shortening              6.75 oz/uscup   # vegetable shortening
+oil                     7.5 oz/uscup
+cakeflour_sifted        3.5 oz/uscup    # The density of flour depends on the
+cakeflour_spooned       4 oz/uscup      # measuring method.  "Scooped",  or
+cakeflour_scooped       4.5 oz/uscup    # "dip and sweep" refers to dipping a
+flour_sifted            4 oz/uscup      # measure into a bin, and then sweeping
+flour_spooned           4.25 oz/uscup   # the excess off the top.  "Spooned"
+flour_scooped           5 oz/uscup      # means to lightly spoon into a measure
+breadflour_sifted       4.25 oz/uscup   # and then sweep the top.  Sifted means
+breadflour_spooned      4.5 oz/uscup    # sifting the flour directly into a
+breadflour_scooped      5.5 oz/uscup    # measure and then sweeping the top.
+cornstarch              120 grams/uscup
+dutchcocoa_sifted       75 g/uscup      # These are for Dutch processed cocoa
+dutchcocoa_spooned      92 g/uscup
+dutchcocoa_scooped      95 g/uscup
+cocoa_sifted            75 g/uscup      # These are for nonalkalized cocoa
+cocoa_spooned           82 g/uscup
+cocoa_scooped           95 g/uscup
+heavycream              232 g/uscup
+milk                    242 g/uscup
+sourcream               242 g/uscup
+molasses                11.25 oz/uscup
+cornsyrup               11.5 oz/uscup
+honey                   11.75 oz/uscup
+sugar                   200 g/uscup
+powdered_sugar          4 oz/uscup
+brownsugar_light        217 g/uscup     # packed
+brownsugar_dark         239 g/uscup
+
+baking_powder           4.6 grams / ustsp
+salt                    6 g / ustsp
+koshersalt              2.8 g / ustsp   # Diamond Crystal kosher salt
+koshersalt_morton       4.8 g / ustsp   # Morton kosher salt
+                                        # Values are from the nutrition info
+                                        # on the packages
+
+
+# Egg weights and volumes for a USA large egg
+
+egg                     50 grams        # without shell
+eggwhite                30 grams
+eggyolk                 18.6 grams
+eggvolume               3 ustablespoons + 1|2 ustsp
+eggwhitevolume          2 ustablespoons
+eggyolkvolume           3.5 ustsp
+
+# Alcohol density
+
+ethanoldensity          0.7893 g/cm^3   # From CRC Handbook, 91st Edition
+alcoholdensity          ethanoldensity
+
+#
+# Density measures.  Density has traditionally been measured on a variety of
+# bizarre nonlinear scales.
+#
+
+# Density of a sugar syrup is frequently measured in candy making procedures.
+# In the USA the boiling point of the syrup is measured.  Some recipes instead
+# specify the density using degrees Baume.  Conversion between degrees Baume
+# and the boiling point measure has proved elusive.  This table appeared in one
+# text, and provides a fragmentary relationship to the concentration.
+#
+# temp(C)  conc (%)
+#   100      30
+#   101      40
+#   102      50
+#   103      60
+#   106      70
+#   112      80
+#   123      90
+#   140      95
+#   151      97
+#   160      98.2
+#   166      99.5
+#   171      99.6
+#
+# The best source identified to date came from "Boiling point elevation of
+# technical sugarcane solutions and its use in automatic pan boiling" by
+# Michael Saska.  International Sugar Journal, 2002, 104, 1247, pp 500-507.
+#
+# But I'm using equation (3) which is credited to Starzak and Peacock,
+# "Water activity coefficient in aqueous solutions of sucrose--A comprehensive
+# data analyzis.  Zuckerindustrie, 122, 380-387.  (I couldn't find this
+# document.)
+#
+# Note that the range of validity is uncertain, but answers are in agreement
+# with the above table all the way to 99.6.
+#
+# The original equation has a parameter for the boiling point of water, which
+# of course varies with altitude.  It also includes various other model
+# parameters.  The input is the molar concentration of sucrose in the solution,
+# (moles sucrose) / (total moles).
+#
+# Bsp 3797.06 degC
+# Csp 226.28 degC
+# QQ -17638 J/mol
+# asp -1.0038
+# bsp -0.24653
+# tbw 100 degC     # boiling point of water
+# sugar_bpe_orig(x) ((1-QQ/R Bsp * x^2 (1+asp x + bsp x^2) (tbw + Csp) \
+#           /(tbw+stdtemp)) /  (1+(tbw + Csp)/Bsp *ln(1-x))-1) * (tbw + Csp)
+#
+# To convert mass concentration (brix) to molar concentration
+#
+# sc(x)  (x / 342.3) / (( x/342.3) + (100-x)/18.02); \
+#        100 sc 342.3|18.02 / (sc (342.3|18.02-1)+1)
+#
+# Here is a simplfied version of this equation where the temperature of boiling
+# water has been fixed at 100 degrees Celcius and the argument is now the
+# concentration (brix).
+#
+# sugar_bpe(x) ((1+ 0.48851085 * sc(x)^2 (1+ -1.0038 sc(x) + -0.24653 sc(x)^2)) \
+#                   / (1+0.08592964 ln(1-sc(x)))-1) 326.28 K
+#
+#
+# The formula is not invertible, so to implement it in units we unfortunately
+# must turn it into a table.
+
+# This table gives the boiling point elevation as a function of the sugar syrup
+# concentration expressed as a percentage.
+
+sugar_conc_bpe[K] \
+ 0 0.0000   5 0.0788  10 0.1690  15 0.2729  20 0.3936  25 0.5351  \
+30 0.7027  35 0.9036  40 1.1475  42 1.2599  44 1.3825  46 1.5165  \
+48 1.6634  50 1.8249  52 2.0031  54 2.2005  56 2.4200  58 2.6651  \
+60 2.9400  61 3.0902  62 3.2499  63 3.4198  64 3.6010  65 3.7944  \
+66 4.0012  67 4.2227  68 4.4603  69 4.7156  70 4.9905  71 5.2870  \
+72 5.6075  73 5.9546  74 6.3316  75 6.7417  76 7.1892  77 7.6786  \
+78.0  8.2155  79.0  8.8061  80.0  9.4578  80.5  9.8092  81.0 10.1793  \
+81.5 10.5693  82.0 10.9807  82.5 11.4152  83.0 11.8743  83.5 12.3601  \
+84.0 12.8744  84.5 13.4197  85.0 13.9982  85.5 14.6128  86.0 15.2663  \
+86.5 15.9620  87.0 16.7033  87.5 17.4943  88.0 18.3391  88.5 19.2424  \
+89.0 20.2092  89.5 21.2452  90.0 22.3564  90.5 23.5493  91.0 24.8309  \
+91.5 26.2086  92.0 27.6903  92.5 29.2839  93.0 30.9972  93.5 32.8374  \
+94.0 34.8104  94.5 36.9195  95.0 39.1636  95.5 41.5348  96.0 44.0142  \
+96.5 46.5668  97.0 49.1350  97.5 51.6347  98.0 53.9681  98.1 54.4091  \
+98.2 54.8423  98.3 55.2692  98.4 55.6928  98.5 56.1174  98.6 56.5497  \
+98.7 56.9999  98.8 57.4828  98.9 58.0206  99.0 58.6455  99.1 59.4062  \
+99.2 60.3763  99.3 61.6706  99.4 63.4751  99.5 66.1062  99.6 70.1448  \
+99.7 76.7867
+
+# Using the brix table we can use this to produce a mapping from boiling point
+# to density which makes all of the units interconvertible.  Because the brix
+# table stops at 95 this approach works up to a boiling point elevation of 39 K
+# or a boiling point of 139 C / 282 F, which is the "soft crack" stage in candy
+# making.  The "hard crack" stage continues up to 310 F.
+
+# Boiling point elevation
+sugar_bpe(T) units=[K;g/cm^3] domain=[0,39.1636] range=[0.99717,1.5144619] \
+               brix(~sugar_conc_bpe(T)); sugar_conc_bpe(~brix(sugar_bpe))
+# Absolute boiling point (produces an absolute temperature)
+sugar_bp(T) units=[K;g/cm^3] domain=[373.15,412.3136] \
+                                         range=[0.99717,1.5144619] \
+                        brix(~sugar_conc_bpe(T-tempC(100))) ;\
+                        sugar_conc_bpe(~brix(sugar_bp))+tempC(100)
+
+# In practice dealing with the absolute temperature is annoying because it is
+# not possible to convert to a nested function, so you're stuck retyping the
+# absolute temperature in Kelvins to convert to celsius or Fahrenheit.  To
+# prevent this we supply definitions that build in the temperature conversion
+# and produce results in the Fahrenheit and Celcius scales.  So using these
+# measures, to convert 46 degrees Baume to a Fahrenheit boiling point:
+#
+#      You have: baume(45)
+#      You want: sugar_bpF
+#              239.05647
+#
+sugar_bpF(T) units=[1;g/cm^3] domain=[212,282.49448] range=[0.99717,1.5144619]\
+                        brix(~sugar_conc_bpe(tempF(T)+-tempC(100))) ;\
+                        ~tempF(sugar_conc_bpe(~brix(sugar_bpF))+tempC(100))
+sugar_bpC(T) units=[1;g/cm^3] domain=[100,139.1636] range=[0.99717,1.5144619]\
+                        brix(~sugar_conc_bpe(tempC(T)+-tempC(100))) ;\
+                        ~tempC(sugar_conc_bpe(~brix(sugar_bpC))+tempC(100))
+
+# Degrees Baume is used in European recipes to specify the density of a sugar
+# syrup.  An entirely different definition is used for densities below
+# 1 g/cm^3.  An arbitrary constant appears in the definition.  This value is
+# equal to 145 in the US, but was according to [], the old scale used in
+# Holland had a value of 144, and the new scale or Gerlach scale used 146.78.
+
+baumeconst 145      # US value
+baume(d) units=[1;g/cm^3] domain=[0,145) range=[1,) \
+                          (baumeconst/(baumeconst+-d)) g/cm^3 ; \
+                          (baume+((-g)/cm^3)) baumeconst / baume
+
+# It's not clear if this value was ever used with negative degrees.
+twaddell(x) units=[1;g/cm^3] domain=[-200,) range=[0,) \
+                             (1 + 0.005 x) g / cm^3 ; \
+                             200 (twaddell / (g/cm^3) +- 1)
+
+# The degree quevenne is a unit for measuring the density of milk.
+# Similarly it's unclear if negative values were allowed here.
+quevenne(x) units=[1;g/cm^3] domain=[-1000,) range=[0,) \
+                             (1 + 0.001 x) g / cm^3 ; \
+                             1000 (quevenne / (g/cm^3) +- 1)
+
+# Degrees brix measures sugar concentration by weigh as a percentage, so a
+# solution that is 3 degrees brix is 3% sugar by weight.  This unit was named
+# after Adolf Brix who invented a hydrometer that read this percentage
+# directly.  This data is from Table 114 of NIST Circular 440, "Polarimetry,
+# Saccharimetry and the Sugars".  It gives apparent specific gravity at 20
+# degrees Celsius of various sugar concentrations.  As rendered below this
+# data is converted to apparent density at 20 degrees Celsius using the
+# density figure for water given in the same NIST reference.  They use the
+# word "apparent" to refer to measurements being made in air with brass
+# weights rather than vacuum.
+
+brix[0.99717g/cm^3]\
+    0 1.00000  1 1.00390  2 1.00780  3 1.01173  4 1.01569  5 1.01968 \
+    6 1.02369  7 1.02773  8 1.03180  9 1.03590 10 1.04003 11 1.04418 \
+   12 1.04837 13 1.05259 14 1.05683 15 1.06111 16 1.06542 17 1.06976 \
+   18 1.07413 19 1.07853 20 1.08297 21 1.08744 22 1.09194 23 1.09647 \
+   24 1.10104 25 1.10564 26 1.11027 27 1.11493 28 1.11963 29 1.12436 \
+   30 1.12913 31 1.13394 32 1.13877 33 1.14364 34 1.14855 35 1.15350 \
+   36 1.15847 37 1.16349 38 1.16853 39 1.17362 40 1.17874 41 1.18390 \
+   42 1.18910 43 1.19434 44 1.19961 45 1.20491 46 1.21026 47 1.21564 \
+   48 1.22106 49 1.22652 50 1.23202 51 1.23756 52 1.24313 53 1.24874 \
+   54 1.25439 55 1.26007 56 1.26580 57 1.27156 58 1.27736 59 1.28320 \
+   60 1.28909 61 1.29498 62 1.30093 63 1.30694 64 1.31297 65 1.31905 \
+   66 1.32516 67 1.33129 68 1.33748 69 1.34371 70 1.34997 71 1.35627 \
+   72 1.36261 73 1.36900 74 1.37541 75 1.38187 76 1.38835 77 1.39489 \
+   78 1.40146 79 1.40806 80 1.41471 81 1.42138 82 1.42810 83 1.43486 \
+   84 1.44165 85 1.44848 86 1.45535 87 1.46225 88 1.46919 89 1.47616 \
+   90 1.48317 91 1.49022 92 1.49730 93 1.50442 94 1.51157 95 1.51876
+
+# Density measure invented by the American Petroleum Institute.  Lighter
+# petroleum products are more valuable, and they get a higher API degree.
+#
+# The intervals of range and domain should be open rather than closed.
+#
+apidegree(x) units=[1;g/cm^3] domain=[-131.5,) range=[0,) \
+                              141.5 g/cm^3 / (x+131.5) ; \
+                              141.5 (g/cm^3) / apidegree + (-131.5)

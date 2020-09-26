@@ -1,0 +1,19 @@
+
+# "Northern" cubit and foot.  This was used by the pre-Aryan civilization in
+# the Indus valley.  It was used in Mesopotamia, Egypt, North Africa, China,
+# central and Western Europe until modern times when it was displaced by
+# the metric system.
+
+northerncubit           26.6 in           # plus/minus .2 in
+northernfoot            1|2 northerncubit
+
+sumeriancubit           495 mm
+kus                     sumeriancubit
+sumerianfoot            2|3 sumeriancubit
+
+assyriancubit           21.6 in
+assyrianfoot            1|2 assyriancubit
+assyrianpalm            1|3 assyrianfoot
+assyriansusi            1|20 assyrianpalm
+susi                    assyriansusi
+persianroyalcubit       7 assyrianpalm

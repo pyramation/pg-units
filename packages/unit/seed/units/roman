@@ -1,0 +1,122 @@
+
+
+#
+# Ancient history units:  There tends to be uncertainty in the definitions
+#                         of the units in this section
+# These units are from [11]
+
+# Roman measure.  The Romans had a well defined distance measure, but their
+# measures of weight were poor.  They adopted local weights in different
+# regions without distinguishing among them so that there are half a dozen
+# different Roman "standard" weight systems.
+
+romanfoot    296 mm          # There is some uncertainty in this definition
+romanfeet    romanfoot       # from which all the other units are derived.
+pes          romanfoot       # This value appears in numerous sources. In "The
+pedes        romanfoot       # Roman Land Surveyors", Dilke gives 295.7 mm.
+romaninch    1|12 romanfoot  # The subdivisions of the Roman foot have the
+romandigit   1|16 romanfoot  #   same names as the subdivisions of the pound,
+romanpalm    1|4 romanfoot   #   but we can't have the names for different
+romancubit   18 romaninch    #   units.
+romanpace    5 romanfeet     # Roman double pace (basic military unit)
+passus       romanpace
+romanperch   10 romanfeet
+stade        125 romanpaces
+stadia       stade
+stadium      stade
+romanmile    8 stadia        # 1000 paces
+romanleague  1.5 romanmile
+schoenus     4 romanmile
+
+# Other values for the Roman foot (from Dilke)
+
+earlyromanfoot    29.73 cm
+pesdrusianus      33.3 cm    # or 33.35 cm, used in Gaul & Germany in 1st c BC
+lateromanfoot     29.42 cm
+
+# Roman areas
+
+actuslength  120 romanfeet     # length of a Roman furrow
+actus        120*4 romanfeet^2 # area of the furrow
+squareactus  120^2 romanfeet^2 # actus quadratus
+acnua        squareactus
+iugerum      2 squareactus
+iugera       iugerum
+jugerum      iugerum
+jugera       iugerum
+heredium     2 iugera          # heritable plot
+heredia      heredium
+centuria     100 heredia
+centurium    centuria
+
+# Roman volumes
+
+sextarius       35.4 in^3      # Basic unit of Roman volume.  As always,
+sextarii        sextarius      # there is uncertainty.  Six large Roman
+                               # measures survive with volumes ranging from
+                               # 34.4 in^3 to 39.55 in^3.  Three of them
+                               # cluster around the size given here.
+                               #
+                               # But the values for this unit vary wildly
+                               # in other sources.  One reference  gives 0.547
+                               # liters, but then says the amphora is a
+                               # cubic Roman foot.  This gives a value for the
+                               # sextarius of 0.540 liters.  And the
+                               # encyclopedia Brittanica lists 0.53 liters for
+                               # this unit.  Both [7] and [11], which were
+                               # written by scholars of weights and measures,
+                               # give the value of 35.4 cubic inches.
+cochlearia      1|48 sextarius
+cyathi          1|12 sextarius
+acetabula       1|8 sextarius
+quartaria       1|4 sextarius
+quartarius      quartaria
+heminae         1|2 sextarius
+hemina          heminae
+cheonix         1.5 sextarii
+
+# Dry volume measures (usually)
+
+semodius        8 sextarius
+semodii         semodius
+modius          16 sextarius
+modii           modius
+
+# Liquid volume measures (usually)
+
+congius         12 heminae
+congii          congius
+amphora         8 congii
+amphorae        amphora      # Also a dry volume measure
+culleus         20 amphorae
+quadrantal      amphora
+
+# Roman weights
+
+libra           5052 grain   # The Roman pound varied significantly
+librae          libra        # from 4210 grains to 5232 grains.  Most of
+romanpound      libra        # the standards were obtained from the weight
+uncia           1|12 libra   # of particular coins.  The one given here is
+unciae          uncia        # based on the Gold Aureus of Augustus which
+romanounce      uncia        # was in use from BC 27 to AD 296.
+deunx           11 uncia
+dextans         10 uncia
+dodrans         9 uncia
+bes             8 uncia
+seprunx         7 uncia
+semis           6 uncia
+quincunx        5 uncia
+triens          4 uncia
+quadrans        3 uncia
+sextans         2 uncia
+sescuncia       1.5 uncia
+semuncia        1|2 uncia
+siscilius       1|4 uncia
+sextula         1|6 uncia
+semisextula     1|12 uncia
+scriptulum      1|24 uncia
+scrupula        scriptulum
+romanobol       1|2 scrupula
+
+romanaspound    4210 grain    # Old pound based on bronze coinage, the
+                              # earliest money of Rome BC 338 to BC 268.

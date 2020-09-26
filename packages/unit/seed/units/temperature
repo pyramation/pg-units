@@ -1,0 +1,92 @@
+#
+# Temperature
+#
+# Two types of units are defined: units for converting temperature differences
+# and functions for converting absolute temperatures.  Conversions for
+# differences start with "deg" and conversions for absolute temperature start
+# with "temp".
+#
+
+TEMPERATURE             kelvin
+TEMPERATURE_DIFFERENCE  kelvin
+
+# In 1741 Anders Celsius introduced a temperature scale with water boiling at
+# 0 degrees and freezing at 100 degrees at standard pressure. After his death
+# the fixed points were reversed and the scale was called the centigrade
+# scale.  Due to the difficulty of accurately measuring the temperature of
+# melting ice at standard pressure, the centigrade scale was replaced in 1954
+# by the Celsius scale which is defined by subtracting 273.15 from the
+# temperature in Kelvins.  This definition differed slightly from the old
+# centigrade definition, but the Kelvin scale depends on the triple point of
+# water rather than a melting point, so it can be measured accurately.
+
+tempC(x) units=[1;K] domain=[-273.15,) range=[0,) \
+                             x K + stdtemp ; (tempC +(-stdtemp))/K
+tempcelsius() tempC
+degcelsius              K
+degC                    K
+
+# Fahrenheit defined his temperature scale by setting 0 to the coldest
+# temperature he could produce in his lab with a salt water solution and by
+# setting 96 degrees to body heat.  In Fahrenheit's words:
+#
+#    Placing the thermometer in a mixture of sal ammoniac or sea
+#    salt, ice, and water a point on the scale will be found which
+#    is denoted as zero. A second point is obtained if the same
+#    mixture is used without salt. Denote this position as 30. A
+#    third point, designated as 96, is obtained if the thermometer
+#    is placed in the mouth so as to acquire the heat of a healthy
+#    man."  (D. G. Fahrenheit, Phil. Trans. (London) 33, 78, 1724)
+
+tempF(x) units=[1;K] domain=[-459.67,) range=[0,) \
+                (x+(-32)) degF + stdtemp ; (tempF+(-stdtemp))/degF + 32
+tempfahrenheit() tempF
+degfahrenheit           5|9 * degC
+degF                    5|9 * degC
+
+
+degreesrankine          degF              # The Rankine scale has the
+degrankine              degreesrankine    # Fahrenheit degree, but its zero
+degreerankine           degF              # is at absolute zero.
+degR                    degrankine
+tempR                   degrankine
+temprankine             degrankine
+
+tempreaumur(x)    units=[1;K] domain=[-218.52,) range=[0,) \
+                  x degreaumur+stdtemp ; (tempreaumur+(-stdtemp))/degreaumur
+degreaumur              10|8 * degC # The Reaumur scale was used in Europe and
+                                  # particularly in France.  It is defined
+                                  # to be 0 at the freezing point of water
+                                  # and 80 at the boiling point.  Reaumur
+                                  # apparently selected 80 because it is
+                                  # divisible by many numbers.
+
+degK                    K         # "Degrees Kelvin" is forbidden usage.
+tempK                   K         # For consistency
+
+# Gas mark is implemented below but in a terribly ugly way.  There is
+# a simple formula, but it requires a conditional which is not
+# presently supported.
+#
+# The formula to convert to degrees Fahrenheit is:
+#
+# 25 log2(gasmark) + k_f   gasmark<=1
+# 25 (gasmark-1) + k_f     gasmark>=1
+#
+# k_f = 275
+#
+gasmark[degR] \
+  .0625    634.67 \
+  .125     659.67 \
+  .25      684.67 \
+  .5       709.67 \
+  1        734.67 \
+  2        759.67 \
+  3        784.67 \
+  4        809.67 \
+  5        834.67 \
+  6        859.67 \
+  7        884.67 \
+  8        909.67 \
+  9        934.67 \
+  10       959.67

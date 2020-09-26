@@ -1,0 +1,103 @@
+#
+# Printing
+#
+
+fournierpoint           0.1648 inch / 12  # First definition of the printers
+                                          # point made by Pierre Fournier who
+                                          # defined it in 1737 as 1|12 of a
+                                          # cicero which was 0.1648 inches.
+olddidotpoint           1|72 frenchinch   # François Ambroise Didot, one of
+                                          # a family of printers, changed
+                                          # Fournier's definition around 1770
+                                          # to fit to the French units then in
+                                          # use.
+bertholdpoint           1|2660 m          # H. Berthold tried to create a
+                                          # metric version of the didot point
+                                          # in 1878.
+INpoint                 0.4 mm            # This point was created by a
+                                          # group directed by Fermin Didot in
+                                          # 1881 and is associated with the
+                                          # imprimerie nationale.  It doesn't
+                                          # seem to have been used much.
+germandidotpoint        0.376065 mm       # Exact definition appears in DIN
+                                          # 16507, a German standards document
+                                          # of 1954.  Adopted more broadly  in
+                                          # 1966 by ???
+metricpoint             3|8 mm            # Proposed in 1977 by Eurograf
+oldpoint                1|72.27 inch      # The American point was invented
+printerspoint           oldpoint          # by Nelson Hawks in 1879 and
+texpoint                oldpoint          # dominates USA publishing.
+                                          # It was standardized by the American
+                                          # Typefounders Association at the
+                                          # value of 0.013837 inches exactly.
+                                          # Knuth uses the approximation given
+                                          # here (which is very close).  The
+                                          # comp.fonts FAQ claims that this
+                                          # value is supposed to be 1|12 of a
+                                          # pica where 83 picas is equal to 35
+                                          # cm.  But this value differs from
+                                          # the standard.
+texscaledpoint          1|65536 texpoint  # The TeX typesetting system uses
+texsp                   texscaledpoint    # this for all computations.
+computerpoint           1|72 inch         # The American point was rounded
+point                   computerpoint
+computerpica            12 computerpoint  # to an even 1|72 inch by computer
+postscriptpoint         computerpoint     # people at some point.
+pspoint                 postscriptpoint
+twip                    1|20 point        # TWentieth of an Imperial Point
+Q                       1|4 mm            # Used in Japanese phototypesetting
+                                          # Q is for quarter
+frenchprinterspoint     olddidotpoint
+didotpoint              germandidotpoint  # This seems to be the dominant value
+europeanpoint           didotpoint        # for the point used in Europe
+cicero                  12 didotpoint
+
+stick                   2 in
+
+# Type sizes
+
+excelsior               3 oldpoint
+brilliant               3.5 oldpoint
+diamondtype             4 oldpoint
+pearl                   5 oldpoint
+agate                   5.5 oldpoint  # Originally agate type was 14 lines per
+                                      #   inch, giving a value of 1|14 in.
+ruby                    agate         # British
+nonpareil               6 oldpoint
+mignonette              6.5 oldpoint
+emerald                 mignonette    # British
+minion                  7 oldpoint
+brevier                 8 oldpoint
+bourgeois               9 oldpoint
+longprimer              10 oldpoint
+smallpica               11 oldpoint
+pica                    12 oldpoint
+english                 14 oldpoint
+columbian               16 oldpoint
+greatprimer             18 oldpoint
+paragon                 20 oldpoint
+meridian                44 oldpoint
+canon                   48 oldpoint
+
+# German type sizes
+
+nonplusultra            2 didotpoint
+brillant                3 didotpoint
+diamant                 4 didotpoint
+perl                    5 didotpoint
+nonpareille             6 didotpoint
+kolonel                 7 didotpoint
+petit                   8 didotpoint
+borgis                  9 didotpoint
+korpus                  10 didotpoint
+corpus                  korpus
+garamond                korpus
+mittel                  14 didotpoint
+tertia                  16 didotpoint
+text                    18 didotpoint
+kleine_kanon            32 didotpoint
+kanon                   36 didotpoint
+grobe_kanon             42 didotpoint
+missal                  48 didotpoint
+kleine_sabon            72 didotpoint
+grobe_sabon             84 didotpoint

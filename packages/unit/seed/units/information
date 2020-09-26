@@ -1,0 +1,104 @@
+#
+# Information theory units.  Note that the name "entropy" is used both
+# to measure information and as a physical quantity.
+#
+
+INFORMATION             bit
+
+nat                     (1/0.693147180559945) bits       # Entropy measured base e
+hartley                 3.321928094887363 bits        # Entropy of a uniformly
+ban                     hartley              #   distributed random variable
+                                             #   over 10 symbols.
+dit                     hartley              # from Decimal digIT
+
+#
+# Computer
+#
+
+bps                     bit/sec              # Sometimes the term "baud" is
+                                             #   incorrectly used to refer to
+                                             #   bits per second.  Baud refers
+                                             #   to symbols per second.  Modern
+                                             #   modems transmit several bits
+                                             #   per symbol.
+#byte                    8 bit               # Not all machines had 8 bit
+#B                       byte                #   bytes, but these days most of
+                                             #   them do.  But beware: for
+                                             #   transmission over modems, a
+                                             #   few extra bits are used so
+                                             #   there are actually 10 bits per
+                                             #   byte.
+octet                   8 bits               # The octet is always 8 bits
+nybble                  4 bits               # Half of a byte. Sometimes
+                                             #   equal to different lengths
+                                             #   such as 3 bits.
+nibble                  nybble
+nyp                     2 bits               # Donald Knuth asks in an exercise
+                                             #   for a name for a 2 bit
+                                             #   quantity and gives the "nyp"
+                                             #   as a solution due to Gregor
+                                             #   Purdy.  Not in common use.
+meg                     megabyte             # Some people consider these
+                                             # units along with the kilobyte
+gig                     gigabyte             # to be defined according to
+                                             # powers of 2 with the kilobyte
+                                             # equal to 2^10 bytes, the
+                                             # megabyte equal to 2^20 bytes and
+                                             # the gigabyte equal to 2^30 bytes
+                                             # but these usages are forbidden
+                                             # by SI.  Binary prefixes have
+                                             # been defined by IEC to replace
+                                             # the SI prefixes.  Use them to
+                                             # get the binary values: KiB, MiB,
+                                             # and GiB.
+jiffy                   0.01 sec     # This is defined in the Jargon File
+jiffies                 jiffy        # (http://www.jargon.org) as being the
+                                     # duration of a clock tick for measuring
+                                     # wall-clock time.  Supposedly the value
+                                     # used to be 1|60 sec or 1|50 sec
+                                     # depending on the frequency of AC power,
+                                     # but then 1|100 sec became more common.
+                                     # On linux systems, this term is used and
+                                     # for the Intel based chips, it does have
+                                     # the value of .01 sec.  The Jargon File
+                                     # also lists two other definitions:
+                                     # millisecond, and the time taken for
+                                     # light to travel one foot.
+cdaudiospeed      44.1 kHz 2*16 bits # CD audio data rate at 44.1 kHz with 2
+                                     # samples of sixteen bits each.
+cdromspeed       75 2048 bytes / sec # For data CDs (mode1) 75 sectors are read
+                                     # each second with 2048 bytes per sector.
+                                     # Audio CDs do not have sectors, but
+                                     # people sometimes divide the bit rate by
+                                     # 75 and claim a sector length of 2352.
+                                     # Data CDs have a lower rate due to
+                                     # increased error correction overhead.
+                                     # There is a rarely used mode (mode2) with
+                                     # 2336 bytes per sector that has fewer
+                                     # error correction bits than mode1.
+dvdspeed                 1385 kB/s   # This is the "1x" speed of a DVD using
+                                     # constant linear velocity (CLV) mode.
+                                     # Modern DVDs may vary the linear velocity
+                                     # as they go from the inside to the
+                                     # outside of the disc.
+                       # See http://www.osta.org/technology/dvdqa/dvdqa4.htm
+#
+# The IP address space is divided into subnets.  The number of hosts
+# in a subnet depends on the length of the subnet prefix.  This is
+# often written as /N where N is the number of bits in the prefix.
+#
+# https://en.wikipedia.org/wiki/Subnetwork
+#
+# These definitions gives the number of hosts for a subnet whose
+# prefix has the specified length in bits.
+#
+
+ipv4subnetsize(prefix_len) units=[1;1]  domain=[0,32] range=[1,4294967296] \
+                         2^(32-prefix_len) ; 32-log2(ipv4subnetsize)
+ipv4classA               ipv4subnetsize(8)
+ipv4classB               ipv4subnetsize(16)
+ipv4classC               ipv4subnetsize(24)
+
+ipv6subnetsize(prefix_len) units=[1;1] domain=[0,128] \
+                         range=[1,340282366920938463463374607431768211456] \
+                         2^(128-prefix_len) ; 128-log2(ipv6subnetsize)

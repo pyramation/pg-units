@@ -1,0 +1,7 @@
+%syntax-version=1.0.0
+%project=unit
+%uri=unit
+  
+schemas/units/schema 2020-09-26T03:23:17Z Dan Lynch <dlynch@Dans-MBP-3> # add schemas/units/schema
+schemas/units/procedures/cast_str [schemas/units/schema] 2020-09-26T03:23:35Z Dan Lynch <dlynch@Dans-MBP-3> # add schemas/units/procedures/cast_str
+schemas/units/tables/unit/table [schemas/units/schema] 2020-09-26T06:55:34Z Dan Lynch <dlynch@Dans-MBP-3> # add schemas/units/tables/unit/table

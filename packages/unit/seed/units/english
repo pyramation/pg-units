@@ -1,0 +1,89 @@
+
+# English wine capacity measures (Winchester measures)
+
+winepint       1|2 winequart
+winequart      1|4 winegallon
+winegallon     231 UKinch^3   # Sometimes called the Winchester Wine Gallon,
+                              # it was legalized in 1707 by Queen Anne, and
+                              # given the definition of 231 cubic inches.  It
+                              # had been in use for a while as 8 pounds of wine
+                              # using a merchant's pound, but the definition of
+                              # the merchant's pound had become uncertain.  A
+                              # pound of 15 tower ounces (6750 grains) had been
+                              # common, but then a pound of 15 troy ounces
+                              # (7200 grains) gained popularity.  Because of
+                              # the switch in the value of the merchants pound,
+                              # the size of the wine gallon was uncertain in
+                              # the market, hence the official act in 1707.
+                              # The act allowed that a six inch tall cylinder
+                              # with a 7 inch diameter was a lawful wine
+                              # gallon.  (This comes out to 230.9 in^3.)
+                              # Note also that in Britain a legal conversion
+                              # was established to the 1824 Imperial gallon
+                              # then taken as 277.274 in^3 so that the wine
+                              # gallon was 0.8331 imperial gallons.  This is
+                              # 231.1 cubic inches (using the international
+                              # inch).
+winerundlet    18 winegallon
+winebarrel     31.5 winegallon
+winetierce     42 winegallon
+winehogshead   2 winebarrel
+winepuncheon   2 winetierce
+winebutt       2 winehogshead
+winepipe       winebutt
+winetun        2 winebutt
+
+# English beer and ale measures used 1803-1824 and used for beer before 1688
+
+beerpint       1|2 beerquart
+beerquart      1|4 beergallon
+beergallon     282 UKinch^3
+beerbarrel     36 beergallon
+beerhogshead   1.5 beerbarrel
+
+# English ale measures used from 1688-1803 for both ale and beer
+
+alepint        1|2 alequart
+alequart       1|4 alegallon
+alegallon      beergallon
+alebarrel      34 alegallon
+alehogshead    1.5 alebarrel
+
+
+
+# English Tower weights, abolished in 1528
+
+towerpound       5400 grain
+towerounce       1|12 towerpound
+towerpennyweight 1|20 towerounce
+towergrain       1|32 towerpennyweight
+
+# English Mercantile weights, used since the late 12th century
+
+mercpound      6750 grain
+mercounce      1|15 mercpound
+mercpennyweight 1|20 mercounce
+
+# English weights for lead
+
+leadstone     12.5 lb
+fotmal        70 lb
+leadwey       14 leadstone
+fothers       12 leadwey
+
+# English Hay measure
+
+newhaytruss 60 lb             # New and old here seem to refer to "new"
+newhayload  36 newhaytruss    # hay and "old" hay rather than a new unit
+oldhaytruss 56 lb             # and an old unit.
+oldhayload  36 oldhaytruss
+
+# English wool measure
+
+woolclove   7 lb
+woolstone   2 woolclove
+wooltod     2 woolstone
+woolwey     13 woolstone
+woolsack    2 woolwey
+woolsarpler 2 woolsack
+woollast    6 woolsarpler

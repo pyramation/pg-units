@@ -1,0 +1,180 @@
+#
+# Named SI derived units (officially accepted)
+#
+
+newton                  kg m / s^2   # force
+N                       newton
+pascal                  N/m^2        # pressure or stress
+Pa                      pascal
+joule                   N m          # energy
+J                       joule
+watt                    J/s          # power
+W                       watt
+coulomb                 A s          # charge
+C                       coulomb
+volt                    W/A          # potential difference
+V                       volt
+ohm                     V/A          # electrical resistance
+siemens                 A/V          # electrical conductance
+S                       siemens
+farad                   C/V          # capacitance
+F                       farad
+weber                   V s          # magnetic flux
+Wb                      weber
+henry                   V s / A      # inductance
+H                       henry
+tesla                   Wb/m^2       # magnetic flux density
+T                       tesla
+hertz                   /s           # frequency
+Hz                      hertz
+
+
+#
+# Dimensions.  These are here to help with dimensional analysis and
+# because they will appear in the list produced by hitting '?' at the
+# "You want:" prompt to tell the user the dimension of the unit.
+#
+
+LENGTH                  meter
+AREA                    LENGTH^2
+VOLUME                  LENGTH^3
+MASS                    kilogram
+AMOUNT                  mole
+ANGLE                   radian
+SOLID_ANGLE             steradian
+MONEY                   US$
+FORCE                   newton
+PRESSURE                FORCE / AREA
+STRESS                  FORCE / AREA
+FREQUENCY               hertz
+VELOCITY                LENGTH / TIME
+ACCELERATION            VELOCITY / TIME
+DENSITY                 MASS / VOLUME
+LINEAR_DENSITY          MASS / LENGTH
+VISCOSITY               FORCE TIME / AREA
+KINEMATIC_VISCOSITY     VISCOSITY / DENSITY
+CURRENT                 ampere
+CHARGE                  coulomb
+CAPACITANCE             farad
+RESISTANCE              ohm
+CONDUCTANCE             siemens
+INDUCTANCE              henry
+E_FIELD                 ELECTRIC_POTENTIAL / LENGTH
+B_FIELD                 tesla
+# The D and H fields are related to the E and B fields by factors of epsilon
+# and mu respectively, so their units can be found by multiplying/dividing by
+# the epsilon0 and mu0, but then it is necessary to remove the constant factors
+# to get the correct scaling.  Defining the units this way allows conversion to
+# CGS units to work correctly.
+D_FIELD                 E_FIELD epsilon0 (c/(m/s))^2 4 pi 1e-7 
+H_FIELD                 B_FIELD / mu0 * 4 pi 1e-7		
+ELECTRIC_DIPOLE_MOMENT  C m
+MAGNETIC_DIPOLE_MOMENT  J / T
+POLARIZATION            ELECTRIC_DIPOLE_MOMENT / VOLUME
+MAGNETIZATION           MAGNETIC_DIPOLE_MOMENT / VOLUME
+ELECTRIC_POTENTIAL      volt
+VOLTAGE                 ELECTRIC_POTENTIAL
+E_FLUX                  E_FIELD AREA	
+D_FLUX                  D_FIELD AREA
+B_FLUX                  B_FIELD AREA	
+H_FLUX                  H_FIELD AREA
+
+#
+# units derived easily from SI units
+#
+
+gram                    millikg
+gm                      gram
+g                       gram
+tonne                   1000 kg
+t                       tonne
+metricton               tonne
+sthene                  tonne m / s^2
+funal                   sthene
+pieze                   sthene / m^2
+quintal                 100 kg
+bar                     1e5 Pa     # About 1 atm
+b                       bar
+vac                     millibar
+micron                  micrometer # One millionth of a meter
+bicron                  picometer  # One brbillionth of a meter
+cc                      cm^3
+are                     100 m^2
+a                       are
+liter                   1000 cc       # The liter was defined in 1901 as the
+oldliter                1.000028 dm^3 # space occupied by 1 kg of pure water at
+L                       liter         # the temperature of its maximum density
+l                       liter         # under a pressure of 1 atm.  This was
+                                      # supposed to be 1000 cubic cm, but it
+                                      # was discovered that the original
+                                      # measurement was off.  In 1964, the
+                                      # liter was redefined to be exactly 1000
+                                      # cubic centimeters.
+mho                     siemens    # Inverse of ohm, hence ohm spelled backward
+galvat                  ampere     # Named after Luigi Galvani
+angstrom                1e-10 m    # Convenient for describing molecular sizes
+xunit                   xunit_cu      # Used for measuring x-ray wavelengths.
+siegbahn                xunit         # Originally defined to be 1|3029.45 of
+xunit_cu             1.00207697e-13 m # the spacing of calcite planes at 18
+xunit_mo             1.00209952e-13 m # degC.  It was intended to be exactly
+                                      # 1e-13 m, but was later found to be
+                                      # slightly off.  Current usage is with
+                                      # reference to common x-ray lines, either
+                                      # the K-alpha 1 line of copper or the
+                                      # same line of molybdenum.
+angstromstar            1.00001495 angstrom # Defined by JA Bearden in 1965
+fermi                   1e-15 m    # Convenient for describing nuclear sizes
+                                   #   Nuclear radius is from 1 to 10 fermis
+barn                    1e-28 m^2  # Used to measure cross section for
+                                   #   particle physics collision, said to
+                                   #   have originated in the phrase "big as
+                                   #   a barn".
+shed                    1e-24 barn # Defined to be a smaller companion to the
+                                   #   barn, but it's too small to be of
+                                   #   much use.
+brewster                micron^2/N # measures stress-optical coef
+diopter                 /m         # measures reciprocal of lens focal length
+fresnel                 1e12 Hz    # occasionally used in spectroscopy
+shake                   1e-8 sec
+svedberg                1e-13 s    # Used for measuring the sedimentation
+                                   # coefficient for centrifuging.
+gamma                   microgram  # Also used for 1e-9 tesla
+lambda                  microliter
+spat                    1e12 m     # Rarely used for astronomical measurements
+preece                  1e13 ohm m # resistivity
+planck                  J s        # action of one joule over one second
+sturgeon                /henry     # magnetic reluctance
+daraf                   1/farad    # elastance (farad spelled backwards)
+leo                     10 m/s^2
+poiseuille              N s / m^2  # viscosity
+mayer                   J/g K      # specific heat
+mired                   / microK   # reciprocal color temperature.  The name
+                                   #   abbreviates micro reciprocal degree.
+crocodile               megavolt   # used informally in UK physics labs
+metricounce             25 g
+mounce                  metricounce
+finsenunit              1e5 W/m^2  # Measures intensity of ultraviolet light
+                                   # with wavelength 296.7 nm.
+fluxunit                1e-26 W/m^2 Hz # Used in radio astronomy to measure
+                                       #   the energy incident on the receiving
+                                       #   body across a specified frequency
+                                       #   bandwidth.  [12]
+jansky                  fluxunit   # K. G. Jansky identified radio waves coming
+Jy                      jansky     # from outer space in 1931.
+flick       W / cm^2 sr micrometer # Spectral radiance or irradiance
+pfu                    / cm^2 sr s # particle flux unit -- Used to measure
+                                   #   rate at which particles are received by
+                                   #   a spacecraft as particles per solid
+                                   #   angle per detector area per second. [18]
+pyron            cal_IT / cm^2 min # Measures heat flow from solar radiation,
+                                   #   from Greek work "pyr" for fire.
+katal                   mol/sec    # Measure of the amount of a catalyst.  One
+kat                     katal      #   katal of catalyst enables the reaction
+                                   #   to consume or produce on mol/sec.
+solarluminosity         382.8e24 W # A common yardstick for comparing the
+                                   #   output of different stars.
+                # http://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html
+# at mean earth-sun distance
+solarirradiance		solarluminosity / (4 pi sundist^2)
+solarconstant		solarirradiance
+TSI			solarirradiance		# total solar irradiance

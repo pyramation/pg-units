@@ -1,0 +1,8 @@
+# unit extension
+comment = 'unit extension'
+default_version = '0.0.1'
+module_pathname = '$libdir/unit'
+requires = 'plpgsql,uuid-ossp,citext'
+relocatable = false
+superuser = false
+  

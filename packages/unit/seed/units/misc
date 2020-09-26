@@ -1,0 +1,871 @@
+#
+# fixup units for times when prefix handling doesn't do the job
+#
+
+hectare                 hectoare
+megohm                  megaohm
+kilohm                  kiloohm
+microhm                 microohm
+megalerg                megaerg    # 'L' added to make it pronounceable [18].
+
+# Used for shellac mixing rate
+
+poundcut            pound / gallon
+lbcut               poundcut
+
+
+#
+# Wire Gauge
+#
+# This area is a nightmare with huge charts of wire gauge diameters
+# that usually have no clear origin.  There are at least 5 competing wire gauge
+# systems to add to the confusion.  The use of wire gauge is related to the
+# manufacturing method: a metal rod is heated and drawn through a hole.  The
+# size change can't be too big.  To get smaller wires, the process is repeated
+# with a series of smaller holes.  Generally larger gauges mean smaller wires.
+# The gauges often have values such as "00" and "000" which are larger sizes
+# than simply "0" gauge.  In the tables that appear below, these gauges must be
+# specified as negative numbers (e.g. "00" is -1, "000" is -2, etc).
+# Alternatively, you can use the following units:
+#
+
+g00                      (-1)
+g000                     (-2)
+g0000                    (-3)
+g00000                   (-4)
+g000000                  (-5)
+g0000000                 (-6)
+
+# American Wire Gauge (AWG) or Brown & Sharpe Gauge appears to be the most
+# important gauge. ASTM B-258 specifies that this gauge is based on geometric
+# interpolation between gauge 0000, which is 0.46 inches exactly, and gauge 36
+# which is 0.005 inches exactly.  Therefore, the diameter in inches of a wire
+# is given by the formula 1|200 92^((36-g)/39).  Note that 92^(1/39) is close
+# to 2^(1/6), so diameter is approximately halved for every 6 gauges.  For the
+# repeated zero values, use negative numbers in the formula.  The same document
+# also specifies rounding rules which seem to be ignored by makers of tables.
+# Gauges up to 44 are to be specified with up to 4 significant figures, but no
+# closer than 0.0001 inch.  Gauges from 44 to 56 are to be rounded to the
+# nearest 0.00001 inch.
+#
+# In addition to being used to measure wire thickness, this gauge is used to
+# measure the thickness of sheets of aluminum, copper, and most metals other
+# than steel, iron and zinc.
+
+wiregauge(g) units=[1;m] range=(0,) \
+             1|200 92^((36+(-g))/39) in; 36+(-39)ln(200 wiregauge/in)/ln(92)
+awg()        wiregauge
+
+# Next we have the SWG, the Imperial or British Standard Wire Gauge.  This one
+# is piecewise linear.  It was used for aluminum sheets.
+
+brwiregauge[in]  \
+       -6 0.5    \
+       -5 0.464  \
+       -3 0.4    \
+       -2 0.372  \
+        3 0.252  \
+        6 0.192  \
+       10 0.128  \
+       14 0.08   \
+       19 0.04   \
+       23 0.024  \
+       26 0.018  \
+       28 0.0148 \
+       30 0.0124 \
+       39 0.0052 \
+       49 0.0012 \
+       50 0.001
+
+# The following is from the Appendix to ASTM B 258
+#
+#    For example, in U.S. gage, the standard for sheet metal is based on the
+#    weight of the metal, not on the thickness. 16-gage is listed as
+#    approximately .0625 inch thick and 40 ounces per square foot (the original
+#    standard was based on wrought iron at .2778 pounds per cubic inch; steel
+#    has almost entirely superseded wrought iron for sheet use, at .2833 pounds
+#    per cubic inch). Smaller numbers refer to greater thickness. There is no
+#    formula for converting gage to thickness or weight.
+#
+# It's rather unclear from the passage above whether the plate gauge values are
+# therefore wrong if steel is being used.  Reference [15] states that steel is
+# in fact measured using this gauge (under the name Manufacturers' Standard
+# Gauge) with a density of 501.84 lb/ft3 = 0.2904 lb/in3 used for steel.
+# But this doesn't seem to be the correct density of steel (.2833 lb/in3 is
+# closer).
+#
+# This gauge was established in 1893 for purposes of taxation.
+
+# Old plate gauge for iron
+
+plategauge[(oz/ft^2)/(480*lb/ft^3)] \
+      -5 300   \
+       1 180   \
+      14  50   \
+      16  40   \
+      17  36   \
+      20  24   \
+      26  12   \
+      31   7   \
+      36   4.5 \
+      38   4
+
+# Manufacturers Standard Gage
+
+stdgauge[(oz/ft^2)/(501.84*lb/ft^3)] \
+      -5 300   \
+       1 180   \
+      14  50   \
+      16  40   \
+      17  36   \
+      20  24   \
+      26  12   \
+      31   7   \
+      36   4.5 \
+      38   4
+
+# A special gauge is used for zinc sheet metal.  Notice that larger gauges
+# indicate thicker sheets.
+
+zincgauge[in]    \
+        1 0.002  \
+       10 0.02   \
+       15 0.04   \
+       19 0.06   \
+       23 0.1    \
+       24 0.125  \
+       27 0.5    \
+       28 1
+
+#
+# Imperial drill bit sizes are reported in inches or in a numerical or
+# letter gauge.
+#
+
+drillgauge[in] \
+       1  0.2280 \
+       2  0.2210 \
+       3  0.2130 \
+       4  0.2090 \
+       5  0.2055 \
+       6  0.2040 \
+       7  0.2010 \
+       8  0.1990 \
+       9  0.1960 \
+      10  0.1935 \
+      11  0.1910 \
+      12  0.1890 \
+      13  0.1850 \
+      14  0.1820 \
+      15  0.1800 \
+      16  0.1770 \
+      17  0.1730 \
+      18  0.1695 \
+      19  0.1660 \
+      20  0.1610 \
+      22  0.1570 \
+      23  0.1540 \
+      24  0.1520 \
+      25  0.1495 \
+      26  0.1470 \
+      27  0.1440 \
+      28  0.1405 \
+      29  0.1360 \
+      30  0.1285 \
+      31  0.1200 \
+      32  0.1160 \
+      33  0.1130 \
+      34  0.1110 \
+      35  0.1100 \
+      36  0.1065 \
+      38  0.1015 \
+      39  0.0995 \
+      40  0.0980 \
+      41  0.0960 \
+      42  0.0935 \
+      43  0.0890 \
+      44  0.0860 \
+      45  0.0820 \
+      46  0.0810 \
+      48  0.0760 \
+      51  0.0670 \
+      52  0.0635 \
+      53  0.0595 \
+      54  0.0550 \
+      55  0.0520 \
+      56  0.0465 \
+      57  0.0430 \
+      65  0.0350 \
+      66  0.0330 \
+      68  0.0310 \
+      69  0.0292 \
+      70  0.0280 \
+      71  0.0260 \
+      73  0.0240 \
+      74  0.0225 \
+      75  0.0210 \
+      76  0.0200 \
+      78  0.0160 \
+      79  0.0145 \
+      80  0.0135 \
+      88  0.0095 \
+      104 0.0031 
+
+drillA    0.234 in
+drillB    0.238 in
+drillC    0.242 in
+drillD    0.246 in
+drillE    0.250 in
+drillF    0.257 in
+drillG    0.261 in
+drillH    0.266 in
+drillI    0.272 in
+drillJ    0.277 in
+drillK    0.281 in
+drillL    0.290 in
+drillM    0.295 in
+drillN    0.302 in
+drillO    0.316 in
+drillP    0.323 in
+drillQ    0.332 in
+drillR    0.339 in
+drillS    0.348 in
+drillT    0.358 in
+drillU    0.368 in
+drillV    0.377 in
+drillW    0.386 in
+drillX    0.397 in
+drillY    0.404 in
+drillZ    0.413 in
+
+#
+# Screw sizes
+#
+# In the USA, screw diameters for both wood screws and machine screws
+# are reported using a gauge number.  Metric machine screws are
+# reported as Mxx where xx is the diameter in mm.
+#
+
+screwgauge(g) units=[1;m] range=[0,) \
+              (.06 + .013 g) in ; (screwgauge/in + (-.06)) / .013
+
+#
+# Abrasive grit size
+#
+# Standards governing abrasive grit sizes are complicated, specifying
+# fractions of particles that are passed or retained by different mesh
+# sizes.  As a result, it is not possible to make precise comparisons
+# of different grit standards.  The tables below allow the
+# determination of rough equivlants by using median particle size.
+#
+# Standards in the USA are determined by the Unified Abrasives
+# Manufacturers' Association (UAMA), which resulted from the merger of
+# several previous organizations.  One of the old organizations was
+# CAMI (Coated Abrasives Manufacturers' Institute).
+#
+# UAMA has a web page with plots showing abrasive particle ranges for
+# various different grits and comparisons between standards.
+#
+# http://www.uama.org/Abrasives101/101Standards.html
+#
+# Abrasives are grouped into "bonded" abrasives for use with grinding
+# wheels and "coated" abrasives for sandpapers and abrasive films.
+# The industry uses different grit standards for these two
+# categories.
+#
+# Another division is between "macrogrits", grits below 240 and
+# "microgrits", which are above 240.  Standards differ, as do methods
+# for determining particle size.  In the USA, ANSI B74.12 is the
+# standard governing macrogrits.  ANSI B74.10 covers bonded microgrit
+# abrasives, and ANSI B74.18 covers coated microgrit abrasives.  It
+# appears that the coated standard is identical to the bonded standard
+# for grits up through 600 but then diverges significantly.
+#
+# European grit sizes are determined by the Federation of European
+# Producers of Abrasives.  http://www.fepa-abrasives.org
+#
+# They give two standards, the "F" grit for bonded abrasives and the
+# "P" grit for coated abrasives.  This data is taken directly from
+# their web page.
+
+# FEPA P grit for coated abrasives is commonly seen on sandpaper in
+# the USA where the paper will be marked P600, for example.  FEPA P
+# grits are said to be more tightly constrained than comparable ANSI
+# grits so that the particles are more uniform in size and hence give
+# a better finish.
+
+grit_P[micron] \
+        12 1815 \
+        16 1324 \
+        20 1000 \
+        24 764 \
+        30 642 \
+        36 538 \
+        40 425 \
+        50 336 \
+        60 269 \
+        80 201 \
+        100 162 \
+        120 125 \
+        150 100 \
+        180 82 \
+        220 68 \
+        240 58.5 \
+        280 52.2 \
+        320 46.2 \
+        360 40.5 \
+        400 35 \
+        500 30.2 \
+        600 25.8 \
+        800 21.8 \
+        1000 18.3 \
+        1200 15.3 \
+        1500 12.6 \
+        2000 10.3 \
+        2500 8.4
+
+# The F grit is the European standard for bonded abrasives such as
+# grinding wheels
+
+grit_F[micron] \
+        4 4890 \
+        5 4125 \
+        6 3460 \
+        7 2900 \
+        8 2460 \
+        10 2085 \
+        12 1765 \
+        14 1470 \
+        16 1230 \
+        20 1040 \
+        22 885 \
+        24 745 \
+        30 625 \
+        36 525 \
+        40 438 \
+        46 370 \
+        54 310 \
+        60 260 \
+        70 218 \
+        80 185 \
+        90 154 \
+        100 129 \
+        120 109 \
+        150 82 \
+        180 69 \
+        220 58 \
+        230 53 \
+        240 44.5 \
+        280 36.5 \
+        320 29.2 \
+        360 22.8 \
+        400 17.3 \
+        500 12.8 \
+        600 9.3 \
+        800 6.5 \
+        1000 4.5 \
+        1200 3 \
+        1500 2.0 \
+        2000 1.2
+
+# According to the UAMA web page, the ANSI bonded and ANSI coated standards
+# are identical to FEPA F in the macrogrit range (under 240 grit), so these
+# values are taken from the FEPA F table.  The values for 240 and above are
+# from the UAMA web site and represent the average of the "d50" range
+# endpoints listed there.
+
+ansibonded[micron] \
+    4 4890 \
+    5 4125 \
+    6 3460 \
+    7 2900 \
+    8 2460 \
+    10 2085 \
+    12 1765 \
+    14 1470 \
+    16 1230 \
+    20 1040 \
+    22 885 \
+    24 745 \
+    30 625 \
+    36 525 \
+    40 438 \
+    46 370 \
+    54 310 \
+    60 260 \
+    70 218 \
+    80 185 \
+    90 154 \
+    100 129 \
+    120 109 \
+    150 82 \
+    180 69 \
+    220 58 \
+    240 50 \
+    280 39.5 \
+    320 29.5 \
+    360 23 \
+    400 18.25 \
+    500 13.9 \
+    600 10.55 \
+    800 7.65 \
+    1000 5.8 \
+    1200 3.8
+
+grit_ansibonded() ansibonded
+
+# Like the bonded grit, the coated macrogrits below 240 are taken from the
+# FEPA F table.  Data above this is from the UAMA site.  Note that the coated
+# and bonded standards are evidently the same from 240 up to 600 grit, but
+# starting at 800 grit, the coated standard diverges.  The data from UAMA show
+# that 800 grit coated has an average size slightly larger than the average
+# size of 600 grit coated/bonded.  However, the 800 grit has a significantly
+# smaller particle size variation.
+#
+# Because of this non-monotonicity from 600 grit to 800 grit this definition
+# produces a warning about the lack of a unique inverse.
+
+ansicoated[micron] noerror \
+    4 4890 \
+    5 4125 \
+    6 3460 \
+    7 2900 \
+    8 2460 \
+    10 2085 \
+    12 1765 \
+    14 1470 \
+    16 1230 \
+    20 1040 \
+    22 885 \
+    24 745 \
+    30 625 \
+    36 525 \
+    40 438 \
+    46 370 \
+    54 310 \
+    60 260 \
+    70 218 \
+    80 185 \
+    90 154 \
+    100 129 \
+    120 109 \
+    150 82 \
+    180 69 \
+    220 58 \
+    240 50 \
+    280 39.5 \
+    320 29.5 \
+    360 23 \
+    400 18.25 \
+    500 13.9 \
+    600 10.55 \
+    800 11.5 \
+    1000 9.5 \
+    2000 7.2 \
+    2500 5.5 \
+    3000 4 \
+    4000 3 \
+    6000 2 \
+    8000 1.2
+
+grit_ansicoated()  ansicoated
+
+
+#
+# Is this correct?  This is the JIS Japanese standard used on waterstones
+#
+jisgrit[micron] \
+     150 75 \
+     180 63 \
+     220 53 \
+     280 48 \
+     320 40 \
+     360 35 \
+     400 30 \
+     600 20 \
+     700 17 \
+     800 14 \
+     1000 11.5 \
+     1200 9.5 \
+     1500 8 \
+     2000 6.7 \
+     2500 5.5 \
+     3000 4 \
+     4000 3 \
+     6000 2 \
+     8000 1.2
+
+# The "Finishing Scale" marked with an A (e.g. A75).  This information
+# is from the web page of the sand paper manufacturer Klingspor
+# http://www.klingspor.com/gritgradingsystems.htm
+#
+# I have no information about what this scale is used for.
+
+grit_A[micron]\
+     16 15.3 \
+     25 21.8 \
+     30 23.6 \
+     35 25.75 \
+     45 35 \
+     60 46.2 \
+     65 53.5 \
+     75 58.5 \
+     90 65 \
+     110 78 \
+     130 93 \
+     160 127 \
+     200 156
+#
+# Grits for DMT brand diamond sharpening stones from
+# http://dmtsharp.com/products/colorcode.htm
+#
+
+dmtxxcoarse  120 micron    # 120 mesh
+dmtsilver    dmtxxcoarse
+dmtxx        dmtxxcoarse
+dmtxcoarse   60 micron     # 220 mesh
+dmtx         dmtxcoarse
+dmtblack     dmtxcoarse
+dmtcoarse    45 micron     # 325 mesh
+dmtc         dmtcoarse
+dmtblue      dmtcoarse
+dmtfine      25 micron     # 600 mesh
+dmtred       dmtfine
+dmtf         dmtfine
+dmtefine     9 micron      # 1200 mesh
+dmte         dmtefine
+dmtgreen     dmtefine
+dmtceramic   7 micron      # 2200 mesh
+dmtcer       dmtceramic
+dmtwhite     dmtceramic
+dmteefine    3 micron      # 8000 mesh
+dmttan       dmteefine
+dmtee        dmteefine
+
+#
+# The following values come from a page in the Norton Stones catalog,
+# available at their web page, http://www.nortonstones.com.
+#
+
+hardtranslucentarkansas  6 micron     # Natural novaculite (silicon quartz)
+softarkansas             22 micron    #   stones
+
+extrafineindia           22 micron    # India stones are Norton's manufactured
+fineindia                35 micron    #   aluminum oxide product
+mediumindia              53.5 micron
+coarseindia              97 micron
+
+finecrystolon            45 micron    # Crystolon stones are Norton's
+mediumcrystalon          78 micron    #   manufactured silicon carbide product
+coarsecrystalon          127 micron
+
+# The following are not from the Norton catalog
+hardblackarkansas        6 micron
+hardwhitearkansas        11 micron
+washita                  35 micron
+
+#
+# Mesh systems for measuring particle sizes by sifting through a wire
+# mesh or sieve
+#
+
+# The Tyler system and US Sieve system are based on four steps for
+# each factor of 2 change in the size, so each size is 2^1|4 different
+# from the adjacent sizes.  Unfortunately, the mesh numbers are
+# arbitrary, so the sizes cannot be expressed with a functional form.
+# Various references round the values differently.  The mesh numbers
+# are supposed to correspond to the number of holes per inch, but this
+# correspondence is only approximate because it doesn't include the
+# wire size of the mesh.
+
+# The Tyler Mesh system was apparently introduced by the WS Tyler
+# company, but it appears that they no longer use it.  They follow the
+# ASTM E11 standard.
+
+meshtyler[micron] \
+          2.5 8000 \
+          3   6727 \
+          3.5 5657 \
+          4   4757 \
+          5   4000 \
+          6   3364 \
+          7   2828 \
+          8   2378 \
+          9   2000 \
+         10   1682 \
+         12   1414 \
+         14   1189 \
+         16   1000 \
+         20    841 \
+         24    707 \
+         28    595 \
+         32    500 \
+         35    420 \
+         42    354 \
+         48    297 \
+         60    250 \
+         65    210 \
+         80    177 \
+        100    149 \
+        115    125 \
+        150    105 \
+        170     88 \
+        200     74 \
+        250     63 \
+        270     53 \
+        325     44 \
+        400     37 
+
+# US Sieve size, ASTM E11
+#
+# The WS Tyler company prints the list from ASTM E11 in their catalog, 
+# http://wstyler.com/wp-content/uploads/2015/11/Product-Catalog-2.pdf
+
+sieve[micron] \
+          3.5   5600 \
+          4     4750 \
+          5     4000 \
+          6     3350 \
+          7     2800 \
+          8     2360 \
+         10     2000 \
+         12     1700 \
+         14     1400 \
+         16     1180 \
+         18     1000 \
+         20      850 \
+         25      710 \
+         30      600 \
+         35      500 \
+         40      425 \
+         45      355 \
+         50      300 \
+         60      250 \
+         70      212 \
+         80      180 \
+        100      150 \
+        120      125 \
+        140      106 \
+        170       90 \
+        200       75 \
+        230       63 \
+        270       53 \
+        325       45 \
+        400       38 \
+        450       32 \
+        500       25 \
+        625       20   # These last two values are not in the standard series
+                       # but were included in the ASTM standard because they
+meshUS()  sieve        # were in common usage.                               
+
+# British Mesh size, BS 410: 1986
+# This system appears to correspond to the Tyler and US system, but
+# with different mesh numbers.
+#
+# http://www.panadyne.com/technical/panadyne_international_sieve_chart.pdf
+# 
+
+meshbritish[micron] \
+          3    5657 \
+          3.5  4757 \
+          4    4000 \
+          5    3364 \
+          6    2828 \
+          7    2378 \
+          8    2000 \
+         10    1682 \
+         12    1414 \
+         14    1189 \
+         16    1000 \
+         18     841 \
+         22     707 \
+         25     595 \
+         30     500 \
+         36     420 \
+         44     354 \
+         52     297 \
+         60     250 \
+         72     210 \
+         85     177 \
+        100     149 \
+        120     125 \
+        150     105 \
+        170      88 \
+        200      74 \
+        240      63 \
+        300      53 \
+        350      44 \
+        400      37  
+
+# French system, AFNOR NFX11-501: 1970
+# The system appears to be based on size doubling every 3 mesh
+# numbers, though the values have been agressively rounded.
+# It's not clear if the unrounded values would be considered
+# incorrect, so this is given as a table rather than a function.
+# Functional form:
+#    meshtamis(mesh) units=[1;m] 5000 2^(1|3 (mesh-38)) micron
+#
+# http://www.panadyne.com/technical/panadyne_international_sieve_chart.pdf
+
+meshtamis[micron] \
+        17   40 \
+        18   50 \
+        19   63 \
+        20   80 \
+        21  100 \
+        22  125 \
+        23  160 \
+        24  200 \
+        25  250 \
+        26  315 \
+        27  400 \
+        28  500 \
+        29  630 \
+        30  800 \
+        31 1000 \
+        32 1250 \
+        33 1600 \
+        34 2000 \
+        35 2500 \
+        36 3150 \
+        37 4000 \
+        38 5000 
+
+#
+# Ring size. All ring sizes are given as the circumference of the ring.
+#
+
+# USA ring sizes.  Several slightly different definitions seem to be in
+# circulation.  According to [15], the interior diameter of size n ring in
+# inches is 0.32 n + 0.458 for n ranging from 3 to 13.5 by steps of 0.5.  The
+# size 2 ring is inconsistently 0.538in and no 2.5 size is listed.
+#
+# However, other sources list 0.455 + 0.0326 n and 0.4525 + 0.0324 n as the
+# diameter and list no special case for size 2.  (Or alternatively they are
+# 1.43 + .102 n and 1.4216+.1018 n for measuring circumference in inches.)  One
+# reference claimed that the original system was that each size was 1|10 inch
+# circumference, but that source doesn't have an explanation for the modern
+# system which is somewhat different.
+
+ringsize(n) units=[1;in] domain=[2,) range=[1.6252,) \
+            (1.4216+.1018 n) in ; (ringsize/in + (-1.4216))/.1018
+
+# Old practice in the UK measured rings using the "Wheatsheaf gauge" with sizes
+# specified alphabetically and based on the ring inside diameter in steps of
+# 1|64 inch.  This system was replaced in 1987 by British Standard 6820 which
+# specifies sizes based on circumference.  Each size is 1.25 mm different from
+# the preceding size.  The baseline is size C which is 40 mm circumference.
+# The new sizes are close to the old ones.  Sometimes it's necessary to go
+# beyond size Z to Z+1, Z+2, etc.
+
+sizeAring               37.50 mm
+sizeBring               38.75 mm
+sizeCring               40.00 mm
+sizeDring               41.25 mm
+sizeEring               42.50 mm
+sizeFring               43.75 mm
+sizeGring               45.00 mm
+sizeHring               46.25 mm
+sizeIring               47.50 mm
+sizeJring               48.75 mm
+sizeKring               50.00 mm
+sizeLring               51.25 mm
+sizeMring               52.50 mm
+sizeNring               53.75 mm
+sizeOring               55.00 mm
+sizePring               56.25 mm
+sizeQring               57.50 mm
+sizeRring               58.75 mm
+sizeSring               60.00 mm
+sizeTring               61.25 mm
+sizeUring               62.50 mm
+sizeVring               63.75 mm
+sizeWring               65.00 mm
+sizeXring               66.25 mm
+sizeYring               67.50 mm
+sizeZring               68.75 mm
+
+# Japanese sizes start with size 1 at a 13mm inside diameter and each size is
+# 1|3 mm larger in diameter than the previous one.  They are multiplied by pi
+# to give circumference.
+
+jpringsize(n)  units=[1;mm] domain=[1,) range=[0.040840704,) \
+               (38|3 + n/3) pi mm ; 3 jpringsize/ pi mm + (-38)
+
+# The European ring sizes are the length of the circumference in mm minus 40.
+
+euringsize(n)  units=[1;mm] (n+40) mm ; euringsize/mm + (-40)
+
+
+#
+# Compatibility units with unix version
+#
+
+pa                      Pa
+ev                      eV
+#hg                     Hg
+oe                      Oe
+mh                      mH
+rd                      rod
+pf                      pF
+gr                      grain
+nt                      N
+hz                      Hz
+hd                      hogshead
+dry                     drygallon/gallon
+nmile                   nauticalmile
+beV                     GeV
+bev                     beV
+coul                    C
+
+
+
+# TGM dozen based unit system listed on the "dozenal" forum
+# http://www.dozenalsociety.org.uk/apps/tgm.htm.  These units are
+# proposed as an allegedly more rational alternative to the SI system.
+
+Tim                     12^-4 hour         # Time 
+Grafut                  gravity Tim^2      # Length based on gravity
+Surf                    Grafut^2           # area
+Volm                    Grafut^3           # volume
+Vlos                    Grafut/Tim         # speed
+Denz                    Maz/Volm           # density
+Mag                     Maz gravity        # force
+Maz                     Volm kg / oldliter # mass based on water
+
+#gross conflict with terameter
+#Tm                      Tim                # Abbreviations
+Gf                      Grafut
+Sf                      Surf
+Vm                      Volm
+Vl                      Vlos
+Mz                      Maz
+Dz                      Denz
+
+# Dozen based unit prefixes
+
+Zena-                   12
+Duna-                   12^2
+Trina-                  12^3
+Quedra-                 12^4
+Quena-                  12^5
+Hesa-                   12^6
+Seva-                   12^7
+Aka-                    12^8
+Neena-                  12^9
+Dexa-                   12^10
+Lefa-                   12^11
+Zennila-                12^12
+
+Zeni-                   12^-1
+Duni-                   12^-2
+Trini-                  12^-3
+Quedri-                 12^-4
+Queni-                  12^-5
+Hesi-                   12^-6
+Sevi-                   12^-7
+Aki-                    12^-8
+Neeni-                  12^-9
+Dexi-                   12^-10
+Lefi-                   12^-11
+Zennili-                12^-12

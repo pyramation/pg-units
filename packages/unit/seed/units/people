@@ -1,0 +1,8 @@
+# population units
+#
+
+people                  1
+person                  people
+death                   people
+capita                  people
+percapita               per capita

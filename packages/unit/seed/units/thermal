@@ -1,0 +1,13 @@
+
+#
+# These thermal units treat entropy as charge, from [5]
+#
+
+thermalcoulomb          J/K        # entropy
+thermalampere           W/K        # entropy flow
+thermalfarad            J/K^2
+thermalohm              K^2/W      # thermal resistance
+fourier                 thermalohm
+thermalhenry            J K^2/W^2  # thermal inductance
+thermalvolt             K          # thermal potential difference
+

@@ -1,0 +1,22 @@
+
+#
+# Some traditional Russian measures
+#
+# If you would like to help expand this section and understand
+# cyrillic transliteration, let me know.  These measures are meant to
+# reflect common usage, e.g. in translated literature.  
+#
+
+dessiatine              2400 sazhen^2    # Land measure
+dessjatine              dessiatine
+
+funt                    409.51718 grams  # similar to pound
+zolotnik                1|96 funt        # used for precious metal measure
+pood                    40 funt          # common in agricultural measure
+
+arshin                  (2 + 1|3) feet
+sazhen                  3 arshin         # analogous to fathom
+verst                   500 sazhen       # of similar use to mile
+versta                  verst
+borderverst             1000 sazhen
+russianmile             7 verst

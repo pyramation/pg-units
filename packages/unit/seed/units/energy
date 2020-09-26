@@ -1,0 +1,379 @@
+#
+# Other units of work, energy, power, etc
+#
+
+ENERGY                  joule
+WORK                    joule
+
+# Calorie: approximate energy to raise a gram of water one degree celsius
+
+calorie                 cal_th       # Default is the thermochemical calorie
+cal                     calorie
+calorie_th              4.184 J      # Thermochemical calorie, defined in 1930
+thermcalorie            calorie_th   #   by Frederick Rossini as 4.1833 J to 
+cal_th                  calorie_th   #   avoid difficulties associated with the 
+                                     #   uncertainty in the heat capacity of 
+                                     #   water.  In 1948 the value of the joule 
+                                     #   was changed, so the thermochemical
+                                     #   calorie was redefined to 4.184 J.
+                                     #   This kept the energy measured by this
+                                     #   unit the same. 
+calorie_IT              4.1868 J     # International (Steam) Table calorie,
+cal_IT                  calorie_IT   #   defined in 1929 as watt-hour/860 or
+                                     #   equivalently 180|43 joules.  At this
+                                     #   time the international joule had a
+                                     #   different value than the modern joule,
+                                     #   and the values were different in the
+                                     #   USA and in Europe.  In 1956 at the
+                                     #   Fifth International Conference on
+                                     #   Properties of Steam the exact
+                                     #   definition given here was adopted. 
+calorie_15              4.18580 J    # Energy to go from 14.5 to 15.5 degC
+cal_15                  calorie_15
+calorie_fifteen         cal_15
+calorie_20              4.18190 J    # Energy to go from 19.5 to 20.5 degC
+cal_20                  calorie_20
+calorie_twenty          calorie_20
+calorie_4               4.204 J      # Energy to go from 3.5 to 4.5 degC
+cal_4                   calorie_4
+calorie_four            calorie_4
+cal_mean                4.19002 J    # 1|100 energy to go from 0 to 100 degC
+Calorie                 kilocalorie  # the food Calorie
+thermie              1e6 cal_15      # Heat required to raise the
+                                     # temperature of a tonne of
+                                     # water from 14.5 to 15.5 degC.
+
+# btu definitions: energy to raise a pound of water 1 degF
+
+btu                     btu_IT       # International Table BTU is the default
+britishthermalunit      btu
+btu_IT                  cal_IT lb (degF) / gram K
+btu_th                  cal_th lb (degF) / gram K
+btu_mean                cal_mean lb (degF) / gram K
+btu_15                  cal_15 lb (degF) / gram K
+btu_ISO                 1055.06 J    # Exact, rounded ISO definition based
+                                     #    on the IT calorie
+quad                    quadrillion btu
+
+ECtherm                 1e5 btu_ISO    # Exact definition
+UStherm                 1.054804e8 J   # Exact definition, 
+therm                   UStherm
+
+# Water latent heat from [23]
+
+water_fusion_heat       6.01 kJ/mol / (18.015 g/mol) # At 0 deg C
+water_vaporization_heat 2256.4 J/g  # At saturation, 100 deg C, 101.42 kPa
+
+# Specific heat capacities of various substances
+
+specificheat_water      calorie / g K
+water_specificheat      specificheat_water
+     # Values from www.engineeringtoolbox.com/specific-heat-metals-d_152.html
+specificheat_aluminum   0.91 J/g K
+specificheat_antimony   0.21 J/g K
+specificheat_barium     0.20 J/g K
+specificheat_beryllium  1.83 J/g K
+specificheat_bismuth    0.13 J/g K
+specificheat_cadmium    0.23 J/g K
+specificheat_cesium     0.24 J/g K
+specificheat_chromium   0.46 J/g K
+specificheat_cobalt     0.42 J/g K
+specificheat_copper     0.39 J/g K
+specificheat_gallium    0.37 J/g K
+specificheat_germanium  0.32 J/g K
+specificheat_gold       0.13 J/g K
+specificheat_hafnium    0.14 J/g K
+specificheat_indium     0.24 J/g K
+specificheat_iridium    0.13 J/g K
+specificheat_iron       0.45 J/g K
+specificheat_lanthanum  0.195 J/g K
+specificheat_lead       0.13 J/g K
+specificheat_lithium    3.57 J/g K
+specificheat_lutetium   0.15 J/g K
+specificheat_magnesium  1.05 J/g K
+specificheat_manganese  0.48 J/g K
+specificheat_mercury    0.14 J/g K
+specificheat_molybdenum 0.25 J/g K
+specificheat_nickel     0.44 J/g K
+specificheat_osmium     0.13 J/g K
+specificheat_palladium  0.24 J/g K
+specificheat_platinum   0.13 J/g K
+specificheat_plutonum   0.13 J/g K
+specificheat_potassium  0.75 J/g K
+specificheat_rhenium    0.14 J/g K
+specificheat_rhodium    0.24 J/g K
+specificheat_rubidium   0.36 J/g K
+specificheat_ruthenium  0.24 J/g K
+specificheat_scandium   0.57  J/g K
+specificheat_selenium   0.32 J/g K
+specificheat_silicon    0.71 J/g K
+specificheat_silver     0.23 J/g K
+specificheat_sodium     1.21 J/g K
+specificheat_strontium  0.30 J/g K
+specificheat_tantalum   0.14 J/g K
+specificheat_thallium   0.13 J/g K
+specificheat_thorium    0.13 J/g K
+specificheat_tin        0.21 J/g K
+specificheat_titanium   0.54 J/g K
+specificheat_tungsten   0.13 J/g K
+specificheat_uranium    0.12 J/g K
+specificheat_vanadium   0.39 J/g K
+specificheat_yttrium    0.30 J/g K
+specificheat_zinc       0.39 J/g K
+specificheat_zirconium  0.27 J/g K
+specificheat_ethanol    2.3  J/g K
+specificheat_ammonia    4.6 J/g K
+specificheat_freon      0.91 J/g K   # R-12 at 0 degrees Fahrenheit
+specificheat_gasoline   2.22 J/g K
+specificheat_iodine     2.15 J/g K
+specificheat_oliveoil   1.97 J/g K
+
+#  en.wikipedia.org/wiki/Heat_capacity#Table_of_specific_heat_capacities
+specificheat_hydrogen   14.3 J/g K
+specificheat_helium     5.1932 J/g K
+specificheat_argon      0.5203 J/g K
+specificheat_tissue     3.5 J/g K
+specificheat_diamond    0.5091 J/g K
+specificheat_granite    0.79 J/g K
+specificheat_graphite   0.71 J/g K
+specificheat_ice        2.11 J/g K
+specificheat_asphalt    0.92 J/g K
+specificheat_brick      0.84 J/g K
+specificheat_concrete   0.88 J/g K
+specificheat_glass_silica 0.84 J/g K
+specificheat_glass_flint  0.503 J/g K
+specificheat_glass_pyrex  0.753 J/g K
+specificheat_gypsum     1.09 J/g K
+specificheat_marble     0.88 J/g K
+specificheat_sand       0.835 J/g K
+specificheat_soil       0.835 J/g K
+specificheat_wood       1.7 J/g K
+
+specificheat_sucrose    1.244 J/g K #www.sugartech.co.za/heatcapacity/index.php
+
+
+# Energy densities of various fuels
+#
+# Most of these fuels have varying compositions or qualities and hence their
+# actual energy densities vary.  These numbers are hence only approximate.
+#
+# E1. http://bioenergy.ornl.gov/papers/misc/energy_conv.html
+# E2. http://www.aps.org/policy/reports/popa-reports/energy/units.cfm
+# E3. http://www.ior.com.au/ecflist.html
+
+tonoil                  1e10 cal_IT    # Ton oil equivalent.  A conventional
+                                       # value for the energy released by
+toe                     tonoil         # burning one metric ton of oil. [18,E2]
+                                       # Note that energy per mass of petroleum
+                                       # products is fairly constant.
+                                       # Variations in volumetric energy
+                                       # density result from variations in the
+                                       # density (kg/m^3) of different fuels.
+                                       # This definition is given by the
+                                       # IEA/OECD.
+toncoal                 7e9 cal_IT     # Energy in metric ton coal from [18].
+                                       # This is a nominal value which
+                                       # is close to the heat content
+                                       # of coal used in the 1950's
+barreloil               5.8 Mbtu       # Conventional value for barrel of crude
+                                       # oil [E2].  Actual range is 5.6 - 6.3.
+naturalgas_HHV          1027 btu/ft^3  # Energy content of natural gas.  HHV
+naturalgas_LHV          930 btu/ft^3   # is for Higher Heating Value and
+naturalgas              naturalgas_HHV # includes energy from condensation
+                                       # combustion products.  LHV is for Lower
+                                       # Heating Value and excludes these.
+                                       # American publications typically report
+                                       # HHV whereas European ones report LHV.
+charcoal                30 GJ/tonne
+woodenergy_dry          20 GJ/tonne    # HHV, a cord weights about a tonne
+woodenergy_airdry       15 GJ/tonne    # 20% moisture content
+coal_bituminous         27 GJ / tonne
+coal_lignite            15 GJ / tonne
+coal_US                 22 GJ / uston  # Average for US coal (short ton), 1995
+ethanol_HHV         84000 btu/usgallon
+ethanol_LHV         75700 btu/usgallon
+diesel             130500 btu/usgallon
+gasoline_LHV       115000 btu/usgallon
+gasoline_HHV       125000 btu/usgallon
+gasoline                gasoline_HHV
+heating                 37.3 MJ/liter
+fueloil                 39.7 MJ/liter  # low sulphur
+propane                 93.3 MJ/m^3
+butane                  124 MJ/m^3
+
+# These values give total energy from uranium fission.  Actual efficiency
+# of nuclear power plants is around 30%-40%.  Note also that some reactors
+# use enriched uranium around 3% U-235.  Uranium during processing or use
+# may be in a compound of uranium oxide or uranium hexafluoride, in which
+# case the energy density would be lower depending on how much uranium is
+# in the compound.
+
+uranium_pure     200 MeV avogadro / (235.0439299 g/mol)  # Pure U-235
+uranium_natural         0.7% uranium_pure        # Natural uranium: 0.7% U-235
+
+# Celsius heat unit: energy to raise a pound of water 1 degC
+
+celsiusheatunit         cal lb (degC) / gram K
+chu                     celsiusheatunit
+
+POWER                   watt
+
+# "Apparent" average power in an AC circuit, the product of rms voltage
+# and rms current, equal to the true power in watts when voltage and
+# current are in phase.  In a DC circuit, always equal to the true power.
+
+VA                      volt ampere
+
+kWh                     kilowatt hour
+
+# The horsepower is supposedly the power of one horse pulling.   Obviously
+# different people had different horses.
+
+horsepower              550 foot pound force / sec    # Invented by James Watt
+mechanicalhorsepower    horsepower
+hp                      horsepower
+metrichorsepower        75 kilogram force meter / sec # PS=Pferdestaerke in
+electrichorsepower      746 W                         # Germany
+boilerhorsepower        9809.50 W
+waterhorsepower         746.043 W
+brhorsepower            745.70 W
+donkeypower             250 W
+chevalvapeur            metrichorsepower
+
+#
+# Heat Transfer
+#
+# Thermal conductivity, K, measures the rate of heat transfer across
+# a material.  The heat transfered is
+#     Q = K dT A t / L
+# where dT is the temperature difference across the material, A is the
+# cross sectional area, t is the time, and L is the length (thickness).
+# Thermal conductivity is a material property.
+
+THERMAL_CONDUCTIVITY    POWER / AREA (TEMPERATURE_DIFFERENCE/LENGTH)
+THERMAL_RESISTIVITY     1/THERMAL_CONDUCTIVITY
+
+# Thermal conductance is the rate at which heat flows across a given
+# object, so the area and thickness have been fixed.  It depends on
+# the size of the object and is hence not a material property.
+
+THERMAL_CONDUCTANCE     POWER / TEMPERATURE_DIFFERENCE
+THERMAL_RESISTANCE      1/THERMAL_CONDUCTANCE
+
+# Thermal admittance is the rate of heat flow per area across an
+# object whose thickness has been fixed.  Its reciprocal, thermal
+# insulation, is used to for measuring the heat transfer per area
+# of sheets of insulation or cloth that are of specified thickness.
+
+THERMAL_ADMITTANCE      THERMAL_CONDUCTIVITY / LENGTH
+THERMAL_INSULANCE       THERMAL_RESISTIVITY LENGTH
+THERMAL_INSULATION      THERMAL_RESISTIVITY LENGTH
+
+Rvalue                  degF ft^2 hr / btu
+Uvalue                  1/Rvalue
+europeanUvalue          watt / m^2 K
+RSI                     degC m^2 / W
+clo                     0.155 * degC m^2 / W # Supposed to be the insulance
+                                           # required to keep a resting person
+                                           # comfortable indoors.  The value
+                                           # given is from NIST and the CRC,
+                                           # but [5] gives a slightly different
+                                           # value of 0.875 ft^2 degF hr / btu.
+tog                     0.1 * degC m^2 / W   # Also used for clothing.
+
+
+# The bel was defined by engineers of Bell Laboratories to describe the
+# reduction in audio level over a length of one mile. It was originally
+# called the transmission unit (TU) but was renamed around 1923 to honor
+# Alexander Graham Bell. The bel proved inconveniently large so the decibel
+# has become more common.  The decibel is dimensionless since it reports a
+# ratio, but it is used in various contexts to report a signal's power
+# relative to some reference level.
+
+bel(x)     units=[1;1] range=(0,) 10^(x);    log(bel)    # Basic bel definition
+decibel(x) units=[1;1] range=(0,) 10^(x/10); 10 log(decibel) # Basic decibel
+dB()       decibel                                           # Abbreviation
+dBW(x)     units=[1;W] range=(0,) dB(x) W ;  ~dB(dBW/W)      # Reference = 1 W
+dBk(x)     units=[1;W] range=(0,) dB(x) kW ; ~dB(dBk/kW)     # Reference = 1 kW
+dBf(x)     units=[1;W] range=(0,) dB(x) fW ; ~dB(dBf/fW)     # Reference = 1 fW
+dBm(x)     units=[1;W] range=(0,) dB(x) mW ; ~dB(dBm/mW)     # Reference = 1 mW
+dBmW(x)    units=[1;W] range=(0,) dBm(x) ;   ~dBm(dBmW)      # Reference = 1 mW
+dBJ(x)     units=[1;J] range=(0,) dB(x) J; ~dB(dBJ/J)        # Energy relative
+                                     # to 1 joule.  Used for power spectral
+                                     # density since W/Hz = J
+
+# When used to measure amplitude, voltage, or current the signal is squared
+# because power is proportional to the square of these measures.  The root
+# mean square (RMS) voltage is typically used with these units.
+
+dBV(x)  units=[1;V] range=(0,) dB(0.5 x) V;~dB(dBV^2 / V^2) # Reference = 1 V
+dBmV(x) units=[1;V] range=(0,) dB(0.5 x) mV;~dB(dBmV^2/mV^2)# Reference = 1 mV
+dBuV(x) units=[1;V] range=(0,) dB(0.5 x) microV ; ~dB(dBuV^2 / microV^2)
+                                   # Reference = 1 microvolt
+
+# Referenced to the voltage that causes 1 mW dissipation in a 600 ohm load.
+# Originally defined as dBv but changed to prevent confusion with dBV.
+# The "u" is for unloaded.
+dBu(x) units=[1;V] range=(0,) dB(0.5 x) sqrt(mW 600 ohm) ; \
+                              ~dB(dBu^2 / mW 600 ohm)
+dBv(x) units=[1;V] range=(0,) dBu(x) ; ~dBu(dBv)  # Synonym for dBu
+
+
+# Measurements for sound in air, referenced to the threshold of human hearing
+# Note that sound in other media typically uses 1 micropascal as a reference
+# for sound pressure.  Units dBA, dBB, dBC, refer to different frequency
+# weightings meant to approximate the human ear's response.
+
+dBSPL(x) units=[1;Pa] range=(0,) dB(0.5 x) 20 microPa ;  \
+                                 ~dB(dBSPL^2 / (20 microPa)^2) # pressure
+dBSIL(x) units=[1;W/m^2] range=(0,) dB(x) 1e-12 W/m^2; \
+                                    ~dB(dBSIL / (1e-12 W/m^2)) # intensity
+dBSWL(x) units=[1;W] range=(0,) dB(x) 1e-12 W; ~dB(dBSWL/1e-12 W)
+
+
+# Misc other measures
+
+ENTROPY                 ENERGY / TEMPERATURE
+clausius                1e3 cal/K       # A unit of physical entropy
+langley                 thermcalorie/cm^2    # Used in radiation theory
+poncelet                100 kg force m / s
+tonrefrigeration        uston 144 btu / lb day # One ton refrigeration is
+                                        # the rate of heat extraction required
+                                        # turn one ton of water to ice in
+                                        # a day.  Ice is defined to have a
+                                        # latent heat of 144 btu/lb.
+tonref                  tonrefrigeration
+refrigeration           tonref / ton
+frigorie                1000 cal_15     # Used in refrigeration engineering.
+tnt                     1e9 cal_th / ton# So you can write tons tnt. This
+                                        # is a defined, not measured, value.
+airwatt                 8.5 (ft^3/min) inH2O # Measure of vacuum power as
+                                             # pressure times air flow.
+
+# Nuclear weapon yields 
+
+davycrocket             10 ton tnt         # lightest US tactical nuclear weapon
+hiroshima               15.5 kiloton tnt   # Uranium-235 fission bomb
+nagasaki                21 kiloton tnt     # Plutonium-239 fission bomb
+fatman                  nagasaki
+littleboy               hiroshima
+ivyking                 500 kiloton tnt    # most powerful fission bomb
+castlebravo             15 megaton tnt     # most powerful US test
+b53bomb                 9 megaton tnt
+                 # http://rarehistoricalphotos.com/gadget-first-atomic-bomb/
+trinity                 18 kiloton tnt     # July 16, 1945
+gadget                  trinity
+
+#
+# Permeability: The permeability or permeance, n, of a substance determines
+# how fast vapor flows through the substance.  The formula W = n A dP
+# holds where W is the rate of flow (in mass/time), n is the permeability,
+# A is the area of the flow path, and dP is the vapor pressure difference.
+#
+
+perm_0C                 grain / hr ft^2 inHg
+perm_zero               perm_0C
+perm_0                  perm_0C
+perm                    perm_0C
+perm_23C                grain / hr ft^2 in Hg23C
+perm_twentythree        perm_23C

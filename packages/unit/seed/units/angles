@@ -1,0 +1,52 @@
+#
+# angular measure
+#
+
+circle                  2 pi radian
+degree                  1|360 circle
+deg                     degree
+arcdeg                  degree
+arcmin                  1|60 degree
+arcminute               arcmin
+'                       arcmin
+arcsec                  1|60 arcmin
+arcsecond               arcsec
+"                       arcsec
+''                      "
+rightangle              90 degrees
+quadrant                1|4 circle
+quintant                1|5 circle
+sextant                 1|6 circle
+
+sign                    1|12 circle # Angular extent of one sign of the zodiac
+turn                    circle
+revolution              turn
+rev                     turn
+pulsatance              radian / sec
+gon                     1|100 rightangle  # measure of grade
+grade                   gon
+centesimalminute        1|100 grade
+centesimalsecond        1|100 centesimalminute
+milangle                1|6400 circle     # Official NIST definition.
+                                          # Another choice is 1e-3 radian.
+pointangle              1|32 circle  # Used for reporting compass readings
+centrad                 0.01 radian  # Used for angular deviation of light
+                                     # through a prism.
+mas                     milliarcsec  # Used by astronomers
+seclongitude            circle (seconds/day) # Astronomers measure longitude
+                                     # (which they call right ascension) in
+                                     # time units by dividing the equator into
+                                     # 24 hours instead of 360 degrees.
+
+#
+# Solid angle measure
+#
+
+sphere                  4 pi sr
+squaredegree            1|180^2 pi^2 sr
+squareminute            1|60^2 squaredegree
+squaresecond            1|60^2 squareminute
+squarearcmin            squareminute
+squarearcsec            squaresecond
+sphericalrightangle     0.5 pi sr
+octant                  0.5 pi sr                                     

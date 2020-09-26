@@ -1,0 +1,123 @@
+
+#
+# Money
+#
+# Note that US$ is the primitive unit so other currencies are
+# generally given in US$.
+#
+
+unitedstatesdollar      US$
+usdollar                US$
+$                       dollar
+mark                    germanymark
+#bolivar                 venezuelabolivar       # Not all databases are 
+#venezuelabolivarfuerte  1e-5 bolivar           #    supplying these
+#bolivarfuerte           1e-5 bolivar           # The currency was revalued 
+#oldbolivar              1|1000 bolivarfuerte   # twice
+peseta                  spainpeseta
+rand                    southafricarand
+escudo                  portugalescudo
+guilder                 netherlandsguilder
+hollandguilder          netherlandsguilder
+peso                    mexicopeso
+yen                     japanyen
+lira                    italylira
+rupee                   indiarupee
+drachma                 greecedrachma
+franc                   francefranc
+markka                  finlandmarkka
+britainpound            unitedkingdompound
+greatbritainpound       unitedkingdompound
+unitedkingdompound      ukpound
+poundsterling           britainpound
+yuan                    chinayuan
+
+# Unicode Currency Names
+
+!utf8
+icelandkróna            icelandkrona
+polandzłoty             polandzloty
+tongapa’anga            tongapa'anga
+#venezuelabolívar        venezuelabolivar
+vietnamđồng             vietnamdong
+mongoliatögrög          mongoliatugrik
+sãotomé&príncipedobra   saotome&principedobra
+!endutf8
+
+UKP                     GBP        # Not an ISO code, but looks like one, and
+                                   # sometimes used on usenet.
+
+!include currency.units
+
+# Money on the gold standard, used in the late 19th century and early
+# 20th century.
+
+olddollargold           23.22 grains goldprice  # Used until 1934
+newdollargold           96|7 grains goldprice   # After Jan 31, 1934
+dollargold              newdollargold
+poundgold               113 grains goldprice    # British pound
+
+# Precious metals
+
+goldounce               goldprice troyounce
+silverounce             silverprice troyounce
+platinumounce           platinumprice troyounce
+XAU                     goldounce
+XPT                     platinumounce
+XAG                     silverounce
+
+# Nominal masses of US coins.  Note that dimes, quarters and half dollars
+# have weight proportional to value.  Before 1965 it was $40 / kg.
+
+USpennyweight           2.5 grams         # Since 1982, 48 grains before
+USnickelweight          5 grams
+USdimeweight            US$ 0.10 / (20 US$ / lb)   # Since 1965
+USquarterweight         US$ 0.25 / (20 US$ / lb)   # Since 1965
+UShalfdollarweight      US$ 0.50 / (20 US$ / lb)   # Since 1971
+USdollarweight          8.1 grams         # Weight of Susan B. Anthony and
+                                          #   Sacagawea dollar coins
+
+# British currency
+
+quid                    britainpound        # Slang names
+fiver                   5 quid
+tenner                  10 quid
+monkey                  500 quid
+brgrand                 1000 quid
+bob                     shilling
+
+shilling                1|20 britainpound   # Before decimalisation, there
+oldpence                1|12 shilling       # were 20 shillings to a pound,
+farthing                1|4 oldpence        # each of twelve old pence
+guinea                  21 shilling         # Still used in horse racing
+crown                   5 shilling
+florin                  2 shilling
+groat                   4 oldpence
+tanner                  6 oldpence
+brpenny                 0.01 britainpound
+pence                   brpenny
+tuppence                2 pence
+tuppenny                tuppence
+ha'penny                halfbrpenny
+hapenny                 ha'penny
+oldpenny                oldpence
+oldtuppence             2 oldpence
+oldtuppenny             oldtuppence
+threepence              3 oldpence    # threepence never refers to new money
+threepenny              threepence
+oldthreepence           threepence
+oldthreepenny           threepence
+oldhalfpenny            halfoldpenny
+oldha'penny             oldhalfpenny
+oldhapenny              oldha'penny
+brpony                  25 britainpound
+
+# Canadian currency
+
+loony                   1 canadadollar    # This coin depicts a loon
+toony                   2 canadadollar
+
+# Cryptocurrency
+
+satoshi                 1e-8 bitcoin
+XBT                     bitcoin           # nonstandard code

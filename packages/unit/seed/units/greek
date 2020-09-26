@@ -1,0 +1,64 @@
+
+# Greek length measures
+
+greekfoot               12.45 in      # Listed as being derived from the
+greekfeet               greekfoot     # Egyptian Royal cubit in [11].  It is
+greekcubit              1.5 greekfoot # said to be 3|5 of a 20.75 in cubit.
+pous                    greekfoot
+podes                   greekfoot
+orguia                  6 greekfoot
+greekfathom             orguia
+stadion                 100 orguia
+akaina                  10 greekfeet
+plethron                10 akaina
+greekfinger             1|16 greekfoot
+homericcubit            20 greekfingers  # Elbow to end of knuckles.
+shortgreekcubit         18 greekfingers  # Elbow to start of fingers.
+
+ionicfoot               296 mm
+doricfoot               326 mm
+
+olympiccubit            25 remendigit    # These olympic measures were not as
+olympicfoot             2|3 olympiccubit # common as the other greek measures.
+olympicfinger           1|16 olympicfoot # They were used in agriculture.
+olympicfeet             olympicfoot
+olympicdakylos          olympicfinger
+olympicpalm             1|4 olympicfoot
+olympicpalestra         olympicpalm
+olympicspithame         3|4 foot
+olympicspan             olympicspithame
+olympicbema             2.5 olympicfeet
+olympicpace             olympicbema
+olympicorguia           6 olympicfeet
+olympicfathom           olympicorguia
+olympiccord             60 olympicfeet
+olympicamma             olympiccord
+olympicplethron         100 olympicfeet
+olympicstadion          600 olympicfeet
+
+# Greek capacity measure
+
+greekkotyle             270 ml           # This approximate value is obtained
+xestes                  2 greekkotyle    # from two earthenware vessels that
+khous                   12 greekkotyle   # were reconstructed from fragments.
+metretes                12 khous         # The kotyle is a day's corn ration
+choinix                 4 greekkotyle    # for one man.
+hekteos                 8 choinix
+medimnos                6 hekteos
+
+# Greek weight.  Two weight standards were used, an Aegina standard based
+# on the Beqa shekel and an Athens (attic) standard.
+
+aeginastater            192 grain        # Varies up to 199 grain
+aeginadrachmae          1|2 aeginastater
+aeginaobol              1|6 aeginadrachmae
+aeginamina              50 aeginastaters
+aeginatalent            60 aeginamina    # Supposedly the mass of a cubic foot
+                                         # of water (whichever foot was in use)
+
+atticstater             135 grain        # Varies 134-138 grain
+atticdrachmae           1|2 atticstater
+atticobol               1|6 atticdrachmae
+atticmina               50 atticstaters
+attictalent             60 atticmina     # Supposedly the mass of a cubic foot
+                                         # of water (whichever foot was in use)

@@ -1,0 +1,13 @@
+
+# Egyptian length measure
+
+egyptianroyalcubit      20.63 in    # plus or minus .2 in
+egyptianpalm            1|7 egyptianroyalcubit
+egyptiandigit           1|4 egyptianpalm
+egyptianshortcubit      6 egyptianpalm
+
+doubleremen             29.16 in  # Length of the diagonal of a square with
+remendigit       1|40 doubleremen # side length of 1 royal egyptian cubit.
+                                  # This is divided into 40 digits which are
+                                  # not the same size as the digits based on
+                                  # the royal cubit.

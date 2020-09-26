@@ -1,0 +1,13 @@
+
+#
+# Swedish (Sweden) pre-metric units of 1739.
+# The metric system was adopted in 1878.
+# https://sv.wikipedia.org/wiki/Verkm%C3%A5tt
+#
+
+verklinje               2.0618125 mm
+verktum                 12 verklinje
+kvarter                 6 verktum
+fot                     2 kvarter
+aln                     2 fot
+famn                    3 aln

@@ -1,0 +1,202 @@
+!utf8
+⅛-                      1|8
+¼-                      1|4
+⅜-                      3|8
+½-                      1|2
+⅝-                      5|8
+¾-                      3|4
+⅞-                      7|8
+⅙-                      1|6
+⅓-                      1|3
+⅔-                      2|3
+⅚-                      5|6
+⅕-                      1|5
+⅖-                      2|5
+⅗-                      3|5
+⅘-                      4|5
+# U+2150-               1|7  For some reason these characters are getting
+# U+2151-               1|9  flagged as invalid UTF8.
+# U+2152-               1|10
+#⅐-               1|7   # fails under MacOS
+#⅑-               1|9   # fails under MacOS
+#⅒-               1|10  # fails under MacOS
+ℯ                       exp(1)      # U+212F, base of natural log
+µ-                      micro       # micro sign U+00B5
+μ-                      micro       # small mu U+03BC
+ångström                angstrom
+Å                       angstrom    # angstrom symbol U+212B
+Å                       angstrom    # A with ring U+00C5
+röntgen                 roentgen
+°C                      degC
+°F                      degF
+°K                      K           # °K is incorrect notation
+°R                      degR
+°                       degree
+℃                       degC
+℉                       degF
+K                       K          # Kelvin symbol, U+212A
+ℓ                       liter      # unofficial abbreviation used in some places
+Ω                       ohm       # Ohm symbol U+2126
+Ω                       ohm       # Greek capital omega U+03A9
+℧                       mho
+ʒ                        dram     # U+0292
+℈                       scruple
+℥                       ounce
+℔                       lb
+ℎ                       hplanck
+ℏ                       hbar
+‰                       1|1000
+‱                       1|10000
+′                       '        # U+2032
+″                       "        # U+2033
+
+
+
+#
+# Unicode currency symbols
+#
+
+¢                       cent
+£                       britainpound
+¥                       japanyen
+€                       euro
+₩                       southkoreawon
+₪                       israelnewshekel
+₤                       lira
+# ₺                       turkeylira  # fails under MacOS
+₨                       rupee           # unofficial legacy rupee sign
+# ₹                       indiarupee      # official rupee sign # MacOS fail
+#؋                       afghanafghani    # fails under MacOS
+฿                       thailandbaht
+₡                       elsalvadorcolon # Also costaricacolon
+₣                       francefranc
+₦                       nigerianaira
+₧                       spainpeseta
+₫                       vietnamdong
+₭                       laokip 
+₮                       mongoliatugrik
+₯                       greecedrachma
+₱                       philippinepeso
+# ₲                       paraguayguarani # fails under MacOS
+#₴                       ukrainehryvnia   # fails under MacOS
+#₵                       ghanacedi        # fails under MacOS
+#₸                       kazakhstantenge  # fails under MacOS
+#₼                       azerbaijanmanat # fails under MacOS
+#₽                       russiaruble     # fails under MacOS
+#₾                       georgialari     # fails under MacOS
+﷼                       iranrial
+﹩                      $
+￠                      ¢
+￡                      £
+￥                      ¥
+￦                      ₩
+
+#
+# Square unicode symbols starting at U+3371
+#
+
+㍱                      hPa
+㍲                      da
+㍳                      au
+㍴                      bar
+# ㍵                          oV???
+㍶                      pc
+#㍷                      dm      invalid on Mac
+#㍸                      dm^2    invalid on Mac
+#㍹                      dm^3    invalid on Mac
+㎀                      pA
+㎁                      nA
+㎂                      µA
+㎃                      mA
+㎄                      kA
+㎅                      kB
+㎆                      MB
+㎇                      GB
+㎈                      cal
+㎉                      kcal
+㎊                      pF
+㎋                      nF
+㎌                      µF
+㎍                      µg
+㎎                      mg
+㎏                      kg
+㎐                      Hz
+㎑                      kHz
+㎒                      MHz
+㎓                      GHz
+㎔                      THz
+㎕                      µL
+㎖                      mL
+㎗                      dL
+㎘                      kL
+㎙                      fm
+㎚                      nm
+㎛                      µm
+㎜                      mm
+㎝                      cm
+㎞                      km
+㎟                      mm^2
+㎠                      cm^2
+㎡                      m^2
+㎢                      km^2
+㎣                      mm^3
+㎤                      cm^3
+㎥                      m^3
+㎦                      km^3
+㎧                      m/s
+㎨                      m/s^2
+㎩                      Pa
+㎪                      kPa
+㎫                      MPa
+㎬                      GPa
+㎭                      rad
+㎮                      rad/s
+㎯                      rad/s^2
+㎰                      ps
+㎱                      ns
+㎲                      µs
+㎳                      ms
+㎴                      pV
+㎵                      nV
+㎶                      µV
+㎷                      mV
+㎸                      kV
+㎹                      MV
+㎺                      pW
+㎻                      nW
+㎼                      µW
+㎽                      mW
+㎾                      kW
+㎿                      MW
+㏀                      kΩ
+㏁                      MΩ
+㏃                      Bq
+㏄                      cc
+㏅                      cd
+㏆                      C/kg
+㏈()                    dB
+㏉                      Gy
+㏊                      ha
+# ㏋  HP??
+㏌                      in
+# ㏍                      KK??
+# ㏎                      KM???
+㏏                      kt
+㏐                      lm
+# ㏑                      ln
+# ㏒                      log
+㏓                      lx
+㏔                      mb
+㏕                      mil
+㏖                      mol
+㏗()                    pH
+㏙                      ppm
+#   ㏚     PR???
+㏛                      sr
+㏜                      Sv
+㏝                      Wb
+#㏞                      V/m     Invalid on Mac
+#㏟                      A/m     Invalid on Mac
+#㏿                      gal     Invalid on Mac
+
+!endutf8

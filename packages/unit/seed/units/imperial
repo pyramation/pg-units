@@ -1,0 +1,87 @@
+
+
+#
+# Units derived from imperial system
+#
+
+ouncedal                oz ft / s^2     # force which accelerates an ounce
+                                        #    at 1 ft/s^2
+poundal                 lb ft / s^2     # same thing for a pound
+tondal                  longton ft / s^2    # and for a ton
+pdl                     poundal
+osi                     ounce force / inch^2   # used in aviation
+psi                     pound force / inch^2
+psia                    psi             # absolute pressure
+                                        #   Note that gauge pressure can be given
+                                        #   using the gaugepressure() and
+                                        #   psig() nonlinear unit definitions
+tsi                     ton force / inch^2
+reyn                    psi sec
+slug                    lbf s^2 / ft
+slugf                   slug force
+slinch                  lbf s^2 / inch  # Mass unit derived from inch second
+slinchf                 slinch force    #   pound-force system.  Used in space
+                                        #   applications where in/sec^2 was a
+                                        #   natural acceleration measure.
+geepound                slug
+lbf                     lb force
+tonf                    ton force
+lbm                     lb
+kip                     1000 lbf     # from kilopound
+ksi                     kip / in^2
+mil                     0.001 inch
+thou                    0.001 inch
+tenth                   0.0001 inch  # one tenth of one thousandth of an inch
+millionth               1e-6 inch    # one millionth of an inch
+circularinch            1|4 pi in^2  # area of a one-inch diameter circle
+circleinch              circularinch #    A circle with diameter d inches has
+                                     #    an area of d^2 circularinches
+cylinderinch         circleinch inch # Cylinder h inch tall, d inches diameter
+                                     #    has volume d^2 h cylinder inches
+circularmil             1|4 pi mil^2 # area of one-mil diameter circle
+cmil                    circularmil
+
+cental                  100 pound
+centner                 cental
+caliber                 0.01 inch    # for measuring bullets
+duty                    ft lbf
+celo                    ft / s^2
+jerk                    ft / s^3
+australiapoint          0.01 inch    # The "point" is used to measure rainfall
+                                     #   in Australia
+sabin                   ft^2         # Measure of sound absorption equal to the
+                                     #   absorbing power of one square foot of
+                                     #   a perfectly absorbing material.  The
+                                     #   sound absorptivity of an object is the
+                                     #   area times a dimensionless
+                                     #   absorptivity coefficient.
+standardgauge          4 ft + 8.5 in # Standard width between railroad track
+flag                   5 ft^2        # Construction term referring to sidewalk.
+rollwallpaper          30 ft^2       # Area of roll of wall paper
+fillpower              in^3 / ounce  # Density of down at standard pressure.
+                                     #   The best down has 750-800 fillpower.
+pinlength              1|16 inch     # A #17 pin is 17/16 in long in the USA.
+buttonline             1|40 inch     # The line was used in 19th century USA
+                                     #   to measure width of buttons.
+beespace               1|4 inch      # Bees will fill any space that is smaller
+                                     #   than the bee space and leave open
+                                     #   spaces that are larger.  The size of
+                                     #   the space varies with species.
+diamond                8|5 ft        # Marking on US tape measures that is
+                                     #   useful to carpenters who wish to place
+                                     #   five studs in an 8 ft distance.  Note
+                                     #   that the numbers appear in red every
+                                     #   16 inches as well, giving six
+                                     #   divisions in 8 feet.
+retmaunit              1.75 in       # Height of rack mountable equipment.
+U                      retmaunit     #   Equipment should be 1|32 inch narrower
+RU                     U             #   than its U measurement indicates to
+                                     #   allow for clearance, so 4U=(6+31|32)in
+                                     #   RETMA stands for the former name of
+                                     #   the standardizing organization, Radio
+                                     #   Electronics Television Manufacturers
+                                     #   Association.  This organization is now
+                                     #   called the Electronic Industries
+                                     #   Alliance (EIA) and the rack standard
+                                     #   is specified in EIA RS-310-D.
+count                  per pound     # For measuring the size of shrimp

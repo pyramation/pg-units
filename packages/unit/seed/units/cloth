@@ -1,0 +1,45 @@
+#
+# yarn and cloth measures
+#
+
+# yarn linear density
+
+woolyarnrun             1600 yard/pound # 1600 yds of "number 1 yarn" weighs
+                                        # a pound.
+yarncut                 300 yard/pound  # Less common system used in
+                                        # Pennsylvania for wool yarn
+cottonyarncount         840 yard/pound
+linenyarncount          300 yard/pound  # Also used for hemp and ramie
+worstedyarncount        1680 ft/pound
+metricyarncount         meter/gram
+denier                  1|9 tex            # used for silk and rayon
+manchesteryarnnumber    drams/1000 yards   # old system used for silk
+pli                     lb/in
+typp                    1000 yd/lb   # abbreviation for Thousand Yard Per Pound
+asbestoscut             100 yd/lb    # used for glass and asbestos yarn
+
+tex                     gram / km    # rational metric yarn measure, meant
+drex                    0.1 tex      # to be used for any kind of yarn
+poumar                  lb / 1e6 yard
+
+# yarn and cloth length
+
+skeincotton             80*54 inch   # 80 turns of thread on a reel with a
+                                     #  54 in circumference (varies for other
+                                     #  kinds of thread)
+cottonbolt              120 ft       # cloth measurement
+woolbolt                210 ft
+bolt                    cottonbolt
+heer                    600 yards
+cut                     300 yards    # used for wet-spun linen yarn
+lea                     300 yards
+
+sailmakersyard          28.5 in
+sailmakersounce         oz / sailmakersyard 36 inch
+
+silkmomme               momme / 25 yards 1.49 inch  # Traditional silk weight
+silkmm                  silkmomme        # But it is also defined as
+                                         # lb/100 yd 45 inch.  The two
+                                         # definitions are slightly different
+                                         # and neither one seems likely to be
+                                         # the true source definition.

@@ -1,0 +1,397 @@
+#
+# United States units
+#
+
+# linear measure
+
+# The US Metric Law of 1866 legalized the metric system in the USA and
+# defined the meter in terms of the British system with the exact
+# 1 meter = 39.37 inches.  On April 5, 1893 Thomas Corwin Mendenhall,
+# Superintendent of Weights and Measures, decided, in what has become
+# known as the "Mendenhall Order" that the meter and kilogram would be the
+# fundamental standards in the USA.  The definition from 1866 was turned
+# around to give an exact definition of the yard as 3600|3937 meters This
+# definition was used until July of 1959 when the definition was changed
+# to bring the US and other English-speaking countries into agreement; the
+# Canadian value of 1 yard = 0.9144 meter (exactly) was chosen because it
+# was approximately halfway between the British and US values; it had the
+# added advantage of making 1 inch = 25.4 mm (exactly).  Since 1959, the
+# "international" foot has been exactly 0.3048 meters.  At the same time,
+# it was decided that any data expressed in feet derived from geodetic
+# surveys within the US would continue to use the old definition and call
+# the old unit the "survey foot." The US continues to define the statute
+# mile, furlong, chain, rod, link, and fathom in terms of the US survey
+# foot.
+# Sources:
+# NIST Special Publication 447, Sects. 5, 7, and 8.
+# NIST Handbook 44, 2011 ed., Appendix C.
+# Canadian Journal of Physics, 1959, 37:(1) 84, 10.1139/p59-014.
+
+US                      1200|3937 m/ft   # These four values will convert
+US-                     US               #   international measures to
+survey-                 US               #   US Survey measures
+geodetic-               US
+int                     3937|1200 ft/m   # Convert US Survey measures to
+int-                    int              #   international measures
+
+yard                    3 ft
+yd                      yard
+mile                    5280 ft          # The mile was enlarged from 5000 ft
+                                         # to this number in order to make
+                                         # it an even number of furlongs.
+                                         # (The Roman mile is 5000 romanfeet.)
+line                    1|12 inch  # Also defined as '.1 in' or as '1e-8 Wb'
+rod                     5.5 yard
+perch                   rod
+furlong                 40 rod           # From "furrow long"
+statutemile             mile
+league                  3 mile           # Intended to be an an hour's walk
+
+# surveyor's measure
+
+surveyorschain          66 surveyft
+surveychain             surveyorschain
+surveyorspole           1|4 surveyorschain
+surveyorslink           1|100 surveyorschain
+chain                   66 ft
+link                    1|100 chain
+ch                      chain
+USacre                  10 surveychain^2
+intacre                 10 chain^2       # Acre based on international ft
+intacrefoot             acre foot
+USacrefoot              USacre surveyfoot
+acrefoot                intacrefoot
+acre                    intacre
+section                 mile^2
+township                36 section
+homestead               160 acre # Area of land granted by the 1862 Homestead
+                                 # Act of the United States Congress
+gunterschain            surveyorschain
+
+engineerschain          100 ft
+engineerslink           1|100 engineerschain
+ramsdenschain           engineerschain
+ramsdenslink            engineerslink
+
+gurleychain             33 feet           # Andrew Ellicott chain is the
+gurleylink              1|50 gurleychain  # same length
+
+wingchain               66 feet           # Chain from 1664, introduced by
+winglink                1|80 wingchain    # Vincent Wing, also found in a
+                                          # 33 foot length with 40 links.
+# early US length standards
+
+# The US has had four standards for the yard: one by Troughton of London
+# (1815); bronze yard #11 (1856); the Mendhall yard (1893), consistent
+# with the definition of the meter in the metric joint resolution of
+# Congress in 1866, but defining the yard in terms of the meter; and the
+# international yard (1959), which standardized definitions for Australia,
+# Canada, New Zealand, South Africa, the UK, and the US.
+# Sources: Pat Naughtin (2009), Which Inch?, www.metricationmatters.com;
+# Lewis E.  Barbrow and Lewis V.  Judson (1976).  NBS Special Publication
+# 447, Weights and Measures Standards of the United States: A Brief
+# History.
+
+troughtonyard           914.42190 mm
+bronzeyard11            914.39980 mm
+mendenhallyard          surveyyard
+internationalyard       yard
+
+# nautical measure
+
+fathom                  6 ft     # Originally defined as the distance from
+                                 #   fingertip to fingertip with arms fully
+                                 #   extended.
+nauticalmile            1852 m   # Supposed to be one minute of latitude at
+                                 # the equator.  That value is about 1855 m.
+                                 # Early estimates of the earth's circumference
+                                 # were a bit off.  The value of 1852 m was
+                                 # made the international standard in 1929.
+                                 # The US did not accept this value until
+                                 # 1954.  The UK switched in 1970.
+
+cable                   1|10 nauticalmile
+intcable                cable              # international cable
+cablelength             cable
+UScable                 100 USfathom
+navycablelength         720 USft           # used for depth in water
+marineleague            3 nauticalmile
+geographicalmile        brnauticalmile
+knot                    nauticalmile / hr
+click                   km       # US military slang
+klick                   click
+
+# Avoirdupois weight
+
+pound                   0.45359237 kg   # The one normally used
+lb                      pound           # From the latin libra
+grain                   1|7000 pound    # The grain is the same in all three
+                                        # weight systems.  It was originally
+                                        # defined as the weight of a barley
+                                        # corn taken from the middle of the
+                                        # ear.
+ounce                   1|16 pound
+oz                      ounce
+dram                    1|16 ounce
+dr                      dram
+ushundredweight         100 pounds
+cwt                     hundredweight
+shorthundredweight      ushundredweight
+uston                   shortton
+shortton                2000 lb
+quarterweight           1|4 uston
+shortquarterweight      1|4 shortton
+shortquarter            shortquarterweight
+
+# Troy Weight.  In 1828 the troy pound was made the first United States
+# standard weight.  It was to be used to regulate coinage.
+
+troypound               5760 grain
+troyounce               1|12 troypound
+ozt                     troyounce
+pennyweight             1|20 troyounce  # Abbreviated "d" in reference to a
+dwt                     pennyweight     #   Frankish coin called the "denier"
+                                        #   minted in the late 700's.  There
+                                        #   were 240 deniers to the pound.
+assayton                mg ton / troyounce  # mg / assayton = troyounce / ton
+usassayton              mg uston / troyounce
+brassayton              mg brton / troyounce
+fineounce               troyounce       # A troy ounce of 99.5% pure gold
+
+# Some other jewelers units
+
+metriccarat             0.2 gram        # Defined in 1907
+metricgrain             50 mg
+carat                   metriccarat
+ct                      carat
+jewelerspoint           1|100 carat
+silversmithpoint        1|4000 inch
+momme                   3.75 grams      # Traditional Japanese unit based
+                                        # on the chinese mace.  It is used for
+                                        # pearls in modern times and also for
+                                        # silk density.  The definition here
+                                        # was adopted in 1891.
+# Apothecaries' weight
+
+appound                 troypound
+apounce                 troyounce
+apdram                  1|8 apounce
+apscruple               1|3 apdram
+
+# Liquid measure
+
+usgallon                231 in^3        # US liquid measure is derived from
+gallon                  usgallon
+gal                     gallon          # the British wine gallon of 1707.
+quart                   1|4 gallon      # See the "winegallon" entry below
+pint                    1|2 quart       # more historical information.
+gill                    1|4 pint
+usquart                 1|4 usgallon
+uspint                  1|2 usquart
+usgill                  1|4 uspint
+usfluidounce            1|16 uspint
+fluiddram               1|8 usfloz
+minimvolume             1|60 fluiddram
+qt                      quart
+pt                      pint
+floz                    fluidounce
+usfloz                  usfluidounce
+fldr                    fluiddram
+liquidbarrel            31.5 usgallon
+usbeerbarrel            2 beerkegs
+beerkeg                 15.5 usgallon   # Various among brewers
+ponykeg                 1|2 beerkeg
+winekeg                 12 usgallon
+petroleumbarrel         42 usgallon     # Originated in Pennsylvania oil
+barrel                  petroleumbarrel # fields, from the winetierce
+bbl                     barrel
+ushogshead              2 liquidbarrel
+usfirkin                9 usgallon
+
+# Dry measures: The Winchester Bushel was defined by William III in 1702 and
+# legally adopted in the US in 1836.
+
+usbushel                2150.42 in^3  # Volume of 8 inch cylinder with 18.5
+bu                      bushel        # inch diameter (rounded)
+peck                    1|4 bushel
+uspeck                  1|4 usbushel
+brpeck                  1|4 brbushel
+pk                      peck
+drygallon               1|2 uspeck
+dryquart                1|4 drygallon
+drypint                 1|2 dryquart
+drybarrel               7056 in^3     # Used in US for fruits, vegetables,
+                                      #   and other dry commodities except for
+                                      #   cranberries.
+cranberrybarrel         5826 in^3     # US cranberry barrel
+heapedbushel            1.278 usbushel# The following explanation for this
+                                      #   value was provided by Wendy Krieger
+                                      #   <os2fan2@yahoo.com> based on
+                                      #   guesswork.  The cylindrical vessel is
+                                      #   18.5 inches in diameter and 1|2 inch
+                                      #   thick.  A heaped bushel includes the
+                                      #   contents of this cylinder plus a heap
+                                      #   on top.  The heap is a cone 19.5
+                                      #   inches in diameter and 6 inches
+                                      #   high.  With these values, the volume
+                                      #   of the bushel is 684.5 pi in^3 and
+                                      #   the heap occupies 190.125 pi in^3.
+                                      #   Therefore, the heaped bushel is
+                                      #   874.625|684.5 bushels.  This value is
+                                      #   approximately 1.2777575 and it rounds
+                                      #   to the value listed for the size of
+                                      #   the heaped bushel.  Sometimes the
+                                      #   heaped bushel is reported as 1.25
+                                      #   bushels.  This same explanation gives
+                                      #   that value if the heap is taken to
+                                      #   have an 18.5 inch diameter.
+
+# Grain measures.  The bushel as it is used by farmers in the USA is actually
+# a measure of mass which varies for different commodities.  Canada uses the
+# same bushel masses for most commodities, but not for oats.
+
+wheatbushel             60 lb
+soybeanbushel           60 lb
+cornbushel              56 lb
+ryebushel               56 lb
+barleybushel            48 lb
+oatbushel               32 lb
+ricebushel              45 lb
+canada_oatbushel        34 lb
+
+# Wine and Spirits measure
+
+ponyvolume              1 usfloz
+jigger                  1.5 usfloz   # Can vary between 1 and 2 usfloz
+shot                    jigger     # Sometimes 1 usfloz
+eushot                  25 ml      # EU standard spirits measure
+fifth                   1|5 usgallon
+winebottle              750 ml     # US industry standard, 1979
+winesplit               1|4 winebottle
+magnum                  1.5 liter  # Standardized in 1979, but given
+                                   # as 2 qt in some references
+metrictenth             375 ml
+metricfifth             750 ml
+metricquart             1 liter
+
+# Old British bottle size
+
+reputedquart            1|6 brgallon
+reputedpint             1|2 reputedquart
+brwinebottle            reputedquart       # Very close to 1|5 winegallon
+
+# French champagne bottle sizes
+
+split                   200 ml
+jeroboam                2 magnum
+rehoboam                3 magnum
+methuselah              4 magnum
+imperialbottle          4 magnum
+salmanazar              6 magnum
+balthazar               8 magnum
+nebuchadnezzar          10 magnum
+solomon                 12 magnum
+melchior                12 magnum
+sovereign               17.5 magnum
+primat                  18 magnum
+goliath                 18 magnum
+melchizedek             20 magnum
+midas                   20 magnum
+
+# The wine glass doesn't seem to have an official standard, but the same value
+# is suggested by several organization. 
+
+# https://www.rethinkingdrinking.niaaa.nih.gov/
+# http://www.rethinkyourdrinking.ca/what-is-a-standard-drink/
+# https://www.drinkaware.co.uk/
+# https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/545937/UK_CMOs__report.pdf
+# http://www.alcohol.gov.au/internet/alcohol/publishing.nsf/content/drinksguide-cnt
+
+wineglass               150 mL     # the size of a "typical" serving
+
+# A unit of alcohol is a specified mass of pure ethyl alcohol.
+# The term is used officially in the UK, but other countries use the same
+# concept but with different values.  For example, the UK value of 8 g is
+# nominally the amount of alcohol that a typical adult can metabolize in
+# one hour.  Values for several countries, converted to a volumetric basis:
+
+alcoholunitus           14 g   / ethanoldensity
+alcoholunitca           13.6 g / ethanoldensity
+alcoholunituk            8 g   / ethanoldensity
+alcoholunitau           10 g   / ethanoldensity
+
+# Example: for 12% ABV (alcohol by volume)
+# alcoholunitus / 12% = 147.8 mL, close to the “standard” serving of 150 mL.
+
+# Coffee 
+#
+# The recommended ratio of coffee to water. Values vary considerably;
+# one is from the  Specialty Coffee Association of America
+# http://scaa.org/?page=resources&d=brewing-best-practices
+
+coffeeratio             55 g/L  # ± 10%
+
+# other recommendations are more loose, e.g.,
+# http://www.ncausa.org/About-Coffee/How-to-Brew-Coffee
+
+
+#
+# Water is "hard" if it contains various minerals, expecially calcium
+# carbonate.
+#
+
+clarkdegree     grains/brgallon # Content by weigh of calcium carbonate
+gpg             grains/usgallon # Divide by water's density to convert to
+                                #   a dimensionless concentration measure
+#
+# Shoe measures
+#
+
+shoeiron                1|48 inch    # Used to measure leather in soles
+shoeounce               1|64 inch    # Used to measure non-sole shoe leather
+
+# USA shoe sizes.  These express the length of the shoe or the length
+# of the "last", the form that the shoe is made on.  But note that
+# this only captures the length.  It appears that widths change 1/4
+# inch for each letter within the same size, and if you change the
+# length by half a size then the width changes between 1/8 inch and
+# 1/4 inch.  But this may not be standard.  If you know better, please
+# contact me.
+
+shoesize_delta          1|3 inch     # USA shoe sizes differ by this amount
+shoe_men0               8.25 inch
+shoe_women0             (7+11|12) inch
+shoe_boys0              (3+11|12) inch
+shoe_girls0             (3+7|12) inch
+
+shoesize_men(n) units=[1;inch]   shoe_men0 + n shoesize_delta ; \
+                                (shoesize_men+(-shoe_men0))/shoesize_delta
+shoesize_women(n) units=[1;inch] shoe_women0 + n shoesize_delta ; \
+                                (shoesize_women+(-shoe_women0))/shoesize_delta
+shoesize_boys(n) units=[1;inch]  shoe_boys0 + n shoesize_delta ; \
+                                (shoesize_boys+(-shoe_boys0))/shoesize_delta
+shoesize_girls(n) units=[1;inch] shoe_girls0 + n shoesize_delta ; \
+                                (shoesize_girls+(-shoe_girls0))/shoesize_delta
+
+# European shoe size.  According to
+#      http://www.shoeline.com/footnotes/shoeterm.shtml
+# shoe sizes in Europe are measured with Paris points which simply measure
+# the length of the shoe.
+
+europeshoesize          2|3 cm
+
+#
+# USA slang units
+#
+
+buck                    US$
+fin                     5 US$
+sawbuck                 10 US$
+usgrand                 1000 US$
+greenback               US$
+key                     kg           # usually of marijuana, 60's
+lid                     1 oz         # Another 60's weed unit
+footballfield           usfootballfield
+usfootballfield         100 yards
+canadafootballfield     110 yards    # And 65 yards wide
+marathon                26 miles + 385 yards

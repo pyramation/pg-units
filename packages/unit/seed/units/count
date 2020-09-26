@@ -1,0 +1,24 @@
+
+
+#
+# Counting measures
+#
+
+pair                    2
+brace                   2
+nest                    3     # often used for items like bowls that
+                              #   nest together
+hattrick                3     # Used in sports, especially cricket and ice
+                              #   hockey to report the number of goals.
+dicker                  10
+dozen                   12
+bakersdozen             13
+score                   20
+flock                   40
+timer                   40
+shock                   60
+toncount                100   # Used in sports in the UK
+longhundred             120   # From a germanic counting system
+gross                   144
+greatgross              12 gross
+tithe                   1|10  # From Anglo-Saxon word for tenth

@@ -1,0 +1,30 @@
+
+
+
+#
+# Old French distance measures, from French Weights and Measures
+# Before the Revolution by Zupko
+#
+
+frenchfoot              144|443.296 m     # pied de roi, the standard of Paris.
+pied                    frenchfoot        #   Half of the hashimicubit,
+frenchfeet              frenchfoot        #   instituted by Charlemagne.
+frenchinch              1|12 frenchfoot   #   This exact definition comes from
+frenchthumb             frenchinch        #   a law passed on 10 Dec 1799 which
+pouce                   frenchthumb       #   fixed the meter at
+                                          #   3 frenchfeet + 11.296 lignes.
+frenchline              1|12 frenchinch   # This is supposed to be the size
+ligne                   frenchline        #   of the average barleycorn
+frenchpoint             1|12 frenchline
+toise                   6 frenchfeet
+arpent                  180^2 pied^2      # The arpent is 100 square perches,
+                                          # but the perche seems to vary a lot
+                                          # and can be 18 feet, 20 feet, or 22
+                                          # feet.  This measure was described
+                                          # as being in common use in Canada in
+                                          # 1934 (Websters 2nd).  The value
+                                          # given here is the Paris standard
+                                          # arpent.
+frenchgrain             1|18827.15 kg     # Weight of a wheat grain, hence
+                                          # smaller than the British grain.
+frenchpound             9216 frenchgrain

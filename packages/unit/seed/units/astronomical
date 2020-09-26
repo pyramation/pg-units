@@ -1,0 +1,498 @@
+#
+# Astronomical time measurements
+#
+# Astronomical time measurement is a complicated matter.  The length of the
+# true day at a given place can be 21 seconds less than 24 hours or 30 seconds
+# over 24 hours.  The two main reasons for this are the varying speed of the
+# earth in its elliptical orbit and the fact that the sun moves on the ecliptic
+# instead of along the celestial equator.  To devise a workable system for time
+# measurement, Simon Newcomb (1835-1909) used a fictitious "mean sun".
+# Consider a first fictitious sun traveling along the ecliptic at a constant
+# speed and coinciding with the true sun at perigee and apogee.  Then
+# considering a second fictitious sun traveling along the celestial equator at
+# a constant speed and coinciding with the first fictitious sun at the
+# equinoxes.  The second fictitious sun is the "mean sun".  From this equations
+# can be written out to determine the length of the mean day, and the tropical
+# year.  The length of the second was determined based on the tropical year
+# from such a calculation and was officially used from 1960-1967 until atomic
+# clocks replaced astronomical measurements for a standard of time.  All of the
+# values below give the mean time for the specified interval.
+#
+# See "Mathematical Astronomy Morsels" by Jean Meeus for more details
+# and a description of how to compute the correction to mean time.
+#
+
+TIME                    second
+
+anomalisticyear         365.2596 days       # The time between successive
+                                            #   perihelion passages of the
+                                            #   earth.
+siderealyear            365.256360417 day   # The time for the earth to make
+                                            #   one revolution around the sun
+                                            #   relative to the stars.
+tropicalyear            365.242198781 day   # The time needed for the mean sun
+                                            #   as defined above to increase
+                                            #   its longitude by 360 degrees.
+                                            #   Most references defined the
+                                            #   tropical year as the interval
+                                            #   between vernal equinoxes, but
+                                            #   this is misleading.  The length
+                                            #   of the season changes over time
+                                            #   because of the eccentricity of
+                                            #   the earth's orbit.  The time
+                                            #   between vernal equinoxes is
+                                            #   approximately 365.24237 days
+                                            #   around the year 2000.  See
+                                            #   "Mathematical Astronomy
+                                            #   Morsels" for more details.
+eclipseyear             346.62 days         # The line of nodes is the
+                                            #   intersection of the plane of
+                                            #   Earth's orbit around the sun
+                                            #   with the plane of the moon's
+                                            #   orbit around earth.  Eclipses
+                                            #   can only occur when the moon
+                                            #   and sun are close to this
+                                            #   line.  The line rotates and
+                                            #   appearances of the sun on the
+                                            #   line of nodes occur every
+                                            #   eclipse year.
+saros                   223 synodicmonth    # The earth, moon and sun appear in
+                                            #   the same arrangement every
+                                            #   saros, so if an eclipse occurs,
+                                            #   then one saros later, a similar
+                                            #   eclipse will occur.  (The saros
+                                            #   is close to 19 eclipse years.)
+                                            #   The eclipse will occur about
+                                            #   120 degrees west of the
+                                            #   preceeding one because the
+                                            #   saros is not an even number of
+                                            #   days.  After 3 saros, an
+                                            #   eclipse will occur at
+                                            #   approximately the same place.
+siderealday             86164.09054 s       # The sidereal day is the interval
+siderealhour            1|24 siderealday    #   between two successive transits
+siderealminute          1|60 siderealhour   #   of a star over the meridian,
+siderealsecond          1|60 siderealminute #   or the time required  for the
+                                            #   earth to make one rotation
+                                            #   relative to the stars.  The
+                                            #   more usual solar day is the
+                                            #   time required to make a
+                                            #   rotation relative to the sun.
+                                            #   Because the earth moves in its
+                                            #   orbit, it has to turn a bit
+                                            #   extra to face the sun again,
+                                            #   hence the solar day is slightly
+                                            #   longer.
+anomalisticmonth        27.55454977 day     # Time for the moon to travel from
+                                            #   perigee to perigee
+nodicalmonth            27.2122199 day      # The nodes are the points where
+draconicmonth           nodicalmonth        #   an orbit crosses the ecliptic.
+draconiticmonth         nodicalmonth        #   This is the time required to
+                                            #   travel from the ascending node
+                                            #   to the next ascending node.
+siderealmonth           27.321661 day       # Time required for the moon to
+                                            #   orbit the earth
+lunarmonth              29 days + 12 hours + 44 minutes + 2.8 seconds
+                                            # Mean time between full moons.
+synodicmonth            lunarmonth          #   Full moons occur when the sun
+lunation                synodicmonth        #   and moon are on opposite sides
+lune                    1|30 lunation       #   of the earth.  Since the earth
+lunour                  1|24 lune           #   moves around the sun, the moon
+                                            #   has to revolve a bit extra to
+                                            #   get into the full moon
+                                            #   configuration.
+year                    tropicalyear
+yr                      year
+month                   1|12 year
+mo                      month
+lustrum                 5 years             # The Lustrum was a Roman
+                                            #   purification ceremony that took
+                                            #   place every five years.
+                                            #   Classically educated Englishmen
+                                            #   used this term.
+decade                  10 years
+century                 100 years
+millennium              1000 years
+millennia               millennium
+solaryear               year
+lunaryear               12 lunarmonth
+calendaryear            365 day
+commonyear              365 day
+leapyear                366 day
+julianyear              365.25 day
+gregorianyear           365.2425 day
+islamicyear             354 day          # A year of 12 lunar months. They
+islamicleapyear         355 day          # began counting on July 16, AD 622
+                                         # when Muhammad emigrated to Medina
+                                         # (the year of the Hegira).  They need
+                                         # 11 leap days in 30 years to stay in
+                                         # sync with the lunar year which is a
+                                         # bit longer than the 29.5 days of the
+                                         # average month.  The months do not
+                                         # keep to the same seasons, but
+                                         # regress through the seasons every
+                                         # 32.5 years.
+islamicmonth            1|12 islamicyear # They have 29 day and 30 day months.
+
+# The Hewbrew year is also based on lunar months, but synchronized to the solar
+# calendar.  The months vary irregularly between 29 and 30 days in length, and
+# the years likewise vary.  The regular year is 353, 354, or 355 days long.  To
+# keep up with the solar calendar, a leap month of 30 days is inserted every
+# 3rd, 6th, 8th, 11th, 14th, 17th, and 19th years of a 19 year cycle.  This
+# gives leap years that last 383, 384, or 385 days.
+
+
+# Sidereal days
+
+mercuryday              58.6462 day
+venusday                243.01 day        # retrograde
+earthday                siderealday
+marsday                 1.02595675 day
+jupiterday              0.41354 day
+saturnday               0.4375 day
+uranusday               0.65 day          # retrograde
+neptuneday              0.768 day
+plutoday                6.3867 day
+
+# Sidereal years from http://ssd.jpl.nasa.gov/phys_props_planets.html.  Data
+# was updated in May 2001 based on the 1992 Explanatory Supplement to the
+# Astronomical Almanac and the mean longitude rates.  Apparently the table of
+# years in that reference is incorrect.
+
+mercuryyear             0.2408467 julianyear
+venusyear               0.61519726 julianyear
+earthyear               siderealyear
+marsyear                1.8808476 julianyear
+jupiteryear             11.862615 julianyear
+saturnyear              29.447498 julianyear
+uranusyear              84.016846 julianyear
+neptuneyear             164.79132 julianyear
+plutoyear               247.92065 julianyear
+
+# Objects on the earth are charted relative to a perfect ellipsoid whose
+# dimensions are specified by different organizations.  The ellipsoid is
+# specified by an equatorial radius and a flattening value which defines the
+# polar radius.  These values are the 1996 values given by the International
+# Earth Rotation Service (IERS) whose reference documents can be found at
+# http://maia.usno.navy.mil/
+
+earthflattening         1|298.25642
+earthradius_equatorial  6378136.49 m
+earthradius_polar       (-earthflattening+1) earthradius_equatorial
+
+landarea                148.847e6 km^2
+oceanarea               361.254e6 km^2
+
+moonradius              1738 km         # mean value
+sunradius               6.96e8 m
+
+# Many astronomical values can be measured most accurately in a system of units
+# using the astronomical unit and the mass of the sun as base units.  The
+# uncertainty in the gravitational constant makes conversion to SI units
+# significantly less accurate.
+
+# The astronomical unit was defined to be the length of the of the semimajor
+# axis of a massless object with the same year as the earth.  With such a
+# definition in force, and with the mass of the sun set equal to one, Kepler's
+# third law can be used to solve for the value of the gravitational constant.
+
+# Kepler's third law says that (2 pi / T)^2 a^3 = G M where T is the orbital
+# period, a is the size of the semimajor axis, G is the gravitational constant
+# and M is the mass.  With M = 1 and T and a chosen for the earth's orbit, we
+# find sqrt(G) = (2 pi / T) sqrt(AU^3).  This constant is called the Gaussian
+# gravitational constant, apparently because Gauss originally did the
+# calculations.  However, when the original calculation was done, the value
+# for the length of the earth's year was inaccurate.  The value used is called
+# the Gaussian year.  Changing the astronomical unit to bring it into
+# agreement with more accurate values for the year would have invalidated a
+# lot of previous work, so instead the astronomical unit has been kept equal
+# to this original value.  This is accomplished by using a standard value for
+# the Gaussian gravitational constant.  This constant is called k.
+# Many values below are from http://ssd.jpl.nasa.gov/?constants
+
+gauss_k                 0.01720209895   # This beast has dimensions of
+                                        # au^(3|2) / day and is exact.
+gaussianyear      (2 pi / gauss_k) days # Year that corresponds to the Gaussian
+                                        # gravitational constant. This is a
+                                        # fictional year, and doesn't
+                                        # correspond to any celestial event.
+astronomicalunit         149597870700 m # IAU definition from 2012, exact
+au                     astronomicalunit # ephemeris for the above described
+                                        # astronomical unit.  (See the NASA
+                                        # site listed above.)
+parsec                  au / 4.84813681113334e-06
+#parsec                 au / tan(arcsec)    # Unit of length equal to distance
+pc                      parsec              #   from the sun to a point having
+                                            #   heliocentric parallax of 1
+                                            #   arcsec (derived from parallax
+                                            #   second).  A distant object with
+                                            #   paralax theta will be about
+                                            #   (arcsec/theta) parsecs from the
+                                            #   sun (using the approximation
+                                            #   that tan(theta) = theta).
+solarmass                  1.9891e30 kg
+sunmass                       solarmass
+
+
+sundist                 1.0000010178 au # mean earth-sun distance
+moondist                3.844e8 m       # mean earth-moon distance
+sundist_near            1.471e11 m      # earth-sun distance at perihelion
+sundist_far             1.521e11 m      # earth-sun distance at aphelion
+moondist_min		3.564e8 m	# approximate least distance at
+                                        #    perigee 1901-2300
+moondist_max		4.067e8 m	# approximate greatest distance at
+                                        #    apogee 1901-2300
+
+
+# The following are masses for planetary systems, not just the planet itself.
+# The comments give the uncertainty in the denominators.  As noted above,
+# masses are given relative to the solarmass because this is more accurate.
+# The conversion to SI is uncertain because of uncertainty in G, the
+# gravitational constant.
+#
+# Values are from http://ssd.jpl.nasa.gov/astro_constants.html
+
+mercurymass             solarmass / 6023600   # 250
+venusmass               solarmass / 408523.71 # 0.06
+earthmoonmass           solarmass / 328900.56 # 0.02
+marsmass                solarmass / 3098708   # 9
+jupitermass             solarmass / 1047.3486 # 0.0008
+saturnmass              solarmass / 3497.898  # 0.018
+uranusmass              solarmass / 22902.98  # 0.03
+neptunemass             solarmass / 19412.24  # 0.04
+plutomass               solarmass / 1.35e8    # 0.07e8
+
+moonearthmassratio      0.012300034 # uncertainty 3e-9
+earthmass               earthmoonmass / ( 1 + moonearthmassratio)
+moonmass                moonearthmassratio earthmass
+
+# These are the old values for the planetary masses.  They may give
+# the masses of the planets alone.
+
+oldmercurymass             0.33022e24 kg
+oldvenusmass               4.8690e24 kg
+oldmarsmass                0.64191e24 kg
+oldjupitermass             1898.8e24 kg
+oldsaturnmass              568.5e24 kg
+olduranusmass              86.625e24 kg
+oldneptunemass             102.78e24 kg
+oldplutomass               0.015e24 kg
+
+# Mean radius from http://ssd.jpl.nsaa.gov/phys_props_planets.html which in
+# turn cites Global Earth Physics by CF Yoder, 1995.
+
+mercuryradius           2440 km
+venusradius             6051.84 km
+earthradius             6371.01 km
+marsradius              3389.92 km
+jupiterradius           69911 km
+saturnradius            58232 km
+uranusradius            25362 km
+neptuneradius           24624 km
+plutoradius             1151 km
+
+moongravity             1.62 m/s^2
+
+# The Hubble constant gives the speed at which distance galaxies are moving
+# away from the earth according to v = H0*d, where H0 is the hubble constant
+# and d is the distance to the galaxy.
+
+hubble                  70 km/s/Mpc        # approximate
+H0                      hubble
+
+# Parallax is the angular difference between the topocentric (on Earth's
+# surface) and geocentric (at Earth's center) direction toward a celestial body
+# when the body is at a given altitude.  When the body is on the horizon, the
+# parallax is the horizontal parallax; when the body is on the horizon and the
+# observer is on the equator, the parallax is the equatorial horizontal
+# parallax.  When the body is at zenith, the parallax is zero.
+
+lunarparallax  asin(earthradius_equatorial / moondist) # Moon equatorial 
+moonhp         lunarparallax                           # horizontal parallax
+                                                       # at mean distance
+
+# Light from celestial objects is attenuated by passage through Earth's
+# atmosphere.  A body near the horizon passes through much more air than an
+# object at zenith, and is consequently less bright.  Air mass is the ratio of
+# the length of the optical path at a given altitude (angle above the horizon)
+# to the length at zenith.  Air mass at zenith is by definition unity; at the
+# horizon, air mass is approximately 38, though the latter value can vary
+# considerably with atmospheric conditions.  The general formula is # E = E0
+# exp(-c X), where E0 is the value outside Earth's atmosphere, E is the value
+# seen by an observer, X is the air mass and c is the extinction coefficient.
+# A common value for c in reasonably clear air is 0.21, but values can be
+# considerably greater in urban areas.  Apparent altitude is that perceived by
+# an observer; it includes the effect of atmospheric refraction.  There is no
+# shortage of formulas for air mass
+# (https://en.wikipedia.org/wiki/Air_mass_(astronomy)); all are subject to
+# variations in local atmospheric conditions.  The formula used here is simple
+# and is in good agreement with rigorously calculated values under standard
+# conditions.
+#
+# Extraterrestrial illuminance or luminance of an object at a given altitude
+# determined with vmag() or SB_xxx() below can be multiplied by
+# atm_transmission() or atm_transmissionz() to estimate the terrestrial value.
+#
+# Kasten and Young (1989) air mass formula. alt is apparent altitude
+# Reference:
+# Kasten, F., and A.T. Young. 1989. "Revised Optical Air Mass Tables
+#     and Approximation Formula."  Applied Optics.  Vol. 28, 4735–4738.
+#     Bibcode:1989ApOpt..28.4735K. doi:10.1364/AO.28.004735.
+
+airmass(alt) units=[degree;1] domain=[0,90] noerror \
+    1 / (sin(alt) + 0.50572 (alt / degree + 6.07995)^-1.6364)
+
+# zenith is apparent zenith angle (zenith = 90 deg - alt)
+airmassz(zenith) units=[degree;1] domain=[0,90] noerror \
+    1 / (cos(zenith) + 0.50572 (96.07995 - zenith / degree)^-1.6364)
+
+# For reasonably clear air at sea level; values may need adjustment for
+# elevation and local atmospheric conditions
+# for scotopic vision (510 nm), appropriate for the dark-adapted eye
+# extinction_coeff           0.26
+# for photopic vision, appropriate for observing brighter objects such
+# as the full moon
+extinction_coeff	0.21
+
+atm_transmission(alt) units=[degree;1] domain=[0,90] noerror \
+    exp(-extinction_coeff airmass(alt))
+
+# in terms of zenith angle (zenith = 90 deg - alt)
+atm_transmissionz(zenith) units=[degree;1] domain=[0,90] noerror \
+    exp(-extinction_coeff airmassz(zenith))
+
+# Moon and Sun data at mean distances
+moonvmag	-12.74	# Moon apparent visual magnitude at mean distance
+sunvmag		-26.74	# Sun apparent visual magnitude at mean distance
+moonsd	asin(moonradius / moondist) # Moon angular semidiameter at mean distance
+sunsd	asin(sunradius / sundist)   # Sun angular semidiameter at mean distance
+
+# Visual magnitude of star or other celestial object.  The system of stellar
+# magnitudes, developed in ancient Greece, assigned magnitudes from 1
+# (brightest) to 6 (faintest visible to the naked eye).  In 1856, British
+# astronomer Norman Pogson made the system precise, with a magnitude 1 object
+# 100 times as bright as a magnitude 6 object, and each magnitude differing
+# from the next by a constant ratio; the ratio, sometimes known as Pogson's
+# ratio, is thus 100^0.2, or approximately 2.5119.  The logarithm of 100^0.2 is
+# 0.4, hence the common use of powers of 10 and base-10 logarithms.
+#
+# Reference:
+# Allen, C.W. 1976.  Astrophysical Quantities, 3rd ed. 1973, reprinted
+#     with corrections, 1976.  London: Athlone.
+#
+# The function argument is the (dimensionless) visual magnitude; reference
+# illuminance of 2.54e-6 lx is from Allen (2000, 21), and is for outside
+# Earth's atmosphere.  Illuminance values can be adjusted to terrestrial values
+# by multiplying by one of the atm_transmission functions above.
+
+# Illuminance from apparent visual magnitude
+vmag(mag) units=[1;lx] domain=[,]  range=(0,] \
+    2.54e-6 lx 10^(-0.4 mag); -2.5 log(vmag / (2.54e-6 lx))
+
+# Surface brightness of a celestial object of a given visual magnitude
+# is a logarithmic measure of the luminance the object would have if its
+# light were emitted by an object of specified solid angle; it is
+# expressed in magnitudes per solid angle.  Surface brightness can be
+# obtained from the visual magnitude by
+#    S = m + 2.5 log(pi pi k a b),
+# where k is the phase (fraction illuminated), a is the equatorial
+# radius, and b is the polar radius.  For 100% illumination (e.g., full
+# moon), this is often simplified to
+#    S = m + 2.5 log(pi k s^2),
+# where s is the object's angular semidiameter; the units of s determine
+# the units of solid angle.  The visual magnitude and semidiameter must
+# be appropriate for the object's distance; for other than 100%
+# illumination, the visual magnitude must be appropriate for the phase.
+# Luminance values are for outside Earth's atmosphere; they can be
+# adjusted to terrestrial values by multiplying by one of the atm_transmission
+# functions above.
+
+# luminance from surface brightness in magnitudes per square degree
+SB_degree(sb) units=[1;cd/m^2] domain=[,] range=(0,] \
+    vmag(sb) / squaredegree ; \
+    ~vmag(SB_degree squaredegree)
+
+# luminance from surface brightness in magnitudes per square minute
+SB_minute(sb) units=[1;cd/m^2] domain=[,] range=(0,] \
+    vmag(sb) / squareminute ; \
+    ~vmag(SB_minute squareminute)
+
+# luminance from surface brightness in magnitudes per square second
+SB_second(sb) units=[1;cd/m^2] domain=[,] range=(0,] \
+    vmag(sb) / squaresecond ; \
+    ~vmag(SB_second squaresecond)
+
+# luminance from surface brightness in magnitudes per steradian
+SB_sr(sb) units=[1;cd/m^2] domain=[,] range=(0,] \
+    vmag(sb) / sr ; \
+    ~vmag(SB_sr sr)
+
+SB()		SB_second
+SB_sec()	SB_second
+SB_min()	SB_minute
+SB_deg()	SB_degree
+
+# The brightness of one tenth-magnitude star per square degree outside
+# Earth's atmosphere; often used for night sky brightness.
+S10	SB_degree(10)
+
+# Examples for magnitude and surface brightness functions
+# Sun illuminance from visual magnitude
+#     You have: sunvmag
+#     You want:
+# 	    Definition: -26.74 = -26.74
+#     You have: vmag(sunvmag)
+#     You want: lx
+# 	    * 126134.45
+# 	    / 7.9280482e-06
+#
+# Moon surface brightness from visual magnitude and semidiameter at 100%
+# illumination (full moon):
+#     You have: moonvmag
+#     You want:
+# 	    Definition: -12.74 = -12.74
+#     You have: moonsd
+#     You want: arcsec
+# 	    * 932.59484
+# 	    / 0.001072277
+#     You have: moonvmag + 2.5 log(pi 932.59484^2)
+#     You want:
+# 	    Definition: 3.3513397
+#
+# Similar example with specific data obtained from another source (JPL
+# Horizons, https://ssd.jpl.nasa.gov/horizons.cgi); semidiameter is in
+# arcseconds
+#
+#     You have: -12.9 + 2.5 log(pi 2023.201|2^2)
+#     You want:
+# 	    Definition: 3.3679199
+#     You have: SB_second(-12.9 + 2.5 log(pi 2023.201|2^2))
+#     You want:
+# 	    Definition: 4858.6547 cd / m^2
+#
+# If surface brightness is provided by another source (e.g., Horizons),
+# it can simply be used directly:
+# You have: SB_second(3.3679199)
+# You want: cd/m^2
+#         * 4858.6546
+#         / 0.0002058183
+# The illuminance and luminance values are extraterrestrial (outside
+# Earth's atmosphere).  The values at Earth's surface are less than these
+# because of atmospheric extinction.  For example, in the last example
+# above, if the Moon were at an altitude of 55 degrees, the terrestrial
+# luminance could be calculated with
+#     You have: SB_second(3.3679199)
+#     You want: cd/m^2
+# 	    * 4858.6546
+# 	    / 0.0002058183
+#     You have: _ atm_transmission(55 deg)
+#     You want: cd/m^2
+# 	    * 3760.6356
+# 	    / 0.0002659125
+# If desired, photographic exposure can be determined with EV100(),
+# leading to acceptable combinations of aperture and exposure time.
+# For the example above, but with the Moon at 10 degrees,
+#     You have: SB_second(3.3679199) atm_transmission(10 deg)
+#     You want: EV100
+# 	    13.553962
+

@@ -1,0 +1,27 @@
+# Arabic measures.  The arabic standards were meticulously kept.  Glass weights
+# accurate to .2 grains were made during AD 714-900.
+
+hashimicubit            25.56 in          # Standard of linear measure used
+                                          # in Persian dominions of the Arabic
+                                          # empire 7-8th cent.  Is equal to two
+                                          # French feet.
+
+blackcubit              21.28 in
+arabicfeet              1|2 blackcubit
+arabicfoot              arabicfeet
+arabicinch              1|12 arabicfoot
+arabicmile              4000 blackcubit
+
+silverdirhem            45 grain  # The weights were derived from these two
+tradedirhem             48 grain  # units with two identically named systems
+                                  # used for silver and used for trade purposes
+
+silverkirat             1|16 silverdirhem
+silverwukiyeh           10 silverdirhem
+silverrotl              12 silverwukiyeh
+arabicsilverpound       silverrotl
+
+tradekirat              1|16 tradedirhem
+tradewukiyeh            10 tradedirhem
+traderotl               12 tradewukiyeh
+arabictradepound        traderotl

@@ -1,0 +1,47 @@
+#
+# Units used for measuring volume of wood
+#
+
+cord                    4*4*8 ft^3   # 4 ft by 4 ft by 8 ft bundle of wood
+facecord                1|2 cord
+cordfoot                1|8 cord     # One foot long section of a cord
+cordfeet                cordfoot
+housecord               1|3 cord     # Used to sell firewood for residences,
+                                     #   often confusingly called a "cord"
+boardfoot               ft^2 inch    # Usually 1 inch thick wood
+boardfeet               boardfoot
+fbm                     boardfoot    # feet board measure
+stack                   4 yard^3     # British, used for firewood and coal [18]
+rick                    4 ft 8 ft 16 in # Stack of firewood, supposedly
+                                     #   sometimes called a face cord, but this
+                                     #   value is equal to 1|3 cord.  Name
+                                     #   comes from an old Norse word for a
+                                     #   stack of wood.
+stere                   m^3
+timberfoot              ft^3         # Used for measuring solid blocks of wood
+standard                120 12 ft 11 in 1.5 in  # This is the St Petersburg or
+                                     #   Pittsburg standard.  Apparently the
+                                     #   term is short for "standard hundred"
+                                     #   which was meant to refer to 100 pieces
+                                     #   of wood (deals).  However, this
+                                     #   particular standard is equal to 120
+                                     #   deals which are 12 ft by 11 in by 1.5
+                                     #   inches (not the standard deal).
+hoppusfoot               (4/pi) ft^3 # Volume calculation suggested in 1736
+hoppusboardfoot      1|12 hoppusfoot #   forestry manual by Edward Hoppus, for
+hoppuston              50 hoppusfoot #   estimating the usable volume of a log.
+                                     #   It results from computing the volume
+                                     #   of a cylindrical log of length, L, and
+                                     #   girth (circumference), G, by V=L(G/4)^2.
+                                     #   The hoppus ton is apparently still in
+                                     #   use for shipments from Southeast Asia.
+
+# In Britain, the deal is apparently any piece of wood over 6 feet long, over
+# 7 wide and 2.5 inches thick.  The OED doesn't give a standard size.  A piece
+# of wood less than 7 inches wide is called a "batten".  This unit is now used
+# exclusively for fir and pine.
+
+deal              12 ft 11 in 2.5 in # The standard North American deal [OED]
+wholedeal        12 ft 11 in 1.25 in # If it's half as thick as the standard
+                                     #   deal it's called a "whole deal"!
+splitdeal         12 ft 11 in 5|8 in # And half again as thick is a split deal.

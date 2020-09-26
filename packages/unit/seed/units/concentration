@@ -1,0 +1,27 @@
+#
+# Concentration measures
+#
+
+percent                 0.01
+%                       percent
+mill                    0.001     # Originally established by Congress in 1791
+                                  # as a unit of money equal to 0.001 dollars,
+                                  # it has come to refer to 0.001 in general.
+                                  # Used by some towns to set their property
+                                  # tax rate, and written with a symbol similar
+                                  # to the % symbol but with two 0's in the
+                                  # denominator.  [18]
+proof                   1|200     # Alcohol content measured by volume at
+                                  # 60 degrees Fahrenheit.  This is a USA
+                                  # measure.  In Europe proof=percent.
+ppm                     1e-6
+partspermillion         ppm
+ppb                     1e-9
+partsperbillion         ppb       # USA billion
+ppt                     1e-12
+partspertrillion        ppt       # USA trillion
+karat                   1|24      # measure of gold purity
+caratgold               karat
+gammil                  mg/l
+basispoint              0.01 %    # Used in finance
+fine                    1|1000    # Measure of gold purity

@@ -1,0 +1,23 @@
+#
+# Localization
+#
+
+!var UNITS_ENGLISH US
+hundredweight           ushundredweight
+ton                     uston
+scruple                 apscruple
+fluidounce              usfluidounce
+bushel                  usbushel
+quarter                 quarterweight
+cup                     uscup
+tablespoon              ustablespoon
+teaspoon                usteaspoon
+dollar                  US$
+cent                    $ 0.01
+penny                   cent
+minim                   minimvolume
+pony                    ponyvolume
+grand                   usgrand
+firkin                  usfirkin
+hogshead                ushogshead
+!endvar

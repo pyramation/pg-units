@@ -1,0 +1,17 @@
+ession, the conversion of 20
+                                         # drops per ml is actually used.
+bloodunit               450 ml           # For whole blood.  For blood
+                                         # components, a blood unit is the
+                                         # quanity of the component found in a
+                                         # blood unit of whole blood.  The
+                                         # human body contains about 12 blood
+                                         # units of whole blood.
+
+#
+# misc medical measure
+#
+
+frenchcathetersize      1|3 mm           # measure used for the outer diameter
+                                         # of a catheter
+charriere               frenchcathetersize
+

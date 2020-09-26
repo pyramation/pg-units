@@ -1,0 +1,161 @@
+
+#
+# Traditional Japanese units (shakkanhou)
+#
+# The traditional system of weights and measures is called shakkanhou from the
+# shaku and the ken.  Japan accepted SI units in 1891 and legalized conversions
+# to the traditional system.  In 1909 the inch-pound system was also legalized,
+# so Japan had three legally approved systems.  A change to the metric system
+# started in 1921 but there was a lot of resistance.  The Measurement Law of
+# October 1999 prohibits sales in anything but SI units.  However, the old
+# units still live on in construction and as the basis for paper sizes of books
+# and tools used for handicrafts.
+#
+# Note that units below use the Hepburn romanization system.  Some other
+# systems would render "mou", "jou", and "chou" as "mo", "jo" and "cho".
+#
+#
+# http://hiramatu-hifuka.com/onyak/onyindx.html
+
+# Japanese Proportions.  These are still in everyday use.  They also
+# get used as units to represent the proportion of the standard unit.
+
+wari_proportion      1|10
+wari                 wari_proportion
+bu_proportion        1|100    # The character bu can also be read fun or bun
+                              # but usually "bu" is used for units.
+rin_proportion       1|1000
+mou_proportion       1|10000
+
+
+# Japanese Length Measures
+#
+# The length system is called kanejaku or
+# square and originated in China.  It was
+# adopted as Japan's official measure in 701
+# by the Taiho Code.  This system is still in
+# common use in architecture and clothing.
+
+shaku              1|3.3 m
+mou                1|10000 shaku
+rin                1|1000 shaku
+bu_distance        1|100 shaku
+sun                1|10 shaku
+jou_distance       10 shaku
+jou                jou_distance
+
+kanejakusun        sun      # Alias to emphasize architectural name
+kanejaku           shaku
+kanejakujou        jou
+
+# http://en.wikipedia.org/wiki/Taiwanese_units_of_measurement
+taichi             shaku   # http://zh.wikipedia.org/wiki/台尺
+taicun             sun     # http://zh.wikipedia.org/wiki/台制
+!utf8
+台尺               taichi  # via Hanyu Pinyin romanizations
+台寸               taicun
+!endutf8
+
+# In context of clothing, shaku is different from architecture
+# http://www.scinet.co.jp/sci/sanwa/kakizaki-essay54.html
+
+kujirajaku         10|8 shaku
+kujirajakusun      1|10 kujirajaku
+kujirajakubu       1|100 kujirajaku
+kujirajakujou      10 kujirajaku
+tan_distance       3 kujirajakujou
+
+ken                6 shaku  # Also sometimes 6.3, 6.5, or 6.6
+                            # http://www.homarewood.co.jp/syakusun.htm
+
+# mostly unused
+chou_distance      60 ken
+chou               chou_distance
+ri                 36 chou
+
+# Japanese Area Measures
+
+# Tsubo is still used for land size, though the others are more
+# recognized by their homonyms in the other measurements.
+
+gou_area             1|10 tsubo
+tsubo                36 shaku^2    # Size of two tatami = ken^2 ??
+se                   30 tsubo
+tan_area             10 se
+chou_area            10 tan_area
+
+# http://en.wikipedia.org/wiki/Taiwanese_units_of_measurement
+ping                 tsubo     # http://zh.wikipedia.org/wiki/坪
+jia                  2934 ping # http://zh.wikipedia.org/wiki/甲_(单位)
+fen                  1|10 jia  # http://zh.wikipedia.org/wiki/分
+fen_area             1|10 jia  # Protection against future collisions
+!utf8
+坪                   ping      # via Hanyu Pinyin romanizations
+甲                   jia
+分                   fen
+分地                 fen_area  # Protection against future collisions
+!endutf8
+
+# Japanese architecture is based on a "standard" size of tatami mat.
+# Room sizes today are given in number of tatami, and this number
+# determines the spacing between colums and hence sizes of sliding
+# doors and paper screens.  However, every region has its own slightly
+# different tatami size.  Edoma, used in and around Tokyo and
+# Hokkaido, is becoming a nationwide standard.  Kyouma is used around
+# Kyoto, Osaka and Kyuushu, and Chuukyouma is used around Nagoya.
+# Note that the tatami all have the aspect ratio 2:1 so that the mats
+# can tile the room with some of them turned 90 degrees.
+#
+# http://www.moon2.net/tatami/infotatami/structure.html
+
+edoma                (5.8*2.9) shaku^2
+kyouma               (6.3*3.15) shaku^2
+chuukyouma           (6*3) shaku^2
+jou_area             edoma
+tatami               jou_area
+
+# Japanese Volume Measures
+
+# The "shou" is still used for such things as alcohol and seasonings.
+# Large quantities of paint are still purchased in terms of "to".
+
+shaku_volume         1|10 gou_volume
+gou_volume           1|10 shou
+gou                  gou_volume
+shou                 (4.9*4.9*2.7) sun^3   # The character shou which is
+                                           # the same as masu refers to a
+                                           # rectangular wooden cup used to
+                                           # measure liquids and cereal.
+                                           # Sake is sometimes served in a masu
+                                           # Note that it happens to be
+                                           # EXACTLY 7^4/11^3 liters.
+to                   10 shou
+koku                 10 to  # No longer used; historically a measure of rice
+
+# Japanese Weight Measures
+#
+# http://wyoming.hp.infoseek.co.jp/zatugaku/zamoney.html
+
+# Not really used anymore.
+
+rin_weight           1|10 bu_weight
+bu_weight            1|10 monme
+fun                  1|10 monme
+monme                momme
+kin                  160 monme
+kan                  1000 monme
+kwan                 kan         # This was the old pronounciation of the unit.
+                                 # The old spelling persisted a few centuries
+                                 # longer and was not changed until around
+                                 # 1950.
+
+# http://en.wikipedia.org/wiki/Taiwanese_units_of_measurement
+# says: "Volume measure in Taiwan is largely metric".
+taijin               kin      # http://zh.wikipedia.org/wiki/台斤
+tailiang             10 monme # http://zh.wikipedia.org/wiki/台斤
+taiqian              monme    # http://zh.wikipedia.org/wiki/台制
+!utf8
+台斤                 taijin # via Hanyu Pinyin romanizations
+台兩                 tailiang
+台錢                 taiqian
+!endutf8

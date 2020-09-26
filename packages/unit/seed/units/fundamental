@@ -1,0 +1,21 @@
+
+
+#
+# The Hartree system of atomic units, derived from fundamental units
+# of mass (of electron), action (planck's constant), charge, and
+# the coulomb constant.
+
+# Fundamental units
+
+atomicmass              electronmass
+atomiccharge            e
+atomicaction            hbar
+
+# derived units (Warning: accuracy is lost from deriving them this way)
+
+atomiclength            bohrradius
+atomictime              hbar^3/coulombconst^2 atomicmass e^4 # Period of first
+                                                             # bohr orbit
+atomicvelocity          atomiclength / atomictime
+atomicenergy            hbar / atomictime
+hartree                 atomicenergy

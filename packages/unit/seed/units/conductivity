@@ -1,0 +1,16 @@
+#
+# Printed circuit board units.  
+#
+# http://www.ndt-ed.org/GeneralResources/IACS/IACS.htm.  
+#
+# Conductivity is often expressed as a percentage of IACS.  A copper wire a
+# meter long with a 1 mm^2 cross section has a resistance of 1|58 ohm at 
+# 20 deg C.  Copper density is also standarized at that temperature. 
+#
+
+copperconductivity      58 siemens m / mm^2     # A wire a meter long with
+IACS                    copperconductivity      #   a 1 mm^2 cross section
+copperdensity           8.89 g/cm^3             # The "ounce" measures the     
+ouncecopper             oz / ft^2 copperdensity #   thickness of copper used   
+ozcu                    ouncecopper             #   in circuitboard fabrication
+           

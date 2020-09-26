@@ -1,0 +1,33 @@
+#
+# time
+#
+
+sec                     s
+minute                  60 s
+min                     minute
+hour                    60 min
+h                       hour
+hr                      hour
+day                     24 hr
+d                       day
+da                      day
+week                    7 day
+wk                      week
+sennight                7 day
+fortnight               14 day
+blink                   1e-5 day   # Actual human blink takes 1|3 second
+ce                      1e-2 day
+cron                    1e6 years
+watch                   4 hours    # time a sentry stands watch or a ship's
+                                   # crew is on duty.
+bell                    1|8 watch  # Bell would be sounded every 30 minutes.
+
+# French Revolutionary Time or Decimal Time.  It was Proposed during
+# the French Revolution.  A few clocks were made, but it never caught
+# on.  In 1998 Swatch defined a time measurement called ".beat" and
+# sold some watches that displayed time in this unit.
+
+decimalhour             1|10 day            
+decimalminute           1|100 decimalhour   
+decimalsecond           1|100 decimalminute 
+beat                    decimalminute          # Swatch Internet Time

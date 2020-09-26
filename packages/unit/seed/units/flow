@@ -1,0 +1,225 @@
+#
+# Gas and Liquid flow units
+#
+
+FLUID_FLOW              VOLUME / TIME
+
+# Some obvious volumetric gas flow units (cu is short for cubic)
+
+cumec                   m^3/s
+cusec                   ft^3/s
+
+# Conventional abbreviations for fluid flow units
+
+gph                     gal/hr
+gpm                     gal/min
+mgd                     megagal/day
+cfs                     ft^3/s
+cfh                     ft^3/hour
+cfm                     ft^3/min
+lpm                     liter/min
+lfm                     ft/min     # Used to report air flow produced by fans.
+                                   # Multiply by cross sectional area to get a
+                                   # flow in cfm.
+
+pru                     mmHg / (ml/min)  # peripheral resistance unit, used in
+                                         # medicine to assess blood flow in
+                                         # the capillaries.
+
+# Miner's inch:  This is an old historic unit used in the Western  United
+# States.  It is generally defined as the rate of flow through a one square
+# inch hole at a specified depth such as 4 inches.  In the late 19th century,
+# volume of water was sometimes measured in the "24 hour inch".  Values for the
+# miner's inch were fixed by state statues.  (This information is from a web
+# site operated by the Nevada Division of Water Planning:  The Water Words
+# Dictionary at http://www.state.nv.us/cnr/ndwp/dict-1/waterwds.htm.)
+
+minersinchAZ            1.5 ft^3/min
+minersinchCA            1.5 ft^3/min
+minersinchMT            1.5 ft^3/min
+minersinchNV            1.5 ft^3/min
+minersinchOR            1.5 ft^3/min
+minersinchID            1.2 ft^3/min
+minersinchKS            1.2 ft^3/min
+minersinchNE            1.2 ft^3/min
+minersinchNM            1.2 ft^3/min
+minersinchND            1.2 ft^3/min
+minersinchSD            1.2 ft^3/min
+minersinchUT            1.2 ft^3/min
+minersinchCO            1 ft^3/sec / 38.4  # 38.4 miner's inches = 1 ft^3/sec
+minersinchBC            1.68 ft^3/min      # British Columbia
+
+# Oceanographic flow
+
+sverdrup                1e6 m^3 / sec   # Used to express flow of ocean
+                                        # currents.  Named after Norwegian
+                                        # oceanographer H. Sverdrup.
+
+# In vacuum science and some other applications, gas flow is measured
+# as the product of volumetric flow and pressure.  This is useful
+# because it makes it easy to compare with the flow at standard
+# pressure (one atmosphere).  It also directly relates to the number
+# of gas molecules per unit time, and hence to the mass flow if the
+# molecular mass is known.
+
+GAS_FLOW                PRESSURE FLUID_FLOW
+
+sccm                    atm cc/min     # 's' is for "standard" to indicate
+sccs                    atm cc/sec     # flow at standard pressure
+scfh                    atm ft^3/hour  #
+scfm                    atm ft^3/min
+slpm                    atm liter/min
+slph                    atm liter/hour
+lusec                   liter micron Hg / s  # Used in vacuum science
+
+# US Standard Atmosphere (1976)
+# Atmospheric temperature and pressure vs. geometric height above sea level
+# This definition covers only the troposphere (the lowest atmospheric
+# layer, up to 11 km), and assumes the layer is polytropic.
+# A polytropic process is one for which PV^k = const, where P is the
+# pressure, V is the volume, and k is the polytropic exponent.  The
+# polytropic index is n = 1 / (k - 1).  As noted in the Wikipedia article
+# https://en.wikipedia.org/wiki/Polytropic_process, some authors reverse
+# the definitions of "exponent" and "index."  The functions below assume
+# the following parameters:
+
+# temperature lapse rate, -dT/dz, in troposphere
+
+lapserate       6.5 K/km        # US Std Atm (1976)
+
+# air molecular weight, including constituent mol wt, given
+# in Table 3, p. 3
+
+air_1976        78.084   %    28.0134 \
+              + 20.9476  %    31.9988 \
+              + 9340     ppm  39.948 \
+              +  314     ppm  44.00995 \
+              +   18.18  ppm  20.183 \
+              +    5.24  ppm   4.0026 \
+              +    2     ppm  16.04303 \
+              +    1.14  ppm  83.80 \
+              +    0.55  ppm   2.01594 \
+              +    0.087 ppm 131.30
+
+# universal gas constant
+R_1976          8.31432e3 N m/(kmol K)
+
+# polytropic index n
+polyndx_1976    air_1976 (kg/kmol) gravity/(R_1976 lapserate) - 1
+
+# If desired, redefine using current values for air mol wt and R
+
+polyndx         polyndx_1976
+# polyndx       air (kg/kmol) gravity/(R lapserate) - 1
+
+# for comparison with various references
+
+polyexpnt       (polyndx + 1) / polyndx
+
+# The model assumes the following reference values:
+# sea-level temperature and pressure
+
+stdatmT0        288.15 K
+stdatmP0        atm
+
+# "effective radius" for relation of geometric to geopotential height,
+# at a latitude at which g = 9.80665 m/s (approximately 45.543 deg); no
+# relation to actual radius
+
+earthradUSAtm   6356766 m
+
+# Temperature vs. geopotential height h
+# Assumes 15 degC at sea level
+# Based on approx 45 deg latitude
+# Lower limits of domain and upper limits of range are those of the
+# tables in US Standard Atmosphere (NASA 1976)
+
+stdatmTH(h) units=[m;K] domain=[-5000,11e3] range=[217,321] \
+    stdatmT0+(-lapserate h) ; (stdatmT0+(-stdatmTH))/lapserate
+
+# Temperature vs. geometric height z; based on approx 45 deg latitude
+stdatmT(z) units=[m;K] domain=[-5000,11e3] range=[217,321] \
+    stdatmTH(geop_ht(z)) ; ~geop_ht(~stdatmTH(stdatmT))
+
+# Pressure vs. geopotential height h
+# Assumes 15 degC and 101325 Pa at sea level
+# Based on approx 45 deg latitude
+# Lower limits of domain and upper limits of range are those of the
+# tables in US Standard Atmosphere (NASA 1976)
+
+stdatmPH(h) units=[m;Pa] domain=[-5000,11e3] range=[22877,177764] \
+    atm (1 - (lapserate/stdatmT0) h)^(polyndx + 1) ; \
+    (stdatmT0/lapserate) (1+(-(stdatmPH/stdatmP0)^(1/(polyndx + 1))))
+
+# Pressure vs. geometric height z; based on approx 45 deg latitude
+stdatmP(z) units=[m;Pa] domain=[-5000,11e3] range=[22877,177764] \
+   stdatmPH(geop_ht(z)); ~geop_ht(~stdatmPH(stdatmP))
+
+# Geopotential height from geometric height
+# Based on approx 45 deg latitude
+# Lower limits of domain and range are somewhat arbitrary; they
+# correspond to the limits in the US Std Atm tables
+
+geop_ht(z) units=[m;m] domain=[-5000,) range=[-5004,) \
+    (earthradUSAtm z) / (earthradUSAtm + z) ; \
+    (earthradUSAtm geop_ht) / (earthradUSAtm + (-geop_ht))
+
+# The standard value for the sea-level acceleration due to gravity is
+# 9.80665 m/s^2, but the actual value varies with latitude (Harrison 1949)
+# R_eff = 2 g_phi / denom
+# g_phi = 978.0356e-2 (1+0.0052885 sin(lat)^2+(-0.0000059) sin(2 lat)^2)
+#   or
+# g_phi = 980.6160e-2 (1+(-0.0026373) cos(2 lat)+0.0000059 cos(2 lat)^2)
+# denom = 3.085462e-6+2.27e-9 cos(2 lat)+(-2e-12) cos(4 lat) (minutes?)
+# There is no inverse function; the standard value applies at a latitude
+# of about 45.543 deg
+
+g_phi(lat) units=[deg;m/s2] domain=[0,90] noerror  \
+    980.6160e-2 (1+(-0.0026373) cos(2 lat)+0.0000059 cos(2 lat)^2) m/s2
+
+# effective Earth radius for relation of geometric height to
+# geopotential height, as function of latitude (Harrison 1949)
+
+earthradius_eff(lat) units=[deg;m] domain=[0,90] noerror \
+    m 2 9.780356 (1+0.0052885 sin(lat)^2+(-0.0000059) sin(2 lat)^2) / \
+    (3.085462e-6 + 2.27e-9 cos(2 lat) + (-2e-12) cos(4 lat))
+
+# References
+# Harrison, L.P. 1949.  Relation Between Geopotential and Geometric
+#   Height.  In Smithsonian Meteorological Tables. List, Robert J., ed.
+#   6th ed., 4th reprint, 1968.  Washington, DC: Smithsonian Institution.
+# NASA.  US National Aeronautics and Space Administration. 1976.
+#   US Standard Atmosphere 1976.  Washington, DC: US Government Printing Office.
+
+# Gauge pressure functions
+#
+# Gauge pressure is measured relative to atmospheric pressure.  In the English
+# system, where pressure is often given in pounds per square inch, gauge
+# pressure is often indicated by 'psig' to distinguish it from absolute
+# pressure, often indicated by 'psia'.  At the standard atmospheric pressure
+# of 14.696 psia, a gauge pressure of 0 psig is an absolute pressure of 14.696
+# psia; an automobile tire inflated to 31 psig has an absolute pressure of
+# 45.696 psia.
+#
+# With gaugepressure(), the units must be specified (e.g., gaugepressure(1.5
+# bar)); with psig(), the units are taken as psi, so the example above of tire
+# pressure could be given as psig(31).
+#
+# If the normal elevation is significantly different from sea level, change
+# Patm appropriately, and adjust the lower domain limit on the gaugepressure
+# definition.
+
+Patm    atm
+
+gaugepressure(x) units=[Pa;Pa] domain=[-101325,) range=[0,) \
+                x + Patm ; gaugepressure+(-Patm)
+
+psig(x) units=[1;Pa] domain=[-14.6959487755135,) range=[0,) \
+    gaugepressure(x psi) ; ~gaugepressure(psig) / psi
+
+
+# Pressure for underwater diving
+
+seawater             0.1 bar / meter
+msw                  meter seawater
+fsw                  foot seawater

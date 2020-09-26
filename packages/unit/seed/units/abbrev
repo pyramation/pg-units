@@ -1,0 +1,25 @@
+#
+# Abbreviations
+#
+
+mph                     mile/hr
+mpg                     mile/gal
+kph                     km/hr
+fL                      footlambert
+fpm                     ft/min
+fps                     ft/s
+rpm                     rev/min
+rps                     rev/sec
+mi                      mile
+smi                     mile
+nmi                     nauticalmile
+mbh                     1e3 btu/hour
+mcm                     1e3 circularmil
+ipy                     inch/year    # used for corrosion rates
+ccf                     100 ft^3     # used for selling water [18]
+Mcf                     1000 ft^3    # not million cubic feet [18]
+kp                      kilopond
+kpm                     kp meter
+Wh                      W hour
+hph                     hp hour
+plf                     lb / foot    # pounds per linear foot

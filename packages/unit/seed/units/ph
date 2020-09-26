@@ -1,0 +1,10 @@
+
+# The pH scale is used to measure the concentration of hydronium (H3O+) ions in
+# a solution.  A neutral solution has a pH of 7 as a result of dissociated
+# water molecules.
+
+pH(x) units=[1;mol/liter] range=(0,) 10^(-x) mol/liter ; (-log(pH liters/mol))
+
+
+
+

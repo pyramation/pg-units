@@ -1,0 +1,18 @@
+
+# Medieval time units.  According to the OED, these appear in Du Cange
+# by Papias.
+
+timepoint               1|5 hour  # also given as 1|4
+timeminute              1|10 hour
+timeostent              1|60 hour
+timeounce               1|8 timeostent
+timeatom                1|47 timeounce
+
+# Given in [15], these subdivisions of the grain were supposedly used
+# by jewelers.  The mite may have been used but the blanc could not
+# have been accurately measured.
+
+mite                    1|20 grain
+droit                   1|24 mite
+periot                  1|20 droit
+blanc                   1|24 periot

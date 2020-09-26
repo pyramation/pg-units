@@ -1,0 +1,31 @@
+
+#
+# Units derived the human body (may not be very accurate)
+#
+
+geometricpace           5 ft   # distance between points where the same
+                               # foot hits the ground
+pace                    2.5 ft # distance between points where alternate
+                               # feet touch the ground
+USmilitarypace          30 in  # United States official military pace
+USdoubletimepace        36 in  # United States official doubletime pace
+fingerbreadth           7|8 in # The finger is defined as either the width
+fingerlength            4.5 in #   or length of the finger
+finger                  fingerbreadth
+palmwidth               hand   # The palm is a unit defined as either the width
+palmlength              8 in   #   or the length of the hand
+hand                    4 inch # width of hand
+shaftment               6 inch # Distance from tip of outstretched thumb to the
+                               #   opposite side of the palm of the hand.  The
+                               #   ending -ment is from the old English word
+                               #   for hand. [18]
+smoot              5 ft + 7 in # Created as part of an MIT fraternity prank.
+                               #   In 1958 Oliver Smoot was used to measure
+                               #   the length of the Harvard Bridge, which was
+                               #   marked off in Smoot lengths.  These
+                               #   markings have been maintained on the bridge
+                               #   since then and repainted by subsequent
+                               #   incoming fraternity members.  During a
+                               #   bridge renovation the new sidewalk was
+                               #   scored every Smoot rather than at the
+                               #   customary 6 ft spacing.

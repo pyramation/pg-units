@@ -1,0 +1,56 @@
+
+#
+# Before the Imperial Weights and Measures Act of 1824, various different
+# weights and measures were in use in different places.
+#
+
+# Scots linear measure
+
+scotsinch        1.00540054 UKinch
+scotslink        1|100 scotschain
+scotsfoot        12 scotsinch
+scotsfeet        scotsfoot
+scotsell         37 scotsinch
+scotsfall        6 scotsell
+scotschain       4 scotsfall
+scotsfurlong     10 scotschain
+scotsmile        8 scotsfurlong
+
+# Scots area measure
+
+scotsrood        40 scotsfall^2
+scotsacre        4 scotsrood
+
+# Scots capacity measure
+
+scotsgill      1|4 mutchkin
+mutchkin       1|2 choppin
+choppin        1|2 scotspint
+scotspint      1|2 scotsquart
+scotsquart     1|4 scotsgallon
+scotsgallon    827.232 UKinch^3
+scotsbarrel    8 scotsgallon
+jug            scotspint
+
+# Scots dry capacity measure
+
+scotswheatlippy   137.333 UKinch^3    # Also used for peas, beans, rye, salt
+scotswheatlippies scotswheatlippy
+scotswheatpeck    4 scotswheatlippy
+scotswheatfirlot  4 scotswheatpeck
+scotswheatboll    4 scotswheatfirlot
+scotswheatchalder 16 scotswheatboll
+
+scotsoatlippy     200.345 UKinch^3    # Also used for barley and malt
+scotsoatlippies   scotsoatlippy
+scotsoatpeck      4 scotsoatlippy
+scotsoatfirlot    4 scotsoatpeck
+scotsoatboll      4 scotsoatfirlot
+scotsoatchalder   16 scotsoatboll
+
+# Scots Tron weight
+
+trondrop       1|16 tronounce
+tronounce      1|20 tronpound
+tronpound      9520 grain
+tronstone      16 tronpound

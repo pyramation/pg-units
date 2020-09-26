@@ -1,0 +1,210 @@
+
+
+
+
+
+
+!var UNITS_SYSTEM esu emu gaussian gauss
+sqrt_cm                 ! 
+sqrt_centimeter         sqrt_cm
++m                      100 sqrt_cm^2
+sqrt_g                  !
+sqrt_gram               sqrt_g
++kg                     kilo sqrt_g^2
+!endvar
+
+
+!var UNITS_SYSTEM esu
+!message CGS-ESU units selected
+!prompt (ESU)
++statcoulomb            sqrt(dyne) cm
++A                      0.1 statamp c/(cm/s)
++mu0                    1/c^2
++coulombconst           1
+!endvar
+
+
+
+!var UNITS_SYSTEM emu
+!message CGS-EMU units selected
+!prompt (EMU)
++abampere               sqrt(dyne)
++A                      0.1 abamp
++mu0                    1
++coulombconst           c^2
+!endvar
+
+!var UNITS_SYSTEM gaussian gauss
+!message CGS-Gaussian units selected
+!prompt (Gaussian)
++statcoulomb            sqrt(dyne) cm
++A                      0.1 statamp c/(cm/s)
++mu0                    1
++epsilon0               1
++coulombconst           1                  # The gauss is the B field produced
++gauss                  statcoulomb / cm^2 # 1 cm from a wire carrying a current
++weber                  1e8 maxwell        # of 0.5*(c/(cm/s)) stA = 1.5e10 stA
++bohrmagneton           e hbar / 2 electronmass c
++nuclearmagneton        e hbar / 2 protonmass c
+!endvar
+
+
+
+# Coffee 
+### NOTE I put it in... but what is this?
+coffeeratio             55 g/L  # ± 10%
+
+
+### MULTI LINE COMMENTS... too hard for now
+
+shaftment               6 inch # Distance from tip of outstretched thumb to the
+                               #   opposite side of the palm of the hand.  The
+                               #   ending -ment is from the old English word
+                               #   for hand. [18]
+smoot              5 ft + 7 in # Created as part of an MIT fraternity prank.
+                               #   In 1958 Oliver Smoot was used to measure
+                               #   the length of the Harvard Bridge, which was
+                               #   marked off in Smoot lengths.  These
+                               #   markings have been maintained on the bridge
+                               #   since then and repainted by subsequent
+                               #   incoming fraternity members.  During a
+                               #   bridge renovation the new sidewalk was
+                               #   scored every Smoot rather than at the
+                               #   customary 6 ft spacing.
+
+## MULTI LINE VALUE
+
+gasmark[degR] \
+  .0625    634.67 \
+  .125     659.67 \
+  .25      684.67 \
+  .5       709.67 \
+  1        734.67 \
+  2        759.67 \
+  3        784.67 \
+  4        809.67 \
+  5        834.67 \
+  6        859.67 \
+  7        884.67 \
+  8        909.67 \
+  9        934.67 \
+  10       959.67
+
+brix[0.99717g/cm^3]\
+    0 1.00000  1 1.00390  2 1.00780  3 1.01173  4 1.01569  5 1.01968 \
+    6 1.02369  7 1.02773  8 1.03180  9 1.03590 10 1.04003 11 1.04418 \
+   12 1.04837 13 1.05259 14 1.05683 15 1.06111 16 1.06542 17 1.06976 \
+   18 1.07413 19 1.07853 20 1.08297 21 1.08744 22 1.09194 23 1.09647 \
+   24 1.10104 25 1.10564 26 1.11027 27 1.11493 28 1.11963 29 1.12436 \
+   30 1.12913 31 1.13394 32 1.13877 33 1.14364 34 1.14855 35 1.15350 \
+   36 1.15847 37 1.16349 38 1.16853 39 1.17362 40 1.17874 41 1.18390 \
+   42 1.18910 43 1.19434 44 1.19961 45 1.20491 46 1.21026 47 1.21564 \
+   48 1.22106 49 1.22652 50 1.23202 51 1.23756 52 1.24313 53 1.24874 \
+   54 1.25439 55 1.26007 56 1.26580 57 1.27156 58 1.27736 59 1.28320 \
+   60 1.28909 61 1.29498 62 1.30093 63 1.30694 64 1.31297 65 1.31905 \
+   66 1.32516 67 1.33129 68 1.33748 69 1.34371 70 1.34997 71 1.35627 \
+   72 1.36261 73 1.36900 74 1.37541 75 1.38187 76 1.38835 77 1.39489 \
+   78 1.40146 79 1.40806 80 1.41471 81 1.42138 82 1.42810 83 1.43486 \
+   84 1.44165 85 1.44848 86 1.45535 87 1.46225 88 1.46919 89 1.47616 \
+   90 1.48317 91 1.49022 92 1.49730 93 1.50442 94 1.51157 95 1.51876
+
+### PAPER was weird
+
+
+
+#
+# drug dosage
+#
+
+mcg                     microgram        # Frequently used for vitamins
+iudiptheria             62.8 microgram   # IU is for international unit
+iupenicillin            0.6 microgram
+iuinsulin               41.67 microgram
+drop                    1|20 ml          # The drop was an old "unit" that was
+                                         # replaced by the minim.  But I was
+                                         # told by a pharmacist that in his
+                                         # prof
+
+WHATS WRONG WITH hectare?
+hectare                 hectoare
+
+
+
+!utf8
+台斤                 taijin # via Hanyu Pinyin romanizations
+台兩                 tailiang
+台錢                 taiqian
+!endutf8
+
+#
+# Localization
+#
+
+!var UNITS_ENGLISH GB
+hundredweight           brhundredweight
+ton                     brton
+scruple                 brscruple
+fluidounce              brfluidounce
+gallon                  brgallon
+bushel                  brbushel
+quarter                 brquarter
+chaldron                brchaldron
+cup                     brcup
+teacup                  brteacup
+tablespoon              brtablespoon
+teaspoon                brteaspoon
+dollar                  US$
+cent                    $ 0.01
+penny                   brpenny
+minim                   minimnote
+pony                    brpony
+grand                   brgrand
+firkin                  brfirkin
+hogshead                brhogshead
+!endvar
+
+!varnot UNITS_ENGLISH GB US
+!message Unknown value for environment variable UNITS_ENGLISH.  Should be GB or US.
+!endvar
+
+
+
+############################################################################
+#
+# Unit list aliases
+#
+# These provide a shorthand for conversions to unit lists.
+#
+############################################################################
+
+!unitlist hms hr;min;sec
+!unitlist time year;day;hr;min;sec
+!unitlist dms deg;arcmin;arcsec
+!unitlist ftin ft;in;1|8 in
+!unitlist inchfine in;1|8 in;1|16 in;1|32 in;1|64 in
+!unitlist usvol cup;3|4 cup;2|3 cup;1|2 cup;1|3 cup;1|4 cup;\
+                tbsp;tsp;1|2 tsp;1|4 tsp;1|8 tsp
+
+############################################################################
+#
+# The following units were in the unix units database but do not appear in
+# this file:
+#
+#      wey        used for cheese, salt and other goods.  Measured mass or
+#      waymass    volume depending on what was measured and where the measuring
+#                 took place.  A wey of cheese ranged from 200 to 324 pounds.
+#
+#      sack       No precise definition
+#
+#      spindle    The length depends on the type of yarn
+#
+#      block      Defined variously on different computer systems
+#
+#      erlang     A unit of telephone traffic defined variously.
+#                 Omitted because there are no other units for this
+#                 dimension.  Is this true?  What about CCS = 1/36 erlang?
+#                 Erlang is supposed to be dimensionless.  One erlang means
+#                 a single channel occupied for one hour.
+#
+############################################################################
+
