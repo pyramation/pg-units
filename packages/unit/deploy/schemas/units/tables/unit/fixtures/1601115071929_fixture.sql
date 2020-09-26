@@ -1,3 +1,10 @@
+-- Deploy schemas/units/tables/unit/fixtures/1601115071929_fixture to pg
+
+-- requires: schemas/units/schema
+-- requires: schemas/units/tables/unit/table
+
+BEGIN;
+
 
 INSERT INTO units.unit (id, name, base, value, amount, description, type, utf8, func) VALUES (1, 'name', false, 'title', 'amount', 'desc', 'type', 'utf8', 'func');
 INSERT INTO units.unit (id, name, base, value, amount, description, type, utf8, func) VALUES (2, 'kg', false, '!', NULL, 'Mass of the international prototype', 'primitive', NULL, NULL);
@@ -2256,3 +2263,5 @@ INSERT INTO units.unit (id, name, base, value, amount, description, type, utf8, 
 INSERT INTO units.unit (id, name, base, value, amount, description, type, utf8, func) VALUES (2255, '㏜', false, 'Sv', NULL, NULL, 'symbols', 'true', 'true');
 INSERT INTO units.unit (id, name, base, value, amount, description, type, utf8, func) VALUES (2256, '㏝', false, 'Wb', NULL, NULL, 'symbols', 'true', 'true');
 
+
+COMMIT;

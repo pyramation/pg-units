@@ -20,6 +20,17 @@ afterEach(async () => {
 });
 
 cases(
+  'unit',
+  async ({ name }) => {
+    const second = await client.selectOne('unit', ['*'], {
+      name
+    });
+    console.log(second);
+  },
+  [{ name: 's' }, { name: 'second' }, { name: 'kg' }]
+);
+
+cases(
   'units',
   async (opts) => {
     const a = await client.callAny('cast_str', {
