@@ -33,7 +33,7 @@ cases(
 cases(
   'units',
   async (opts) => {
-    const a = await client.callAny('cast_str', {
+    const [{ cast_str: a }] = await client.callAny('cast_str', {
       str: opts.name
     });
     console.log(a);
@@ -42,6 +42,8 @@ cases(
     { name: '1' },
     { name: ' 1 mi ' },
     { name: '1 km' },
+    { name: '1 s' },
+    { name: '1 second' },
     { name: '20,000 gigaton' },
     { name: '1 gigaton' },
     { name: '1 ml' }

@@ -1,5 +1,6 @@
 -- Deploy schemas/units/procedures/cast_str to pg
 -- requires: schemas/units/schema
+-- requires: schemas/units/tables/unit/table 
 
 BEGIN;
 -- https://www.postgresql.org/docs/9.1/sql-createcast.html
@@ -13,11 +14,29 @@ DECLARE
   p1 text;
   num text;
   p2 text;
+  u units.unit;
 BEGIN
   p = trim(regexp_replace(str, '\s+', ' ', 'g'));
   p1 = split_part(p, ' ', 1);
   num = replace(p1, ',', '')::numeric;
   p2 = split_part(p, ' ', 2);
+
+  SELECT * FROM units.unit 
+    WHERE name = p2
+  INTO u;
+ 
+  IF (FOUND) THEN
+    RETURN json_build_object(
+      'name', u.name,
+      'type', u.type,
+      'base', u.base,
+      'amount', u.amount,
+      'ival', u.value, -- TODO we need to simply combine ival and amount anyways...
+      'value', num,
+      'desc', u.description
+    );
+  END IF;
+
   RETURN json_build_object('type', p2, 'value', num);
 END;
 $$

@@ -1,21 +1,6 @@
 \echo Use "CREATE EXTENSION unit" to load this file. \quit
 CREATE SCHEMA units;
 
-CREATE FUNCTION units.cast_str ( str text ) RETURNS json AS $EOFCODE$
-DECLARE
-  p text;
-  p1 text;
-  num text;
-  p2 text;
-BEGIN
-  p = trim(regexp_replace(str, '\s+', ' ', 'g'));
-  p1 = split_part(p, ' ', 1);
-  num = replace(p1, ',', '')::numeric;
-  p2 = split_part(p, ' ', 2);
-  RETURN json_build_object('type', p2, 'value', num);
-END;
-$EOFCODE$ LANGUAGE plpgsql STABLE;
-
 CREATE TABLE units.unit (
  	id serial PRIMARY KEY,
 	name text,
@@ -27,6 +12,39 @@ CREATE TABLE units.unit (
 	utf8 text,
 	func text 
 );
+
+CREATE FUNCTION units.cast_str ( str text ) RETURNS json AS $EOFCODE$
+DECLARE
+  p text;
+  p1 text;
+  num text;
+  p2 text;
+  u units.unit;
+BEGIN
+  p = trim(regexp_replace(str, '\s+', ' ', 'g'));
+  p1 = split_part(p, ' ', 1);
+  num = replace(p1, ',', '')::numeric;
+  p2 = split_part(p, ' ', 2);
+
+  SELECT * FROM units.unit 
+    WHERE name = p2
+  INTO u;
+ 
+  IF (FOUND) THEN
+    RETURN json_build_object(
+      'name', u.name,
+      'type', u.type,
+      'base', u.base,
+      'amount', u.amount,
+      'ival', u.value, -- TODO we need to simply combine ival and amount anyways...
+      'value', num,
+      'desc', u.description
+    );
+  END IF;
+
+  RETURN json_build_object('type', p2, 'value', num);
+END;
+$EOFCODE$ LANGUAGE plpgsql STABLE;
 
 INSERT INTO units.unit ( id, name, base, value, amount, description, type, utf8, func ) VALUES (1, 'name', (FALSE), 'title', 'amount', 'desc', 'type', 'utf8', 'func');
 
