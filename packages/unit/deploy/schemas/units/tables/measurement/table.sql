@@ -11,7 +11,8 @@ CREATE TABLE units.derived_unit (
     quantity text, -- quantity which provides base unit, volume, duration, etc. (DOES THIS GO NOW? since quantity will b)
     derived text, -- unit to measure the quantity. optional. If not specified, store in the quantity units.
     -- we could name derived unit, and make unit optional.
-    typeof text -- water, trees, etc.
+    typeof text, -- water, trees, etc.
+    unique(name)
 );
 
 COMMENT ON TABLE units.derived_unit IS 'Measurement includes a quantity and a derived unit to measure that quanity so the amount stored can be stored in derived units but converted to base units.';
