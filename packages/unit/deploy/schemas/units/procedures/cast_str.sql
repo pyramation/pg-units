@@ -6,6 +6,13 @@ BEGIN;
 -- https://www.postgresql.org/docs/9.1/sql-createcast.html
 -- CREATE CAST (bigint AS int4) WITH FUNCTION int4(bigint) AS ASSIGNMENT;
 
+-- get it so you only reduce to base or simple types
+-- any equations, just stop 
+
+-- but then for quantities, you can just use those types that resolve
+-- these are what we need!
+
+
 CREATE FUNCTION units.cast_str (str text)
   RETURNS json
   AS $$
@@ -26,6 +33,10 @@ BEGIN
   INTO u;
  
   IF (FOUND) THEN
+
+      -- if it's simple, recursively look up
+      -- soon as we have any equation, thats the base case
+
     RETURN json_build_object(
       'name', u.name,
       'type', u.type,

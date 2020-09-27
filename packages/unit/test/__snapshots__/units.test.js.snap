@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`quantities Duration 1`] = `
+Array [
+  Object {
+    "description": "a period of existence or persistence",
+    "id": "[ID]",
+    "label": "Duration",
+    "name": "Duration",
+    "unit": "s",
+    "unit_desc": "second",
+  },
+]
+`;
+
+exports[`quantities Energy 1`] = `
+Array [
+  Object {
+    "description": "the capacity of a physical system to do work",
+    "id": "[ID]",
+    "label": "Energy",
+    "name": "Energy",
+    "unit": "J",
+    "unit_desc": "Joule",
+  },
+]
+`;
+
+exports[`quantities Money 1`] = `
+Array [
+  Object {
+    "description": "something generally accepted as a medium of exchange, a measure of value, or a means of payment",
+    "id": "[ID]",
+    "label": "Money",
+    "name": "Money",
+    "unit": null,
+    "unit_desc": null,
+  },
+]
+`;
+
+exports[`quantities Power 1`] = `
+Array [
+  Object {
+    "description": "the rate at which work is done",
+    "id": "[ID]",
+    "label": "Power",
+    "name": "Power",
+    "unit": "W",
+    "unit_desc": "Watt",
+  },
+]
+`;
+
+exports[`quantities Volume 1`] = `
+Array [
+  Object {
+    "description": "the amount of space occupied by a three-dimensional object or region of space, expressed in cubic units",
+    "id": "[ID]",
+    "label": "Volume",
+    "name": "Volume",
+    "unit": "m³",
+    "unit_desc": "cubic meter",
+  },
+]
+`;
+
+exports[`unit kg 1`] = `
+Object {
+  "amount": null,
+  "base": false,
+  "description": "Mass of the international prototype",
+  "func": null,
+  "id": "[ID]",
+  "name": "kg",
+  "type": "primitive",
+  "utf8": null,
+  "value": "!",
+}
+`;
+
+exports[`unit s 1`] = `
+Object {
+  "amount": null,
+  "base": false,
+  "description": "Duration of 9192631770 periods of the radiation",
+  "func": null,
+  "id": "[ID]",
+  "name": "s",
+  "type": "primitive",
+  "utf8": null,
+  "value": "!",
+}
+`;
+
+exports[`unit second 1`] = `
+Object {
+  "amount": null,
+  "base": false,
+  "description": "corresponding to the transition between the two hyperfine",
+  "func": null,
+  "id": "[ID]",
+  "name": "second",
+  "type": "primitive",
+  "utf8": null,
+  "value": "s",
+}
+`;
+
+exports[`units  1 mi  1`] = `
+Object {
+  "amount": null,
+  "base": false,
+  "desc": null,
+  "ival": "mile",
+  "name": "mi",
+  "type": "abbrev",
+  "value": "1",
+}
+`;
+
+exports[`units 1 1`] = `
+Object {
+  "type": "",
+  "value": "1",
+}
+`;
+
+exports[`units 1 gigaton 1`] = `
+Object {
+  "type": "gigaton",
+  "value": "1",
+}
+`;
+
+exports[`units 1 km 1`] = `
+Object {
+  "type": "km",
+  "value": "1",
+}
+`;
+
+exports[`units 1 ml 1`] = `
+Object {
+  "type": "ml",
+  "value": "1",
+}
+`;
+
+exports[`units 1 s 1`] = `
+Object {
+  "amount": null,
+  "base": false,
+  "desc": "Duration of 9192631770 periods of the radiation",
+  "ival": "!",
+  "name": "s",
+  "type": "primitive",
+  "value": "1",
+}
+`;
+
+exports[`units 1 second 1`] = `
+Object {
+  "amount": null,
+  "base": false,
+  "desc": "corresponding to the transition between the two hyperfine",
+  "ival": "s",
+  "name": "second",
+  "type": "primitive",
+  "value": "1",
+}
+`;
+
+exports[`units 10,000 feet 1`] = `
+Object {
+  "amount": null,
+  "base": false,
+  "desc": null,
+  "ival": "foot",
+  "name": "feet",
+  "type": "constants",
+  "value": "10000",
+}
+`;
+
+exports[`units 10,000 foot 1`] = `
+Object {
+  "amount": "12",
+  "base": false,
+  "desc": null,
+  "ival": "inch",
+  "name": "foot",
+  "type": "constants",
+  "value": "10000",
+}
+`;
+
+exports[`units 20,000 gigaton 1`] = `
+Object {
+  "type": "gigaton",
+  "value": "20000",
+}
+`;

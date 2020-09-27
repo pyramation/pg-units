@@ -13,5 +13,7 @@ CREATE TABLE units.unit (
   utf8 text,
   func text
 );
+
+COMMENT ON TABLE units.unit IS 'A standard quantity against which a quantity is measured, e.g. gram, metre, second, litre, pascal.';
 COMMIT;
 

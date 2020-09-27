@@ -1,8 +1,10 @@
 const fs = require('fs');
 
+// THIS FILE PRODUCES units.csv
+
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
-  path: __dirname + '/output.csv',
+  path: __dirname + '/units.csv',
   header: [
     { id: 'name', title: 'name' },
     { id: 'value', title: 'title' },
