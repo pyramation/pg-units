@@ -1,6 +1,7 @@
 -- Deploy schemas/units/procedures/cast_str to pg
 -- requires: schemas/units/schema
 -- requires: schemas/units/tables/unit/table 
+-- requires: schemas/units/tables/measurement/table
 
 BEGIN;
 -- https://www.postgresql.org/docs/9.1/sql-createcast.html
@@ -53,5 +54,37 @@ END;
 $$
 LANGUAGE 'plpgsql'
 STABLE;
+
+CREATE FUNCTION ct.cast_str2 (str text)
+  RETURNS ct.measurement_type
+  AS $$
+DECLARE
+  p text;
+  p1 text;
+  num numeric;
+  p2 text;
+  u units.unit;
+BEGIN
+  p = trim(regexp_replace(str, '\s+', ' ', 'g'));
+  p1 = split_part(p, ' ', 1);
+  num = replace(p1, ',', '')::numeric;
+  p2 = split_part(p, ' ', 2);
+
+  SELECT * FROM units.unit 
+    WHERE name = p2
+  INTO u;
+ 
+  IF (FOUND) THEN
+    RETURN ROW(u.id::bigint,num);
+  END IF;
+
+  RAISE EXCEPTION 'INVALID_TYPE';
+
+END;
+$$
+LANGUAGE 'plpgsql'
+STABLE;
+
+
 COMMIT;
 
