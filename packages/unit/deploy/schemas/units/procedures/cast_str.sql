@@ -55,8 +55,8 @@ $$
 LANGUAGE 'plpgsql'
 STABLE;
 
-CREATE FUNCTION ct.cast_str2 (str text)
-  RETURNS ct.measurement_type
+CREATE FUNCTION units.text2measure (str text)
+  RETURNS units.measurement_type
   AS $$
 DECLARE
   p text;
@@ -85,6 +85,29 @@ $$
 LANGUAGE 'plpgsql'
 STABLE;
 
+CREATE FUNCTION units.measure2text (measure units.measurement_type)
+  RETURNS text
+  AS $$
+DECLARE
+  u units.unit;
+BEGIN
+  SELECT * FROM units.unit 
+    WHERE id = measure.unit
+  INTO u;
+ 
+  IF (FOUND) THEN
+    RETURN measure.value || ' ' || u.name;
+  END IF;
 
+  RAISE EXCEPTION 'INVALID_TYPE';
+
+END;
+$$
+LANGUAGE 'plpgsql'
+STABLE;
+
+
+CREATE CAST (text AS units.measurement_type) WITH FUNCTION units.text2measure(text) AS ASSIGNMENT;
+CREATE CAST (units.measurement_type as text) WITH FUNCTION units.measure2text(units.measurement_type) AS ASSIGNMENT;
 COMMIT;
 

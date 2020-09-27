@@ -22,7 +22,7 @@ COMMENT ON COLUMN units.derived_unit.derived IS 'A unit. A standard quantity aga
 
 
 CREATE TYPE units.measurement_type as (
-    unit int,
+    unit bigint,
     value numeric
 );
 
@@ -33,7 +33,7 @@ CREATE TYPE units.measurement_type_text as (
 
 CREATE TABLE units.measurement (
     id serial primary key, -- probably NOT serial! UUID
-    unit int, -- now we could reference
+    unit bigint, -- now we could reference
     value numeric
 );
 

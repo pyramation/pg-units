@@ -4,8 +4,8 @@
   
 schemas/units/schema 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/units/schema
 schemas/units/tables/unit/table [schemas/units/schema] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/units/tables/unit/table
-schemas/units/procedures/cast_str [schemas/units/schema schemas/units/tables/unit/table] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/units/procedures/cast_str
+schemas/units/tables/measurement/table [schemas/units/schema] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/units/tables/measurement/table
+schemas/units/procedures/cast_str [schemas/units/schema schemas/units/tables/unit/table schemas/units/tables/measurement/table] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/units/procedures/cast_str
+schemas/units/tables/quantity/table [schemas/units/schema] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/units/tables/quantity/table
+schemas/units/tables/quantity/fixtures/1601179866631_fixture [schemas/units/schema schemas/units/tables/quantity/table] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/units/tables/quantity/fixtures/1601179866631_fixture
 schemas/units/tables/unit/fixtures/1601115071929_fixture [schemas/units/schema schemas/units/tables/unit/table] 2017-08-11T08:11:51Z skitch <skitch@5b0c196eeb62> # add schemas/units/tables/unit/fixtures/1601115071929_fixture
-schemas/units/tables/quantity/table [schemas/units/schema] 2020-09-27T04:04:18Z Dan Lynch <dlynch@Dans-MBP-3> # add schemas/units/tables/quantity/table
-schemas/units/tables/quantity/fixtures/1601179866631_fixture [schemas/units/schema schemas/units/tables/quantity/table] 2020-09-27T04:11:07Z Dan Lynch <dlynch@Dans-MBP-3> # add schemas/units/tables/quantity/fixtures/1601179866631_fixture
-schemas/units/tables/measurement/table [schemas/units/schema] 2020-09-27T04:43:51Z Dan Lynch <dlynch@Dans-MBP-3> # add schemas/units/tables/measurement/table
