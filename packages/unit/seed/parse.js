@@ -1,189 +1,206 @@
-const fs = require('fs');
-
-// THIS FILE PRODUCES units.csv
-
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const csvWriter = createCsvWriter({
-  path: __dirname + '/units.csv',
-  header: [
-    { id: 'name', title: 'name' },
-    { id: 'value', title: 'title' },
-    { id: 'amount', title: 'amount' },
-    { id: 'desc', title: 'desc' },
-    { id: 'type', title: 'type' },
-    { id: 'utf8', title: 'utf8' },
-    { id: 'func', title: 'func' }
-  ]
-});
-
-// logField('name');
-// logField('value');
-// logField('amount');
-// logField('desc');
-// logField('type');
-// logField('utf8');
-// logField('func');
-// logField('\n');
-
-const records = [];
-
-// const fd = fs.createWriteStream(__dirname + '/out.csv');
-// const logField = (str) => {
-// fd.write(str || '');
-// fd.write('@');
-// };
-
-const TYPES = {
-  primitive: 'Primitive',
-  prefix: 'Prefix',
-  numbers: 'Numbers',
-  us: 'US Units',
-  geometric: 'Geometric',
-  astronomical: 'Astronomical',
-  fundamental: 'Fundamental',
-  british: 'British',
-  thermal: 'Thermal',
-  photometric: 'Photometric',
-  electrostatic: 'Electrostatic',
-  human: 'Derived from Human',
-  conductivity: 'Conductivity',
-  constants: 'Constants',
-  ph: 'pH',
-  time: 'Time',
-  derived: 'Named SI derived units',
-  temperature: 'Temperature',
-  angles: 'Angles',
-  concentration: 'Concentration',
-  cooking: 'Cooking',
-  imperial: 'Imperial',
-  energy: 'Energy',
-  count: 'Count',
-  paper: 'Paper',
-  print: 'Print',
-  information: 'Information',
-  cloth: 'yarn and cloth measures',
-  medical: 'Medical',
-  currency: 'Currency',
-  wood: 'Wood',
-  misc: 'Misc',
-  flow: 'Gas and Liquid flow units',
-  abbrev: 'Abbreviations',
-  radioactive: 'Radioactivity',
-  air: 'Air',
-  people: 'People',
-  scots: 'Scots',
-  swedish: 'Swedish',
-  german: 'German',
-  australian: 'Australian',
-  english: 'English',
-  roman: 'Roman',
-  egyptian: 'Egyptian',
-  greek: 'Greek',
-  northern: 'Northern',
-  arabic: 'Arabic',
-  medieval: 'Medieval',
-  ancient: 'Ancient',
-  symbols: 'Symbols'
-};
-
-const read = (type) => {
-  fs.createReadStream(__dirname + '/units/' + type)
-    .on('data', (data) => {
-      const lines = data
-        .toString()
-        .split('\n')
-        .map((l) => l.trim())
-        .filter((l) => l && l.length)
-        .filter((l) => !l.startsWith('#'));
-
-      const agg = [];
-      let vvar;
-      let utf8;
-      let aggMode = false;
-      let func = false;
-
-      lines.forEach((line) => {
-        if (line.endsWith('\\')) {
-          console.log(line);
-          if (aggMode) {
-            agg.push(line.replace(/\\$/, '').trim());
-          } else {
-            aggMode = true;
-          }
-        } else if (aggMode) {
-          agg.push(line.trim());
-          console.log(agg);
-          aggMode = false;
-          return;
-        }
-
-        if (line.startsWith('!')) {
-          console.log(line);
-          if (line.startsWith('!var')) {
-            vvar = true;
-          } else if (line.startsWith('!endvar')) {
-            vvar = false;
-          } else if (line.startsWith('!utf8')) {
-            utf8 = true;
-          } else if (line.startsWith('!endutf8')) {
-            utf8 = false;
-          } else {
-            console.log('dont know ', line);
-          }
-          return;
-        }
-
-        const [info, desc] = line.split('#');
-        let base, value, amount;
-        const args = info.split(' ').filter((c) => c && c.length);
-        const name = args[0];
-        if (/[()]+/.test(name)) {
-          func = true;
-        }
-
-        if (args.length === 3) {
-          value = args[2];
-          amount = args[1];
-        } else if (args.length === 2) {
-          value = args[1];
-        } else {
-          //   console.log('what does that mean?' + args.length);
-          //   console.log(args);
-          return;
-        }
-
-        // why?????
-        if (value === '\\') return;
-
-        records.push({
-          name,
-          value,
-          amount,
-          desc: desc && desc.trim(),
-          type,
-          utf8: utf8 ? 'true' : null,
-          func: func ? 'true' : null
-        });
-        // logField(name);
-        // logField(value);
-        // logField(amount);
-        // logField(desc && desc.trim());
-        // logField(type);
-        // logField(utf8 ? 'true' : null);
-        // logField(func ? 'true' : null);
-        // fd.write('\n');
-      });
+const Units = (text) => {
+  let buf = [];
+  const lines = text
+    .split('\n')
+    .map((line) => {
+      if (!line.startsWith('#') && line.trim().endsWith('\\')) {
+        buf.push(line.replace(/\\$/, '').trim());
+        return null;
+      }
+      if (buf.length) {
+        buf.push(line);
+        buf = [];
+        return buf;
+      }
+      if (line.startsWith('#')) return null;
+      return line;
     })
-    .on('end', () => {
-      // fd.end();
-      csvWriter
-        .writeRecords(records) // returns a promise
-        .then(() => {
-          console.log('...Done');
-        });
-    });
+    .filter((i) => i);
+
+  const tokens = [];
+  const state = {
+    set: false,
+    utf8: false
+  };
+
+  const parseFn = (obj) => {
+    const params = obj.params;
+    const units = obj.params.match(/units=([^\s]*)/);
+    if (units) {
+      obj.units = units[1];
+      obj.params = obj.params.replace(units[0], '');
+    }
+    const range = obj.params.match(/range=([^\s]*)/);
+    if (range) {
+      obj.range = range[1];
+      obj.params = obj.params.replace(range[0], '');
+    }
+    const domain = obj.params.match(/domain=([^\s]*)/);
+    if (domain) {
+      obj.domain = domain[1];
+      obj.params = obj.params.replace(domain[0], '');
+    }
+
+    const noerror = obj.params.match(/noerror/);
+    if (noerror) {
+      obj.noerror = true;
+      obj.params = obj.params.replace(noerror[0], '');
+    }
+
+    const parameters = obj.def.match(/.*\((.*)\)/);
+    obj.parameters = parameters[1]
+      .split(',')
+      .map((a) => a.trim())
+      .filter((a) => a);
+
+    obj.def = obj.def.split('(')[0];
+
+    obj.fns = obj.params.split(';').map((a) => a.trim());
+
+    if (obj.units) {
+      obj.units = obj.units
+        .split(';')
+        .map((u) => u.replace('[', '').replace(']', ''))
+        .filter((a) => a);
+    }
+    if (obj.units && !obj.units.length) delete obj.units;
+    delete obj.params;
+    return obj;
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    // TODO handle multiline definitions
+    let line = lines[i];
+    if (typeof line === 'string') {
+      line = line.replace(/\t/g, ' ');
+      if (line.startsWith('!')) {
+        state.set = true;
+        if (/^!utf8/.test(line)) {
+          state.utf8 = true;
+        }
+        if (/^!endutf8/.test(line)) {
+          state.utf8 = false;
+        }
+      } else {
+        state.set = false;
+      }
+      if (line.startsWith(' ')) {
+        // will lose comments here
+        continue;
+      }
+      if (!state.set) {
+        let [name, ...params] = line.split(' ');
+        params = params
+          .map((a) => a.trim())
+          .join(' ')
+          .trim();
+        let comment;
+        if (/#/.test(params)) {
+          const parts = params.split('#');
+          params = parts[0].trim();
+          comment = parts[1].trim();
+        }
+
+        const obj = {};
+        if (comment) {
+          obj.comment = comment;
+        }
+        if (name.includes('[')) {
+          throw new Error('should not happen');
+        } else if (name.includes('(')) {
+          tokens.push({
+            Function: parseFn({
+              def: name,
+              params: params,
+              ...obj
+            })
+          });
+        } else {
+          tokens.push({
+            Definition: {
+              def: name,
+              params: params,
+              ...obj
+            }
+          });
+        }
+      }
+    } else if (Array.isArray(line) && line.length) {
+      let [first, ...rest] = line;
+      first = first.replace(/\t/g, ' ');
+      if (first.startsWith('!')) {
+        state.set = true;
+        if (/^!utf8/.test(line)) {
+          state.utf8 = true;
+        }
+        if (/^!endutf8/.test(line)) {
+          state.utf8 = false;
+        }
+      } else {
+        state.set = false;
+      }
+
+      let [name, ...params] = first.split(' ');
+      params = params
+        .concat(rest)
+        .map((a) => a.trim())
+        .join(' ')
+        .trim();
+      let comment;
+      if (/#/.test(params)) {
+        const parts = params.split('#');
+        params = parts[0].trim();
+        comment = parts[1].trim();
+      }
+
+      const obj = {};
+      if (comment) {
+        obj.comment = comment;
+      }
+
+      if (!state.set) {
+        if (name.includes('[')) {
+          tokens.push({
+            Matrix: {
+              def: name,
+              params: rest.map((a) =>
+                a
+                  .trim()
+                  .replace(/\t/g, ' ')
+                  .replace(/\s+/g, ' ')
+                  .split(/[\t\s]/)
+                  .map((a) => Number(a.trim()))
+              ),
+              ...obj
+            }
+          });
+        } else if (name.includes('(')) {
+          tokens.push({
+            Function: parseFn({
+              def: name,
+              params: params,
+              ...obj
+            })
+          });
+        } else {
+          tokens.push({
+            Definition: {
+              def: name,
+              params: params,
+              ...obj
+            }
+          });
+        }
+      }
+    }
+  }
+
+  return tokens;
 };
 
-Object.entries(TYPES).forEach(([key, type]) => {
-  read(key);
-});
+const str = require('fs')
+  .readFileSync(__dirname + '/src/definitions.units.patched')
+  .toString();
+
+const toks = JSON.stringify(Units(str), null, 2);
+require('fs').writeFileSync(__dirname + '/units.json', toks);
